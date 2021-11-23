@@ -6,6 +6,7 @@ namespace UI
 {
     public class ConsoleTesting
     {
+        
         IUserBL _userBL;
 
         public ConsoleTesting(IUserBL p_userBL)
@@ -26,6 +27,23 @@ namespace UI
         public List<User> TestShowAll()
         {
             return _userBL.GetAllUsers();
+        }
+
+        public List<User> TestGetByName(string p_name)
+        {
+            return _userBL.GetUserByName(p_name);
+        }
+
+
+        public User TestGetByID(int p_ID)
+        {
+            return _userBL.GetUserById(p_ID);
+        }
+
+
+        public User TestDeleteUser(User p_user)
+        {
+            return _userBL.DeleteUser(p_user);
         }
     }
 }

@@ -42,5 +42,23 @@ namespace DL
             ).ToList();
 
         }
+
+
+        public Model.User DeleteUser(Model.User p_user)
+        {
+            
+            _context.Users.Remove(
+                new Entity.User()
+                {
+                    Id=p_user.ID,
+                    UserName = p_user.UserName,
+                    UserPass = p_user.UserPass,
+                    Email = p_user.Email
+                }
+            );
+            _context.SaveChanges();
+            return p_user;
+        }
+        
     }
 }
