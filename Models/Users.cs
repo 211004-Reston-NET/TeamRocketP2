@@ -1,4 +1,4 @@
-﻿using System;
+
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
@@ -33,7 +33,6 @@ namespace Models
             get { return _Email; }
             set { _Email = value; }
         }
-
 
         public  List<Forum> Forums { get; set; }
         public List<Invite> Invites { get; set; }
