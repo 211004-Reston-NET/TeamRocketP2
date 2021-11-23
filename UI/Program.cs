@@ -27,8 +27,8 @@ namespace UI
 
             var instance = new ConsoleTesting(new UsersBL(new UserCloudRepo(new P3ApiContext(options))));
             //instance.TestAdd();
-            List<Model.Users> ListOfUsers= instance.TestShowAll();
-            foreach(Models.Users user in ListOfUsers)
+            List<Model.User> ListOfUsers= instance.TestShowAll();
+            foreach(Models.User user in ListOfUsers)
             {
                 Console.WriteLine(user.ToString());
             }

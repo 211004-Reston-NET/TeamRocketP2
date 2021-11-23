@@ -9,13 +9,13 @@ namespace BL
         /// will return a list of Users
         /// </summary>
         /// <returns></returns>
-        List<Users> GetAllUsers();
+        List<User> GetAllUsers();
 
         /// <summary>
         /// Adds passed user to the database
         /// </summary>
         /// <param name="_Users"></param>
         /// <returns>added user</returns>
-        Users AddUser(Users _Users);
+        User AddUser(User _Users);
     }
 }

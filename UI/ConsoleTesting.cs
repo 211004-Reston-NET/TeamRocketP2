@@ -13,9 +13,9 @@ namespace UI
             _userBL=p_userBL;
         }
 
-        public  Users TestAdd()
+        public  User TestAdd()
         {
-            return _userBL.AddUser( new Users()
+            return _userBL.AddUser( new User()
             {
                 UserName = "name",
                 UserPass = "password",
@@ -23,7 +23,7 @@ namespace UI
             });
         }
 
-        public List<Users> TestShowAll()
+        public List<User> TestShowAll()
         {
             return _userBL.GetAllUsers();
         }

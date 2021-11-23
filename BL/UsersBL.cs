@@ -13,12 +13,12 @@ namespace BL
         {
             _repo=p_repo;
         }
-        public Users AddUser(Users p_user)
+        public User AddUser(User p_user)
         {
             return _repo.AddUser(p_user);
         }
 
-        public List<Users> GetAllUsers()
+        public List<User> GetAllUsers()
         {
             return _repo.GetAllUsers();
         }

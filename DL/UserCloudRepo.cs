@@ -14,7 +14,7 @@ namespace DL
         {
             _context = p_context;
         }
-        public Model.Users AddUser(Model.Users p_Users)
+        public Model.User AddUser(Model.User p_Users)
         {
             _context.Users.Add
             (
@@ -29,10 +29,10 @@ namespace DL
             return p_Users;
         }
 
-        public List<Model.Users> GetAllUsers()
+        public List<Model.User> GetAllUsers()
         {
             return _context.Users.Select(user =>
-                new Model.Users()
+                new Model.User()
                 {
                     ID = user.Id,
                     UserName = user.UserName,
@@ -40,7 +40,7 @@ namespace DL
                     Email = user.Email
                 }
             ).ToList();
-            
+
         }
     }
 }
