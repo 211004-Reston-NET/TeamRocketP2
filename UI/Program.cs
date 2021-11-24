@@ -39,9 +39,9 @@ namespace UI
             //     Console.WriteLine(user.ToString());
             // }
 
-            //Console.WriteLine(instance.TestGetByID(1));
+            // Console.WriteLine(instance.TestGetByID(1));
 
-            //instance.TestDeleteUser(instance.TestGetByID(1));
+            // instance.TestDeleteUser(instance.TestGetByID(1));
         }
 
         

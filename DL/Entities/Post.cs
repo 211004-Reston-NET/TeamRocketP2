@@ -9,7 +9,7 @@ namespace DL.Entities
     {
         public Post()
         {
-            PostsAndReplies = new HashSet<PostsAndReply>();
+            Replies = new HashSet<Reply>();
         }
 
         public string PostText { get; set; }
@@ -20,6 +20,6 @@ namespace DL.Entities
 
         public virtual Forum Forum { get; set; }
         public virtual User User { get; set; }
-        public virtual ICollection<PostsAndReply> PostsAndReplies { get; set; }
+        public virtual ICollection<Reply> Replies { get; set; }
     }
 }

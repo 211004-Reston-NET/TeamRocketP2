@@ -19,6 +19,7 @@ namespace DL.Entities
         public string UserPass { get; set; }
         public string Email { get; set; }
         public int Id { get; set; }
+        public string NameOfUser { get; set; }
 
         public virtual ICollection<Forum> Forums { get; set; }
         public virtual ICollection<Invite> Invites { get; set; }

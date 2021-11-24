@@ -11,6 +11,6 @@ namespace Models
         public int ReplyId { get; set; }
 
         public User User { get; set; }
-        public List<PostsAndReply> PostsAndReplies { get; set; } 
+        
     }
 }
