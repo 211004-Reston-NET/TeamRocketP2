@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Models;
 using Entity = DL.Entities;
 using Model = Models;
 
@@ -17,7 +18,7 @@ namespace DL
         }
         public Model.Forum AddForum(Model.Forum p_forum)
         {
-            _context.Forum.Add
+            _context.Forums.Add
             (
                 new Entity.Forum()
                 {
@@ -34,14 +35,14 @@ namespace DL
 
         public List<Model.Forum> GetAllForum()
         {
-            return _context.Forum.Select(Forum =>
+            return _context.Forums.Select(Forum =>
                 new Model.Forum()
                 {
                     ForumId =  Forum.ForumId,
                     TopicName = Forum.TopicName,
                     DateCreated = Forum.DateCreated,
                     CreatorId = Forum.CreatorId, 
-                    AmountOfPost = Forum.AmountOfPost,
+                    AmountOfPosts = Forum.AmountOfPosts,
                     
                 }
             ).ToList();
@@ -51,7 +52,7 @@ namespace DL
        
          public Model.Forum DeleteForum(Model.Forum p_forum)
         {
-           _context.Forum.Remove(
+           _context.Forums.Remove(
                new Entity.Forum()
 
                {
@@ -59,7 +60,7 @@ namespace DL
                     TopicName = p_forum.TopicName,
                     DateCreated = p_forum.DateCreated,
                     CreatorId = p_forum.CreatorId, 
-                    AmountOfPost = p_forum.AmountOfPost,
+                    AmountOfPosts = p_forum.AmountOfPosts,
                     
                 }
            ); 
@@ -69,7 +70,15 @@ namespace DL
            return p_forum;
         }
 
-      
+        public Forum GetForumById(int p_forumId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Forum UpdateForumById(int p_forumId)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

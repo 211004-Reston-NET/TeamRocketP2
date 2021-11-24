@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using DL;
 using Models;
 
@@ -39,6 +40,11 @@ namespace BL
         public Event DeleteEvent(Event p_event)
         {
             return _repo.DeleteEvent(p_event);
+        }
+
+        public Event UpdateEventById(int p_eventId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

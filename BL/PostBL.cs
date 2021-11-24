@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using DL;
 using Models;
 
@@ -39,6 +40,11 @@ namespace BL
         public Post DeletePost(Post p_post)
         {
             return _repo.DeletePost(p_post);
+        }
+
+        public Post UpdatePostById(int p_postId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

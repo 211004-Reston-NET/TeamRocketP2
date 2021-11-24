@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using DL;
 using Models;
 
@@ -39,6 +40,11 @@ namespace BL
         public Forum DeleteForum(Forum p_forum)
         {
             return _repo.DeleteForum(p_forum);
+        }
+
+        public Forum UpdateForumById(int p_referenceId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

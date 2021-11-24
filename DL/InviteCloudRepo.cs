@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Models;
 using Entity = DL.Entities;
 using Model = Models;
 
@@ -17,7 +18,7 @@ namespace DL
         }
         public Model.Invite AddInvite(Model.Invite p_invite)
         {
-            _context.Invite.Add
+            _context.Invites.Add
             (
                 new Entity.Invite()
                 {
@@ -33,7 +34,7 @@ namespace DL
 
         public List<Model.Invite> GetAllInvite()
         {
-            return _context.Invite.Select(Invite =>
+            return _context.Invites.Select(Invite =>
                 new Model.Invite()
                 {
                     InviteId =  Invite.InviteId,
@@ -50,11 +51,11 @@ namespace DL
 
          public Model.Invite DeleteInvite(Model.Invite p_invite)
         {
-           _context.Invite.Remove(
+           _context.Invites.Remove(
                new Entity.Invite()
 
                {
-                    InviteById = p_invite.InviteId,
+                    InviteId = p_invite.InviteId,
                     UserId = p_invite.UserId,
                     EmailRecipient = p_invite.EmailRecipient,
                     EventId = p_invite.EventId, 
@@ -67,7 +68,15 @@ namespace DL
            return p_invite;
         }
 
-       
+        public Invite GetInviteById(int p_inviteId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Invite UpdateInviteById(int p_inviteId)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

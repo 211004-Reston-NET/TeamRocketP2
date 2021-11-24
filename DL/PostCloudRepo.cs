@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Models;
 using Entity = DL.Entities;
 using Model = Models;
 
@@ -17,7 +18,7 @@ namespace DL
         }
         public Model.Post AddPost(Model.Post p_post)
         {
-            _context.Post.Add
+            _context.Posts.Add
             (
                 new Entity.Post()
                 {
@@ -34,7 +35,7 @@ namespace DL
 
         public List<Model.Post> GetAllPost()
         {
-            return _context.Post.Select(Post =>
+            return _context.Posts.Select(Post =>
                 new Model.Post()
                 {
                     PostId =  Post.PostId,
@@ -52,7 +53,7 @@ namespace DL
 
          public Model.Post DeletePost(Model.Post p_post)
         {
-           _context.Post.Remove(
+           _context.Posts.Remove(
                new Entity.Post()
 
                {
@@ -70,7 +71,15 @@ namespace DL
            return p_post;
         }
 
-     
+        public Post GetPostById(int p_postId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Post UpdatePostById(int p_postId)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

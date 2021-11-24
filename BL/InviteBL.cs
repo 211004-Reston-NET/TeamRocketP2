@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using DL;
 using Models;
 
@@ -39,6 +40,11 @@ namespace BL
         public Invite DeleteInvite(Invite p_invite)
         {
             return _repo.DeleteInvite(p_invite);
+        }
+
+        public Invite UpdateInviteById(int p_inviteId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

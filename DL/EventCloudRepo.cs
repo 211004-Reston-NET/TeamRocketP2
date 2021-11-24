@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Models;
 using Entity = DL.Entities;
 using Model = Models;
 
@@ -17,7 +18,7 @@ namespace DL
         }
         public Model.Event AddEvent(Model.Event p_event)
         {
-            _context.Event.Add
+            _context.Events.Add
             (
                 new Entity.Event()
                 {
@@ -34,7 +35,7 @@ namespace DL
 
         public List<Model.Event> GetAllEvent()
         {
-            return _context.Event.Select(Event =>
+            return _context.Events.Select(Event =>
                 new Model.Event()
                 {
                     EventId =  Event.EventId,
@@ -57,7 +58,7 @@ namespace DL
 
          public Model.Event DeleteEvent(Model.Event p_event)
         {
-           _context.Event.Remove(
+           _context.Events.Remove(
                new Entity.Event()
 
                {
@@ -73,6 +74,16 @@ namespace DL
 
            _context.SaveChanges();
            return p_event;
+        }
+
+        public Event GetEventById(int p_eventId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Event UpdateEventById(int p_eventId)
+        {
+            throw new NotImplementedException();
         }
 
         // --to be deleted--

@@ -6,7 +6,7 @@ using DL;
 using DL.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Model = Model;
+//using Model = Model;
 
 namespace UI
 {
