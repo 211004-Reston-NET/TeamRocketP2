@@ -12,6 +12,6 @@ namespace Models
 
         public Forum Forum { get; set; }
         public User User { get; set; }
-        public List<PostsAndReply> PostsAndReplies { get; set; }
+        
     }
 }

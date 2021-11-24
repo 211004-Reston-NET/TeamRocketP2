@@ -34,6 +34,8 @@ namespace Models
             set { _Email = value; }
         }
 
+        public string NameOfUser { get; set; }
+
         public  List<Forum> Forums { get; set; }
         public List<Invite> Invites { get; set; }
         public List<Post> Posts { get; set; }
