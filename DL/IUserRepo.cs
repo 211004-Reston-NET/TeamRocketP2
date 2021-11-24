@@ -16,5 +16,12 @@ namespace DL
         /// <param name="_Users"></param>
         /// <returns>added user</returns>
         User AddUser(User _Users);
+
+        /// <summary>
+        /// removes the passed user from the DB
+        /// </summary>
+        /// <param name="p_user"></param>
+        /// <returns></returns>
+        User DeleteUser(User _user);
     }
 }

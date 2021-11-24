@@ -27,13 +27,21 @@ namespace UI
 
             var instance = new ConsoleTesting(new UsersBL(new UserCloudRepo(new P3ApiContext(options))));
             //instance.TestAdd();
-            List<Model.User> ListOfUsers= instance.TestShowAll();
-            foreach(Models.User user in ListOfUsers)
-            {
-                Console.WriteLine(user.ToString());
-            }
-            
-            
+            // List<Model.User> ListOfUsers= instance.TestShowAll();
+            // List<Model.User> ListOfUsers = instance.TestGetByName("name");
+            // foreach(Models.User user in ListOfUsers)
+            // {
+            //     Console.WriteLine(user.ToString());
+            // }
+
+            // foreach (Models.User user in ListOfUsers)
+            // {
+            //     Console.WriteLine(user.ToString());
+            // }
+
+            //Console.WriteLine(instance.TestGetByID(1));
+
+            //instance.TestDeleteUser(instance.TestGetByID(1));
         }
 
         

@@ -17,5 +17,26 @@ namespace BL
         /// <param name="_Users"></param>
         /// <returns>added user</returns>
         User AddUser(User _Users);
+
+        /// <summary>
+        /// return a list of users with names matching the passed string
+        /// </summary>
+        /// <param name="_name"></param>
+        /// <returns></returns>
+        List<User> GetUserByName(string _name);
+
+        /// <summary>
+        /// return the user with an ID matching the passed Int
+        /// </summary>
+        /// <param name="p_Id"></param>
+        /// <returns></returns>
+        User GetUserById(int _Id);
+
+        /// <summary>
+        /// removes the passed user obj from the DB
+        /// </summary>
+        /// <param name="p_user"></param>
+        /// <returns>removed User</returns>
+        User DeleteUser(User _user);
     }
 }
