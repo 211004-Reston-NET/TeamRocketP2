@@ -30,16 +30,16 @@ namespace P2WebApi.Controllers
 
 
          [HttpPost("Add")]
-        public IActionResult AddFourm([FromBody] Event p_fourm)
+        public IActionResult AddFourm([FromBody] Forum p_fourm)
         {
-            return Created("api/Forum/Add", _ForumBL.AddEvent(p_event));
+            return Created("api/Forum/Add", _ForumBL.AddForum(p_fourm));
         }
 
        
         [HttpDelete("Delete")]
-        public IActionResult DeleteEvent([FromBody] Event p_event)
+        public IActionResult DeleteFourm([FromBody] Forum p_fourm)
         {
-            return Ok(_EventBL.DeleteEvent(p_event));
+            return Ok(_ForumBL.DeleteForum(p_fourm));
         }
 
     }
