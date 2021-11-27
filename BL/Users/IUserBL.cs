@@ -37,6 +37,6 @@ namespace BL
         /// </summary>
         /// <param name="p_user"></param>
         /// <returns>removed User</returns>
-        User DeleteUser(User _user);
+        User DeleteUser(int _user_Id);
     }
 }

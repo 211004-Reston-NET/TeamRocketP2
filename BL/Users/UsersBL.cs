@@ -47,9 +47,9 @@ namespace BL
             return Found[0];
         }
 
-        public User DeleteUser(User p_user)
+        public User DeleteUser(int p_user_Id)
         {
-            return _repo.DeleteUser(p_user);
+            return _repo.DeleteUser(p_user_Id);
         }
     }
 }

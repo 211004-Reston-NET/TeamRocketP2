@@ -21,7 +21,6 @@ namespace DL.Entities
         public virtual DbSet<Forum> Forums { get; set; }
         public virtual DbSet<Invite> Invites { get; set; }
         public virtual DbSet<Post> Posts { get; set; }
-        public virtual DbSet<PostsAndReply> PostsAndReplies { get; set; }
         public virtual DbSet<Reply> Replies { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
@@ -146,32 +145,6 @@ namespace DL.Entities
                     .HasConstraintName("FK__Posts__User_Id__05D8E0BE");
             });
 
-            modelBuilder.Entity<PostsAndReply>(entity =>
-            {
-                entity.HasKey(e => e.PostReplyId)
-                    .HasName("PostReply_Id");
-
-                entity.ToTable("Posts_and_Replies");
-
-                entity.Property(e => e.PostReplyId).HasColumnName("PostReply_Id");
-
-                entity.Property(e => e.PostId).HasColumnName("Post_Id");
-
-                entity.Property(e => e.ReplyId).HasColumnName("Reply_Id");
-
-                entity.HasOne(d => d.Post)
-                    .WithMany(p => p.PostsAndReplies)
-                    .HasForeignKey(d => d.PostId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Posts_and__Post___09A971A2");
-
-                entity.HasOne(d => d.Reply)
-                    .WithMany(p => p.PostsAndReplies)
-                    .HasForeignKey(d => d.ReplyId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Posts_and__Reply__0A9D95DB");
-            });
-
             modelBuilder.Entity<Reply>(entity =>
             {
                 entity.Property(e => e.ReplyId).HasColumnName("Reply_Id");
@@ -192,6 +165,12 @@ namespace DL.Entities
 
                 entity.Property(e => e.UserId).HasColumnName("User_Id");
 
+                entity.HasOne(d => d.Post)
+                    .WithMany(p => p.Replies)
+                    .HasForeignKey(d => d.PostId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__Replies__Post_Id__0C85DE4D");
+
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Replies)
                     .HasForeignKey(d => d.UserId)
@@ -201,11 +180,19 @@ namespace DL.Entities
 
             modelBuilder.Entity<User>(entity =>
             {
+                entity.HasIndex(e => e.UserName, "UQ__Users__C9F28456826BF494")
+                    .IsUnique();
+
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Email)
                     .IsRequired()
                     .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.NameOfUser)
+                    .IsRequired()
+                    .HasMaxLength(100)
                     .IsUnicode(false);
 
                 entity.Property(e => e.UserName)
