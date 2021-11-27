@@ -19,9 +19,9 @@ namespace BL
             return _repo.AddReply(p_reply);
         }
 
-        public Reply DeleteReply(Reply p_reply)
+        public Reply DeleteReply(int p_reply_Id)
         {
-            return _repo.DeleteReply(p_reply);
+            return _repo.DeleteReply(p_reply_Id);
         }
 
         public List<Reply> GetAllReplies()

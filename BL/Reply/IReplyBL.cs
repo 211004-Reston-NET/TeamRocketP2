@@ -17,6 +17,6 @@ namespace BL
         Reply GetReplyById(int _Id);
 
 
-        Reply DeleteReply(Reply _reply);
+        Reply DeleteReply(int _reply_Id);
     }
 }
