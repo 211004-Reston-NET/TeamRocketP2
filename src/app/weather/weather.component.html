@@ -1,1 +1,31 @@
 <p>weather works!</p>
+<div>
+    <div>
+      <label>Weather: </label>
+      <p><input type="text" [(ngModel)]="weatherText"></p>
+      {{weatherResult}}
+      <button type="button" (click)="Weather(weatherText)">weather</button>
+      <button type="button" (click)="Forecast(weatherText)">weather forecast</button>
+    </div>
+    <div>
+    </div>
+  </div>
+  <table class="table table-hover">
+    <thead>
+        <th>date</th>
+        <th>temp</th>
+        <th>minimum temperature</th>
+        <th>maximum temperature</th>
+        
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let restaurant of listOfWeatherForecast">
+            <td>{{restaurant.date}}</td>
+            <td>{{restaurant.temp}}</td>
+            <td>{{restaurant.minimum}}</td>
+            <td>{{restaurant.maximum}}</td>
+            <!-- <a routerLink="/review">Review</a> -->
+        </tr>
+    </tbody>
+</table>

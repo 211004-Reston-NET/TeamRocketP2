@@ -1,1 +1,33 @@
 <p>news works!</p>
+
+
+<div>
+    <div>
+      <label>translate: </label>
+      <p><input type="text" id="text2" name="text2" [(ngModel)]="text2"></p>
+      {{resultado}}
+      <button type="button" (click)="translate(text2)">Clickme</button>
+
+    </div>
+    <div>
+    </div>
+  </div>
+<button type="button" (click)="News2()">news</button>
+<button type="button" (click)="JapaneseNews()">JapaneseNews</button>
+<table class="table table-hover">
+  <thead>
+      <th>published</th>
+      <th>title</th>
+      <th>link</th>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let restaurant of listOfNewsArticles">
+          <td>{{restaurant.published}}</td>
+          <td>{{restaurant.title}}</td>
+          <td><a href={{restaurant.link}}>{{restaurant.link}}</a></td>
+
+          <!-- <a routerLink="/review">Review</a> -->
+      </tr>
+  </tbody>
+</table>
