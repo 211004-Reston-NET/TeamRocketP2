@@ -22,6 +22,6 @@ namespace DL
         /// </summary>
         /// <param name="_reply"></param>
         /// <returns></returns>
-        Reply DeleteReply(Reply _reply);
+        Reply DeleteReply(int _reply_Id);
     }
 }

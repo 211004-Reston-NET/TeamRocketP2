@@ -20,9 +20,9 @@ namespace BL
             return _repo.AddPost(p_post);
         }
 
-        public Post DeletePost(Post p_post)
+        public Post DeletePost(int p_Id)
         {
-            return _repo.DeletePost(p_post);
+            return _repo.DeletePost(p_Id);
         }
 
         public List<Post> GetAllPosts()
@@ -42,7 +42,12 @@ namespace BL
 
         public List<Post> GetPostByForum(int p_forum_Id)
         {
-            throw new System.NotImplementedException();
+            List<Post> listOfPosts = _repo.GetAllPosts();
+
+
+            List<Post> Found = (listOfPosts.Where(post => post.ForumId.Equals(p_forum_Id))).ToList();
+
+            return Found;
         }
     }
 }

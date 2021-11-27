@@ -31,21 +31,23 @@ namespace DL
             return p_reply;
         }
 
-        public Model.Reply DeleteReply(Model.Reply p_reply)
+        public Model.Reply DeleteReply(int p_reply_Id)
         {
-            _context.Replies.Remove
-            (
-                new Entity.Reply()
-                {
-                    ReplyText = p_reply.ReplyText,
-                    DateCreated = p_reply.DateCreated,
-                    UserId = p_reply.UserId,
-                    PostId = p_reply.PostId,
-                    ReplyId = p_reply.ReplyId
-                }
-            );
+  
+            var result = _context.Replies
+                .FirstOrDefault<Entity.Reply>(reply =>
+                    reply.ReplyId == p_reply_Id);
+            _context.Replies.Remove(result);
             _context.SaveChanges();
-            return p_reply;
+
+            return new Model.Reply()
+            {
+                ReplyText = result.ReplyText,
+                DateCreated = result.DateCreated,
+                UserId = result.UserId,
+                PostId = result.PostId,
+                ReplyId = result.ReplyId
+            };
         }
 
         public List<Model.Reply> GetAllReplies()

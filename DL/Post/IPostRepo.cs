@@ -22,6 +22,6 @@ namespace DL
         /// </summary>
         /// <param name="_post"></param>
         /// <returns></returns>
-        Post DeletePost(Post _post);
+        Post DeletePost(int _Id);
     }
 }

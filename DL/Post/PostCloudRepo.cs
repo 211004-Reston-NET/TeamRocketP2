@@ -30,22 +30,23 @@ namespace DL
             return p_post;
         }
 
-        public Model.Post DeletePost(Model.Post p_post)
+        public Model.Post DeletePost(int p_Id)
         {
-            _context.Posts.Remove
-            (
-                new Entity.Post()
-                {
-                    PostText = p_post.PostText,
-                    DateCreated = p_post.DateCreated,
-                    UserId = p_post.UserId,
-                    ForumId = p_post.ForumId,
-                    PostId=p_post.PostId
-                }
-            );
-            _context.SaveChanges();
-            return p_post;
         
+            var result = _context.Posts
+                .FirstOrDefault<Entity.Post>(post =>
+                    post.PostId == p_Id);
+            _context.Posts.Remove(result);
+            _context.SaveChanges();
+
+            return new Model.Post()
+            {
+                PostText = result.PostText,
+                DateCreated = result.DateCreated,
+                UserId = result.UserId,
+                ForumId = result.ForumId,
+                PostId = result.PostId
+            };
         }
 
         public List<Model.Post> GetAllPosts()

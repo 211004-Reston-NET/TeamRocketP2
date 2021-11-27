@@ -22,6 +22,6 @@ namespace DL
         /// </summary>
         /// <param name="p_user"></param>
         /// <returns></returns>
-        User DeleteUser(User _user);
+        User DeleteUser(int _user_Id);
     }
 }

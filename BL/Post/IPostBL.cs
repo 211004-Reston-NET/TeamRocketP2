@@ -18,6 +18,6 @@ namespace BL
         Post GetPostById(int _Id);
 
 
-        Post DeletePost(Post _post);
+        Post DeletePost(int _Id);
     }
 }

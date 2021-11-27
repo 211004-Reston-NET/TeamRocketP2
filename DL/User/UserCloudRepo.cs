@@ -22,7 +22,8 @@ namespace DL
                 {
                     UserName = p_Users.UserName,
                     UserPass = p_Users.UserPass,
-                    Email = p_Users.Email
+                    Email = p_Users.Email,
+                    NameOfUser = p_Users.NameOfUser
                 }
             );
             _context.SaveChanges();
@@ -37,28 +38,32 @@ namespace DL
                     ID = user.Id,
                     UserName = user.UserName,
                     UserPass = user.UserPass,
-                    Email = user.Email
+                    Email = user.Email,
+                    NameOfUser = user.NameOfUser
                 }
             ).ToList();
 
         }
 
 
-        public Model.User DeleteUser(Model.User p_user)
+        public Model.User DeleteUser(int p_user_Id)
         {
-            
-            _context.Users.Remove(
-                new Entity.User()
-                {
-                    Id=p_user.ID,
-                    UserName = p_user.UserName,
-                    UserPass = p_user.UserPass,
-                    Email = p_user.Email
-                }
-            );
+            var result = _context.Users
+                .FirstOrDefault<Entity.User>(user =>
+                    user.Id == p_user_Id);
+            _context.Users.Remove(result);
             _context.SaveChanges();
-            return p_user;
+
+            return new Model.User()
+            {
+                ID = result.Id,
+                UserName = result.UserName,
+                UserPass = result.UserPass,
+                Email = result.Email,
+                NameOfUser = result.NameOfUser
+            };
+  
         }
-        
+
     }
 }

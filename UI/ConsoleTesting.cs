@@ -41,9 +41,9 @@ namespace UI
         }
 
 
-        public User TestDeleteUser(User p_user)
+        public User TestDeleteUser(int p_user_Id)
         {
-            return _userBL.DeleteUser(p_user);
+            return _userBL.DeleteUser(p_user_Id);
         }
     }
 }
