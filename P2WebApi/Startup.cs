@@ -1,7 +1,12 @@
+
+using BL;
+using DL;
+using DL.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,6 +37,14 @@ namespace P2WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "P2WebApi", Version = "v1" });
             });
+
+            services.AddDbContext<P3ApiContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ReferenceToDB")));
+            services.AddScoped<IUserRepo, UserCloudRepo>();
+            services.AddScoped<IUserBL, UsersBL>();
+            services.AddScoped<IPostRepo, PostCloudRepo>();
+            services.AddScoped<IPostBL, PostBL>();
+            services.AddScoped<IReplyRepo, ReplyCloudRepo>();
+            services.AddScoped<IReplyBL, ReplyBL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
