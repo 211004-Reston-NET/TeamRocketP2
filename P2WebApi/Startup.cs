@@ -45,6 +45,13 @@ namespace P2WebApi
             services.AddScoped<IPostBL, PostBL>();
             services.AddScoped<IReplyRepo, ReplyCloudRepo>();
             services.AddScoped<IReplyBL, ReplyBL>();
+            services.AddScoped<IInviteBL, InviteBL>();
+            services.AddScoped<IInviteRepo, InviteCloudRepo>();
+            services.AddScoped<IEventBL, EventBL>();
+            services.AddScoped<IEventRepo, EventCloudRepo>();
+            services.AddScoped<IForumBL, ForumBL>();
+            services.AddScoped<IForumRepo, ForumCloudRepo>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
