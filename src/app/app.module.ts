@@ -9,21 +9,23 @@ import {MatButtonModule} from '@angular/material/button';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
 import { WeatherComponent } from './weather/weather.component';
 import { NewsComponent } from './news/news.component';
 import { EventsComponent } from './events/events.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { LandingComponent } from './landing/landing.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     WeatherComponent,
     NewsComponent,
     EventsComponent,
-    LoginComponent
+    LoginComponent,
+    LandingComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
