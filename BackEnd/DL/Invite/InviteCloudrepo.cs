@@ -49,23 +49,28 @@ namespace DL
 
       
 
-         public Model.Invite DeleteInvite(Model.Invite p_invite)
+         public Model.Invite DeleteInvite(int p_invite_Id)
         {
-           _context.Invites.Remove(
-               new Entity.Invite()
+           
+            var result = _context.Invites
+                .FirstOrDefault<Entity.Invite>(invite =>
+                    invite.InviteId == p_invite_Id);
+            _context.Invites.Remove(result);
+            _context.SaveChanges();
+
+                return new Model.Invite()
 
                {
-                    InviteId = p_invite.InviteId,
-                    UserId = p_invite.UserId,
-                    EmailRecipient = p_invite.EmailRecipient,
-                    EventId = p_invite.EventId, 
+                    InviteId = result.InviteId,
+                    UserId = result.UserId,
+                    EmailRecipient = result.EmailRecipient,
+                    EventId = result.EventId, 
                     
-                }
-           ); 
+                };
+            
 
 
-           _context.SaveChanges();
-           return p_invite;
+           
         }
 
         public Invite GetInviteById(int p_inviteId)

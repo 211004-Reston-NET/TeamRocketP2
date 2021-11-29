@@ -37,9 +37,9 @@ namespace BL
             return Found[0];
         }
 
-        public Invite DeleteInvite(Invite p_invite)
+        public Invite DeleteInvite(int p_invite_Id)
         {
-            return _repo.DeleteInvite(p_invite);
+            return _repo.DeleteInvite(p_invite_Id);
         }
 
         public Invite UpdateInviteById(int p_inviteId)
