@@ -8,3 +8,6 @@ appsetting.json
 appsettings.json
 -publish
 publish
+node_modules
+
+
