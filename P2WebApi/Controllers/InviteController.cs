@@ -35,7 +35,11 @@ namespace P2WebApi.Controllers
             return Created("api/Invite/Add", _InviteBL.AddInvite(p_invite));
         }
 
-       
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
+
         [HttpDelete("{id}")]
         public IActionResult DeleteInvite(int id)
         {

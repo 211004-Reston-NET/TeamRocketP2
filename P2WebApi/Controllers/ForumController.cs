@@ -35,7 +35,10 @@ namespace P2WebApi.Controllers
             return Created("api/Forum/Add", _ForumBL.AddForum(p_fourm));
         }
 
-       
+       [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
         [HttpDelete("{id}")]
         public IActionResult DeleteFourm(int id)
         {

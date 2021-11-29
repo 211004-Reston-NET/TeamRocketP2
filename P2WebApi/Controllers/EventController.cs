@@ -46,6 +46,11 @@ namespace P2WebApi.Controllers
             return Created("api/Event/Add", _EventBL.AddEvent(p_event));
         }
 
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
+
        
         [HttpDelete("{id}")]
         public IActionResult DeleteEvent(int id)
