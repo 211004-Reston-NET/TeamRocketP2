@@ -32,7 +32,7 @@ namespace DL
         /// </summary>
         /// <param name="p_forum">This is the Forum it will delete</param>
         /// <returns>It returns the deleted Forum</returns>
-        Forum DeleteForum(Forum p_forum);
+        Forum DeleteForum(int _forum_Id);
 
         
     }

@@ -50,24 +50,29 @@ namespace DL
         }
 
        
-         public Model.Forum DeleteForum(Model.Forum p_forum)
+         public Model.Forum DeleteForum(int p_forum_Id)
         {
-           _context.Forums.Remove(
-               new Entity.Forum()
+          
+            var result = _context.Forums
+                .FirstOrDefault<Entity.Forum>(fourm =>
+                    fourm.ForumId == p_forum_Id);
+            _context.Forums.Remove(result);
+            _context.SaveChanges();
+
+            return new Model.Forum()
 
                {
-                    ForumId = p_forum.ForumId,
-                    TopicName = p_forum.TopicName,
-                    DateCreated = p_forum.DateCreated,
-                    CreatorId = p_forum.CreatorId, 
-                    AmountOfPosts = p_forum.AmountOfPosts,
+                    ForumId = result.ForumId,
+                    TopicName = result.TopicName,
+                    DateCreated = result.DateCreated,
+                    CreatorId = result.CreatorId, 
+                    AmountOfPosts = result.AmountOfPosts,
                     
-                }
-           ); 
+                };
+            
 
 
-           _context.SaveChanges();
-           return p_forum;
+           
         }
 
         public Forum GetForumById(int p_forumId)
