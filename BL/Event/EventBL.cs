@@ -37,9 +37,9 @@ namespace BL
             return Found[0];
         }
 
-        public Event DeleteEvent(Event p_event)
+        public Event DeleteEvent(int p_event_Id)
         {
-            return _repo.DeleteEvent(p_event);
+            return _repo.DeleteEvent(p_event_Id);
         }
 
         public Event UpdateEventById(int p_eventId)

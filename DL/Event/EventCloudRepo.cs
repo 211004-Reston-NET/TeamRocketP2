@@ -56,24 +56,29 @@ namespace DL
         //     return Event.EventId;
         // }
 
-         public Model.Event DeleteEvent(Model.Event p_event)
+         public Model.Event DeleteEvent( int p_event_Id)
         {
-           _context.Events.Remove(
-               new Entity.Event()
+
+            var result = _context.Events
+                .FirstOrDefault<Entity.Event>(eve =>
+                    eve.EventId == p_event_Id);
+            _context.Events.Remove(result);
+            _context.SaveChanges();
+
+            return new Model.Event()           
 
                {
-                    EventId = p_event.EventId,
-                    StartTime = p_event.StartTime,
-                    EndTime = p_event.EndTime,
-                    Location = p_event.Location, 
-                    EventName = p_event.EventName,
-                    EventDescription = p_event.EventDescription
-                }
-           ); 
+                    EventId = result.EventId,
+                    StartTime = result.StartTime,
+                    EndTime = result.EndTime,
+                    Location = result.Location, 
+                    EventName = result.EventName,
+                    EventDescription = result.EventDescription
+                };
+        
 
 
-           _context.SaveChanges();
-           return p_event;
+          
         }
 
         public Event GetEventById(int p_eventId)
@@ -92,7 +97,7 @@ namespace DL
         //     _context.Event.Update(p_event);
         //     _context.SaveChanges();
         //     return p_event;
-        // }
+      }  // }
     }
 
-}
+

@@ -32,7 +32,7 @@ namespace DL
         /// </summary>
         /// <param name="p_event">This is the event it will delete</param>
         /// <returns>It returns the deleted event</returns>
-        Event DeleteEvent(Event p_event);
+        Event DeleteEvent(int _event_Id);
 
         
     }
