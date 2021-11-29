@@ -37,9 +37,9 @@ namespace BL
             return Found[0];
         }
 
-        public Forum DeleteForum(Forum p_forum)
+        public Forum DeleteForum(int  p_forum_Id)
         {
-            return _repo.DeleteForum(p_forum);
+            return _repo.DeleteForum(p_forum_Id);
         }
 
         public Forum UpdateForumById(int p_referenceId)

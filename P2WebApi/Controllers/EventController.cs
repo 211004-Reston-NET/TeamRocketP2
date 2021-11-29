@@ -47,7 +47,7 @@ namespace P2WebApi.Controllers
         }
 
        
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public IActionResult DeleteEvent(int id)
         {
             return Ok(_EventBL.DeleteEvent(id));

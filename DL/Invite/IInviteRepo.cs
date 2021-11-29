@@ -32,7 +32,7 @@ namespace DL
         /// </summary>
         /// <param name="p_invite">This is the Invite it will delete</param>
         /// <returns>It returns the deleted Invite</returns>
-        Invite DeleteInvite(Invite p_invite);
+        Invite DeleteInvite(int _invite_Id);
 
         
     }

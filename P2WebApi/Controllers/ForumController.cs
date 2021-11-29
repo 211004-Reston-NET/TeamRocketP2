@@ -36,10 +36,10 @@ namespace P2WebApi.Controllers
         }
 
        
-        [HttpDelete("Delete")]
-        public IActionResult DeleteFourm([FromBody] Forum p_fourm)
+        [HttpDelete("{id}")]
+        public IActionResult DeleteFourm(int id)
         {
-            return Ok(_ForumBL.DeleteForum(p_fourm));
+            return Ok(_ForumBL.DeleteForum(id));
         }
 
     }

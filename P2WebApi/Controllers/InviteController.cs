@@ -36,10 +36,10 @@ namespace P2WebApi.Controllers
         }
 
        
-        [HttpDelete("Delete")]
-        public IActionResult DeleteInvite([FromBody] Invite p_invite)
+        [HttpDelete("{id}")]
+        public IActionResult DeleteInvite(int id)
         {
-            return Ok(_InviteBL.DeleteInvite(p_invite));
+            return Ok(_InviteBL.DeleteInvite(id));
         }
     }
 }
