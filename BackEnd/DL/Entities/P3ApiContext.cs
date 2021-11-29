@@ -32,7 +32,11 @@ namespace DL.Entities
             {
                 entity.Property(e => e.EventId).HasColumnName("Event_Id");
 
-                entity.Property(e => e.EndTime).HasColumnName("End_Time");
+                entity.Property(e => e.EndTime)
+                    .IsRequired()
+                    .HasMaxLength(60)
+                    .IsUnicode(false)
+                    .HasColumnName("End_Time");
 
                 entity.Property(e => e.EventDescription)
                     .IsRequired()
@@ -51,7 +55,11 @@ namespace DL.Entities
                     .HasMaxLength(250)
                     .IsUnicode(false);
 
-                entity.Property(e => e.StartTime).HasColumnName("Start_Time");
+                entity.Property(e => e.StartTime)
+                    .IsRequired()
+                    .HasMaxLength(60)
+                    .IsUnicode(false)
+                    .HasColumnName("Start_Time");
             });
 
             modelBuilder.Entity<Forum>(entity =>

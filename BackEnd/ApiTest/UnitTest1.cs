@@ -11,7 +11,7 @@ namespace ApiTest
         public void ShouldGetAllUsers()
         {
             //Arrange
-            List<Users> ListOfUsers = new List<Users>();
+            List<User> ListOfUsers = new List<User>();
 
             //Act
 
