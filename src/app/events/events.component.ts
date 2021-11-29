@@ -26,6 +26,7 @@ export class EventsComponent implements OnInit {
 
   getusers() {
     this.revApi.Users().subscribe((response) => {
+      console.log(response);
 
       //It will set the show property to false to each element and also add it to our listOfRest
       response.forEach(element => {
