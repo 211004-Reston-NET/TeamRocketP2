@@ -58,7 +58,7 @@ jobs:
       run: dotnet build BackEnd/P2WebApi/ --configuration Release --no-restore
    
     - name: Test
-      run: dotnet test --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+      run: dotnet test BackEnd/P2WebApi/ --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
       #Build and have scanner analyze our code
     - name: Build and analyze
       env:
