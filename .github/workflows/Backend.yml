@@ -50,12 +50,12 @@ jobs:
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
 
     - name: Restore dependencies
-      run: dotnet restore P2WebApi/ # The filepath will differ for yours
+      run: dotnet restore BackEnd/P2WebApi/ # The filepath will differ for yours
     
     
     
     - name: Build
-      run: dotnet build P2WebApi/ --configuration Release --no-restore
+      run: dotnet build BackEnd/P2WebApi/ --configuration Release --no-restore
    
     - name: Test
       run: dotnet test --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
@@ -71,7 +71,7 @@ jobs:
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}" 
     
     - name: Publish
-      run: dotnet publish P2WebApi/ --configuration Release -o ./publish
+      run: dotnet publish BackEnd/P2WebApi/ --configuration Release -o ./publish
       
     - name: Upload sonarscanner report
       uses: actions/upload-artifact@v2
