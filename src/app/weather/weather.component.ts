@@ -44,7 +44,7 @@ export class WeatherComponent implements OnInit {
 
   }
 
-  
+
 
 
   Forecast(p_text:string) {
@@ -71,6 +71,6 @@ export class WeatherComponent implements OnInit {
 
   }
 
-  
+
 
 }
