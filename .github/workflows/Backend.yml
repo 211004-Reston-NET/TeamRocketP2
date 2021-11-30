@@ -48,10 +48,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore BackEnd/P2WebApi/ # The filepath will differ for yours
     
-    
-    
-    - name: Build
-      run: dotnet build BackEnd/P2WebApi/ --configuration Release --no-restore
    
     - name: Test
       run: dotnet test BackEnd/P2WebApi/ --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
