@@ -42,8 +42,6 @@ export class WeatherComponent implements OnInit {
     this.revApi.GetCurrentWeather(this.text2)
       .subscribe(data => {
         console.log(data)
-
-
         // this.weatherResult = "Current weather in " + p_weathertext + " is " + data.main.temp + " degrees F";
         this.city=data.name;
         this.weatherTemp = data.main.temp;
