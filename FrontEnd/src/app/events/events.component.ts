@@ -28,16 +28,13 @@ export class EventsComponent implements OnInit {
     this.revApi.Users().subscribe((response) => {
       console.log(response);
 
-      //It will set the show property to false to each element and also add it to our listOfRest
+      //It will set the show property to false to each element and also add it to our listOfUser
       response.forEach(element => {
         
         this.listOfUsers.push(element);
       });
     });
-      //It will set the show property to false to each element and also add it to our listOfRest
-
-
-
+      
   }
 
 }

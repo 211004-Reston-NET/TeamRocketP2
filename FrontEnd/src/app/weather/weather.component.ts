@@ -17,6 +17,8 @@ export class WeatherComponent implements OnInit {
   weatherResult: string = "";
   listOfNewsArticles: News[] = [];
   listOfWeatherForecast:Weather[]=[];
+  weatherItemDate:Weather={temp:"",minimum:"",maximum:"",date:""};
+  sunrise:string ="";
 
   constructor(private revApi: RevAPIService, private router: Router) { }
 
@@ -62,12 +64,17 @@ export class WeatherComponent implements OnInit {
           date:response.list[i].dt_txt
 
         };
+        this.sunrise=response.city.sunrise;
+       // this.weatherItemDate=response.list[i].dt_txt;
         this.listOfWeatherForecast.push(test);
+        this.weatherItemDate=this.listOfWeatherForecast[0];
       }
+
       //It will set the show property to false to each element and also add it to our listOfRest
 
 
     });
+    
 
   }
 

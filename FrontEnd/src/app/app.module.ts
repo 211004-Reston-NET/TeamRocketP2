@@ -16,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
 import { HomeComponent } from './home/home.component';
+import { AuthModule } from '@auth0/auth0-angular'
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { HomeComponent } from './home/home.component';
     MatTabsModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    AuthModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
