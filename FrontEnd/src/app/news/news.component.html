@@ -1,5 +1,18 @@
-<p>news works!</p>
-
+<section class="news">
+  <div class="container">
+    <div class="row mt-5" >
+      <div class="col-lg-3" *ngFor="let restaurant of listOfNewsArticles">
+        <div class="box shadow-sm">
+          <img src="" width="100%">
+          <h5 class="mt-2 mb-2">{{restaurant.title}}</h5>
+          <p class="mt-2">{{restaurant.published}}</p>
+          <a href="{{restaurant.link}}" class="btn btn-dark btn-sm mt-2"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<router-outlet></router-outlet>
 
 <div>
     <div>
@@ -7,12 +20,11 @@
       <p><input type="text" id="text2" name="text2" [(ngModel)]="text2"></p>
       {{resultado}}
       <button type="button" (click)="translate(text2)">Clickme</button>
-
     </div>
     <div>
     </div>
   </div>
-<button type="button" (click)="News2()">news</button>
+<!-- <button type="button" (click)="News2()">news</button> -->
 <button type="button" (click)="JapaneseNews()">JapaneseNews</button>
 <table class="table table-hover">
   <thead>
@@ -20,7 +32,6 @@
       <th>title</th>
       <th>link</th>
   </thead>
-
   <tbody>
       <tr *ngFor="let restaurant of listOfNewsArticles">
           <td>{{restaurant.published}}</td>
