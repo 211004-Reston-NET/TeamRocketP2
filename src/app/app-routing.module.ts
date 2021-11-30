@@ -1,4 +1,3 @@
-import { HomeComponent } from './home/home.component';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { EventsComponent } from './events/events.component';
@@ -13,7 +12,6 @@ import { BrowserModule } from '@angular/platform-browser';
 const routes: Routes = [
 
   { path:'', component: LandingComponent},
-  { path:'home', component: HomeComponent},
   { path: 'weather', component: WeatherComponent},
   { path: 'news', component: NewsComponent},
   { path: 'events', component: EventsComponent},

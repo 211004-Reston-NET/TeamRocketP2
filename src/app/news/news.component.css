@@ -1,0 +1,16 @@
+.news
+{
+  background-color: whitesmoke;
+  padding: 50px 100px;
+}
+
+.box
+{
+  background-color: whitesmoke;
+  padding: 10px 10px;
+}
+
+.box h5
+{
+  font-size: 18px;
+}

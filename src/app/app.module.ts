@@ -17,7 +17,6 @@ import { EventsComponent } from './events/events.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
-import { HomeComponent } from './home/home.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -28,8 +27,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NewsComponent,
     EventsComponent,
     LoginComponent,
-    LandingComponent,
-    HomeComponent
+    LandingComponent
   ],
 
   imports: [
