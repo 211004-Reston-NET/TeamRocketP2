@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using DL;
+using BL;
 
 namespace ApiTest
 {
@@ -17,7 +18,7 @@ namespace ApiTest
         public UserTest()
         {
             _options = new DbContextOptionsBuilder<DL.Entities.P3ApiContext>()
-                        .UseSqlite("Filename =Test.db").Options;
+                        .UseSqlite("Filename =UserTest.db").Options;
                     
             Seed();
         }
@@ -40,6 +41,90 @@ namespace ApiTest
 
         }
 
+        [Fact]
+        public void GetUserByIdTest()
+        {
+            using (var context = new DL.Entities.P3ApiContext(_options))
+            {
+                //arrange -- define/ set up what is needed for the Act
+                IUserBL BL = new UsersBL(new UserCloudRepo(context));
+                Entity.User test = context.Users.Find(1);
+                //Act -- a call to the method that is being tested 
+                Model.User found = BL.GetUserById(test.Id);
+
+                //Assert -- expected outcome of Act
+                //Equal(number of customers expected, #of customers retrevied from GetAllCustomers)
+                Assert.Equal("Username", found.UserName);
+            }
+        }
+
+        [Fact]
+        public void GetUserUserName()
+        {
+            using (var context = new DL.Entities.P3ApiContext(_options))
+            {
+                //arrange -- define/ set up what is needed for the Act
+                IUserBL BL = new UsersBL(new UserCloudRepo(context));
+                Entity.User test = context.Users.Find(1);
+                //Act -- a call to the method that is being tested 
+                List<Model.User> found = BL.GetUserByName(test.UserName);
+
+                //Assert -- expected outcome of Act
+                //Equal(number of customers expected, #of customers retrevied from GetAllCustomers)
+                Assert.Equal("Username", found[0].UserName);
+            }
+        }
+
+
+        [Fact]
+        public void DeleteUserTest()
+        {
+            using (var context = new DL.Entities.P3ApiContext(_options))
+            {
+                //Arrange
+                IUserRepo repo = new UserCloudRepo(context);
+                Entity.User user = context.Users.Find(2);
+
+                //Act
+                repo.DeleteUser(user.Id);
+            }
+            using (var context = new DL.Entities.P3ApiContext(_options))
+            {
+                //Assert
+                List<Entity.User> ListOfUser = context.Users.ToList();
+
+                Assert.Single(ListOfUser);
+                Assert.Null(context.Users.Find(2));
+            }
+        }
+
+        [Fact]
+        public void AddUserTest()
+        {
+            using (var context = new DL.Entities.P3ApiContext(_options))
+            {
+                //arrange -- define/ set up what is needed for the Act
+                IUserRepo repo = new UserCloudRepo(context);
+                Model.User AddedUser = new Model.User
+                {
+                    UserName = "AddTest",
+                    UserPass = "WasIAdded",
+                    Email = "Add@Test.com",
+                    NameOfUser = "tester"
+                };
+
+                //Act -- a call to the method that is being tested 
+                repo.AddUser(AddedUser);
+            }
+            //Assert -- expected outcome of Act
+            using (var context = new DL.Entities.P3ApiContext(_options))
+            {
+                Entity.User result = context.Users.Find(3);
+
+                Assert.NotNull(result);
+                Assert.Equal("AddTest", result.UserName);
+            }
+        }
 
         private void Seed()
         {
