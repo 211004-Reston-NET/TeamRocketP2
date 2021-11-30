@@ -12,7 +12,7 @@ export class RevAPIService {
 
   private endpoint:string = "https://211004-rr-web-app.azurewebsites.net/api";
 
-  private endpoint2:string='https://google-translate1.p.rapidapi.com/language/translate/v2?key=86cdbd2072msh31d13534aa18519p1285cfjsnf663f86b2e55';
+private endpoint2:string='https://google-translate1.p.rapidapi.com/language/translate/v2?key=86cdbd2072msh31d13534aa18519p1285cfjsnf663f86b2e55';
 private endpoint3:string="https://google-translate20.p.rapidapi.com/translate?"
 private endpoint4:string="https://community-open-weather-map.p.rapidapi.com/weather?";
 private endpoint4b:string="https://community-open-weather-map.p.rapidapi.com/forecast?";
@@ -40,18 +40,18 @@ private endpoint5b:string="https://google-news1.p.rapidapi.com/top-headlines?cou
   translate(p_text:string): Observable<any>
   {
     const headers= new HttpHeaders()
-   
-    
+
+
     .set('x-rapidapi-key', '86cdbd2072msh31d13534aa18519p1285cfjsnf663f86b2e55')
     .set('x-rapidapi-host', 'google-translate20.p.rapidapi.com')
     //.set('content-type', 'application/x-www-form-urlencoded');
-    
+
     return this.http.get<any>(this.endpoint3+"text="+p_text+"&tl=en",{ 'headers': headers, withCredentials: true });
 
-    
-     
+
+
     // const headers= new HttpHeaders()
-   
+
     // //.append('content-type','application/x-www-form-urlencoded')
     // //.set( 'content-type', 'application/json')
     // .set('x-rapidapi-key', '86cdbd2072msh31d13534aa18519p1285cfjsnf663f86b2e55')
@@ -68,7 +68,7 @@ private endpoint5b:string="https://google-news1.p.rapidapi.com/top-headlines?cou
 
   GetCurrentWeather(p_text:string): Observable<any>
   {
-    
+
     const headers= new HttpHeaders()
     // .set('content-type', 'application/x-www-form-urlencoded')
     .set('x-rapidapi-key', '86cdbd2072msh31d13534aa18519p1285cfjsnf663f86b2e55')

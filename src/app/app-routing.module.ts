@@ -11,15 +11,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
+
   { path:'', component: LandingComponent},
   { path:'home', component: HomeComponent},
   { path: 'weather', component: WeatherComponent},
   { path: 'news', component: NewsComponent},
   { path: 'events', component: EventsComponent},
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: '**', component: LandingComponent}
+
 ];
 
 @NgModule({
+
   imports: [BrowserModule,
     HttpClientModule,
     FormsModule,
