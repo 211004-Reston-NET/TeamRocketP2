@@ -21,6 +21,11 @@ namespace P2WebApi.Controllers
         {
             _InviteBL = p_InviteBL;
         }
+        [HttpGet("All")]
+        public IActionResult GetAllInvite()
+        {
+            return Ok(_InviteBL.GetAllInvite());
+        }
 
         [HttpGet("{p_id}")]
         public IActionResult GetInviteById(int p_id)

@@ -22,6 +22,13 @@ namespace P2WebApi.Controllers
             _ForumBL = p_ForumBL;
         }
 
+        [HttpGet("All")]
+        public IActionResult GetAllForum()
+        {
+            return Ok(_ForumBL.GetAllForum());
+        }
+
+
         [HttpGet("{p_id}")]
         public IActionResult GetForumById(int p_id)
         {
