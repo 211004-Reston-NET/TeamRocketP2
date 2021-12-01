@@ -21,6 +21,11 @@ namespace P2WebApi.Controllers
         {
             _InviteBL = p_InviteBL;
         }
+        [HttpGet("All")]
+        public IActionResult GetAllInvite()
+        {
+            return Ok(_InviteBL.GetAllInvite());
+        }
 
         [HttpGet("{p_id}")]
         public IActionResult GetInviteById(int p_id)
@@ -35,11 +40,15 @@ namespace P2WebApi.Controllers
             return Created("api/Invite/Add", _InviteBL.AddInvite(p_invite));
         }
 
-       
-        [HttpDelete("Delete")]
-        public IActionResult DeleteInvite([FromBody] Invite p_invite)
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
         {
-            return Ok(_InviteBL.DeleteInvite(p_invite));
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteInvite(int id)
+        {
+            return Ok(_InviteBL.DeleteInvite(id));
         }
     }
 }

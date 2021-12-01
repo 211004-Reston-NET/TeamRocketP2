@@ -1,5 +1,5 @@
 .body {
-  background-image: url("../../assets/background.jpg");
+  background-image: url("../../assets/images/background.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -11,7 +11,7 @@
 }
 
 .example-header-image {
-  background-image: url('../../assets/user.png');
+  background-image: url('../../assets/images/user.png');
   background-size: cover;
 }
 

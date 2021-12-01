@@ -5,6 +5,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+import { AuthModule } from '@auth0/auth0-angular';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,8 +17,10 @@ import { EventsComponent } from './events/events.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
-import { HomeComponent } from './home/home.component';
-import { AuthModule } from '@auth0/auth0-angular';
+
+//import { HomeComponent } from './home/home.component';
+//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -25,11 +29,12 @@ import { AuthModule } from '@auth0/auth0-angular';
     NewsComponent,
     EventsComponent,
     LoginComponent,
-    LandingComponent,
-    HomeComponent
+    LandingComponent
   ],
+
   imports: [
     AuthModule.forRoot({
+
       clientId:"YhFU5C8gk9d3y3SIVeRw8rGgmrFr6zLg",
       domain:"dev-i74lopba.us.auth0.com"
     }),
@@ -40,9 +45,13 @@ import { AuthModule } from '@auth0/auth0-angular';
     MatTabsModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
+    MatTableModule,
+    FormsModule,
+    //FontAwesomeModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
