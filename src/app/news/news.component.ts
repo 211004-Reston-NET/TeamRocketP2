@@ -34,7 +34,7 @@ export class NewsComponent implements OnInit
         };
         this.listOfNewsArticles.push(n)
       }
-      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,10);
+      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,5);
     });
     console.log(this.listOfNewsArticles);
   }
@@ -55,7 +55,7 @@ export class NewsComponent implements OnInit
         };
         this.listOfNewsArticles.push(test)
       }
-      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,10);
+      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,5);
     });
     console.log(this.listOfNewsArticles);
   }

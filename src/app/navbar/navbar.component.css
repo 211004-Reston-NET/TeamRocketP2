@@ -31,7 +31,7 @@
 }
 
 .dropdown-menu:hover .dropdown-item {
-  display: block;
+  display: flex;
 }
 
 

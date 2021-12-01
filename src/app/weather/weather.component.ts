@@ -1,8 +1,8 @@
-import { Weather } from './../models/Weather';
 import { Component,Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { News } from '../models/news';
 import { RevAPIService } from '../services/rev-api.service';
+import { Weather } from './../models/Weather';
 
 @Component({
   selector: 'app-weather',

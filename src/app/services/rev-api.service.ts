@@ -1,9 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Evento } from '../models/events';
 import { News } from '../models/news';
 import { Restaurant } from '../models/restaurant';
 import { Review } from '../models/review';
+import { Users } from '../models/users';
 
 @Injectable({
   providedIn: 'root'
@@ -108,6 +110,17 @@ private endpoint5b:string="https://google-news1.p.rapidapi.com/top-headlines?cou
     return this.http.get<any>(this.endpoint5b,{ 'headers': headers });
 
   }
+
+  Users():Observable<Users[]>
+  {
+    return this.http.get<Users[]>("https://teamrocketapi.azurewebsites.net/api/user/all");
+  }
+
+  Event():Observable<Evento[]>
+  {
+    return this.http.get<Evento[]>("https://teamrocketapi.azurewebsites.net/api/event/all");
+  }
+
 
 
 
