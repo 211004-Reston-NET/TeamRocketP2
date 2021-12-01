@@ -39,7 +39,7 @@ export class EventsComponent implements OnInit {
       
   }
 
-  Event() {
+  Eventa() {
     this.revApi.Event().subscribe((response) => {
       console.log(response);
 
