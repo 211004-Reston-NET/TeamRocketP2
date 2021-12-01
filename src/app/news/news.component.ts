@@ -34,8 +34,9 @@ export class NewsComponent implements OnInit
         };
         this.listOfNewsArticles.push(n)
       }
-      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,5);
+      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,10);
     });
+    console.log(this.listOfNewsArticles);
   }
 
   JapaneseNews()
@@ -54,8 +55,9 @@ export class NewsComponent implements OnInit
         };
         this.listOfNewsArticles.push(test)
       }
-      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,5);
+      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,10);
     });
+    console.log(this.listOfNewsArticles);
   }
 
   translate(p_text: string)

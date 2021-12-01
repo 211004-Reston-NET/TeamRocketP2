@@ -1,3 +1,4 @@
+import { ForumComponent } from './forum/forum.component';
 import { JapanComponent } from './japan/japan.component';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'events', component: EventsComponent},
   { path: 'login', component: LoginComponent},
   { path: 'japan', component: JapanComponent},
+  { path: 'forum', component: ForumComponent},
   { path: '**', component: LandingComponent}
 
 ];

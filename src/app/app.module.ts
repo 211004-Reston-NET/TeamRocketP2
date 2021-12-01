@@ -22,6 +22,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { JapanComponent } from './japan/japan.component';
+import { ForumComponent } from './forum/forum.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { JapanComponent } from './japan/japan.component';
     NavbarComponent,
     FooterComponent,
     JapanComponent,
+    ForumComponent,
 
   ],
 
