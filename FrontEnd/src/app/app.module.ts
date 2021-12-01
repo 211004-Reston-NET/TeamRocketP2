@@ -7,7 +7,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import { AuthModule } from '@auth0/auth0-angular';
-import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,10 +17,12 @@ import { EventsComponent } from './events/events.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { JapanComponent } from './japan/japan.component';
+import { RouterModule } from '@angular/router';
+import { AuthLoginComponent } from './auth-login/auth-login.component';
+
+//import { HomeComponent } from './home/home.component';
+//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -31,18 +32,18 @@ import { JapanComponent } from './japan/japan.component';
     EventsComponent,
     LoginComponent,
     LandingComponent,
-    NavbarComponent,
-    FooterComponent,
-    JapanComponent,
-
+    AuthLoginComponent
   ],
 
   imports: [
+    // RouterModule.forRoot([
+    //   {path: "**", component:LandingComponent}
+    // ]),
     AuthModule.forRoot({
-      clientId: "UInoKfY6haP5fUKrz8V9sWhGkJ8lwAer",
-      domain: "dev-c5jmjc96.us.auth0.com"
-    }),
 
+      clientId:"YhFU5C8gk9d3y3SIVeRw8rGgmrFr6zLg",
+      domain:"dev-i74lopba.us.auth0.com"
+    }),
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -52,9 +53,7 @@ import { JapanComponent } from './japan/japan.component';
     MatButtonModule,
     MatTableModule,
     FormsModule,
-    FontAwesomeModule,
-    FlexLayoutModule
-
+    //FontAwesomeModule
   ],
 
   providers: [],

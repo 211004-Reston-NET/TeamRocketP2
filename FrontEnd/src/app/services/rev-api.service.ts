@@ -1,9 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Evento } from '../models/Event';
 import { News } from '../models/news';
 import { Restaurant } from '../models/restaurant';
 import { Review } from '../models/review';
+import { Users } from '../models/Users';
 
 @Injectable({
   providedIn: 'root'
@@ -109,6 +111,33 @@ private endpoint5b:string="https://google-news1.p.rapidapi.com/top-headlines?cou
 
   }
 
+  Users():Observable<Users[]>
+  {
+    return this.http.get<Users[]>("https://teamrocketapi.azurewebsites.net/api/user/all");
+  }
 
+  Event():Observable<Evento[]>
+  {
+    return this.http.get<Evento[]>("https://teamrocketapi.azurewebsites.net/api/event/all");
+  }
+
+
+
+  // const data = null;
+
+  // const xhr = new XMLHttpRequest();
+  // xhr.withCredentials = true;
+  
+  // xhr.addEventListener("readystatechange", function () {
+  //   if (this.readyState === this.DONE) {
+  //     console.log(this.responseText);
+  //   }
+  // });
+  
+  // xhr.open("GET", "https://navitime-maps.p.rapidapi.com/map_image?width=500&center=35.681236%2C139.767125&zoom=15&height=500&datum=wgs84&coord_unit=degree");
+  // xhr.setRequestHeader("x-rapidapi-key", "86cdbd2072msh31d13534aa18519p1285cfjsnf663f86b2e55");
+  // xhr.setRequestHeader("x-rapidapi-host", "navitime-maps.p.rapidapi.com");
+  
+  // xhr.send(data);
 
 }

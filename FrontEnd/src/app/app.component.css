@@ -1,0 +1,12 @@
+.navbar
+{
+  background-color: whitesmoke;
+}
+
+.navbar-light .navbar-nav .nav-link
+{
+  color: black;
+  font-size: 14px;
+  font-style: inherit;
+}
+

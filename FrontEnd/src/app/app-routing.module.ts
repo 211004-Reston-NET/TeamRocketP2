@@ -1,4 +1,3 @@
-import { JapanComponent } from './japan/japan.component';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { EventsComponent } from './events/events.component';
@@ -16,9 +15,11 @@ const routes: Routes = [
   { path: 'weather', component: WeatherComponent},
   { path: 'news', component: NewsComponent},
   { path: 'events', component: EventsComponent},
+
   { path: 'login', component: LoginComponent},
-  { path: 'japan', component: JapanComponent},
+  // { path: 'Auth0login', component: AuthLoginComponent}
   { path: '**', component: LandingComponent}
+
 
 ];
 
@@ -30,5 +31,4 @@ const routes: Routes = [
     RouterModule.forRoot(routes),],
   exports: [RouterModule]
 })
-
 export class AppRoutingModule { }

@@ -1,1 +1,25 @@
 <p>events works!</p>
+
+<button type="button" (click)="getusers()">users</button>
+<button type="button" (click)="Event()">Event</button>
+<table class="table table-hover">
+  <thead>
+      <th>id</th>
+      <th>username</th>
+      <th>userPass</th>
+      <th>email</th>
+      <th>name</th>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let restaurant of listOfUsers">
+          <td>{{restaurant.id}}</td>
+          <td>{{restaurant.userName}}</td>
+          <td>{{restaurant.userPass}}</td>
+          <td>{{restaurant.email}}</td>
+          <td>{{restaurant.nameOfUser}}</td>
+
+          <!-- <a routerLink="/review">Review</a> -->
+      </tr>
+  </tbody>
+</table>

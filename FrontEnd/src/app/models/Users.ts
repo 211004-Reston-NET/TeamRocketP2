@@ -1,12 +1,12 @@
 export interface Users
 {
-    id:any,
+    id:string,
     userName:string,
     userPass:string,
     email:string,
     nameOfUser:string,
-    forums:any,
-    invites:any,
-    posts:any,
-    replies:any
+    forums:string,
+    invites:string,
+    posts:string,
+    replies:string
 }
