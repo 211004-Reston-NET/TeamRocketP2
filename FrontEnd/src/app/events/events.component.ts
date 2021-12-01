@@ -4,6 +4,7 @@ import { News } from '../models/news';
 import { Users } from '../models/Users';
 import { Weather } from '../models/Weather';
 import { RevAPIService } from '../services/rev-api.service';
+import { Evento } from '../models/Event';
 
 @Component({
   selector: 'app-events',
@@ -17,6 +18,7 @@ export class EventsComponent implements OnInit {
   listOfNewsArticles: News[] = [];
   listOfWeatherForecast:Weather[]=[];
   listOfUsers:Users[]=[];
+  listOfEvents:Evento[]=[];
 
   constructor(private revApi: RevAPIService, private router: Router) { }
 
@@ -32,6 +34,19 @@ export class EventsComponent implements OnInit {
       response.forEach(element => {
         
         this.listOfUsers.push(element);
+      });
+    });
+      
+  }
+
+  Event() {
+    this.revApi.Event().subscribe((response) => {
+      console.log(response);
+
+      //It will set the show property to false to each element and also add it to our listOfUser
+      response.forEach(element => {
+        
+        this.listOfEvents.push(element);
       });
     });
       
