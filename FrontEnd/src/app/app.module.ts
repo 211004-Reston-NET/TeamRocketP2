@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
 import { HomeComponent } from './home/home.component';
+import { AuthModule } from '@auth0/auth0-angular';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,10 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
+    AuthModule.forRoot({
+      clientId:"YhFU5C8gk9d3y3SIVeRw8rGgmrFr6zLg",
+      domain:"dev-i74lopba.us.auth0.com"
+    }),
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

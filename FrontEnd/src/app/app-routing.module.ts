@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'news', component: NewsComponent},
   { path: 'events', component: EventsComponent},
   { path: 'login', component: LoginComponent}
+  // { path: 'Auth0login', component: AuthLoginComponent}
 ];
 
 @NgModule({
