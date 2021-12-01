@@ -17,6 +17,8 @@ import { EventsComponent } from './events/events.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
+import { RouterModule } from '@angular/router';
+import { AuthLoginComponent } from './auth-login/auth-login.component';
 
 //import { HomeComponent } from './home/home.component';
 //import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -29,10 +31,14 @@ import { LandingComponent } from './landing/landing.component';
     NewsComponent,
     EventsComponent,
     LoginComponent,
-    LandingComponent
+    LandingComponent,
+    AuthLoginComponent
   ],
 
   imports: [
+    // RouterModule.forRoot([
+    //   {path: "**", component:LandingComponent}
+    // ]),
     AuthModule.forRoot({
 
       clientId:"YhFU5C8gk9d3y3SIVeRw8rGgmrFr6zLg",
