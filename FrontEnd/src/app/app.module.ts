@@ -7,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import { AuthModule } from '@auth0/auth0-angular';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,8 +18,10 @@ import { EventsComponent } from './events/events.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
-
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { JapanComponent } from './japan/japan.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NewsComponent,
     EventsComponent,
     LoginComponent,
-    LandingComponent
+    LandingComponent,
+    NavbarComponent,
+    FooterComponent,
+    JapanComponent,
+
   ],
 
   imports: [
@@ -45,7 +52,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatButtonModule,
     MatTableModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FlexLayoutModule
+
   ],
 
   providers: [],

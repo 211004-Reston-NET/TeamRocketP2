@@ -4,12 +4,11 @@ import { News } from '../models/news';
 import { RevAPIService } from '../services/rev-api.service';
 
 @Component({
-  selector: 'app-news',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.css']
+  selector: 'app-japan',
+  templateUrl: './japan.component.html',
+  styleUrls: ['./japan.component.css']
 })
-
-export class NewsComponent implements OnInit
+export class JapanComponent implements OnInit
 {
   text2: string = "";
   resultado: string = "";

@@ -1,0 +1,26 @@
+<section class="news">
+
+  <div class="container mt-5">
+
+    <h4>Top News</h4>
+
+    <div class="row">
+
+      <div *ngFor="let i of listOfNewsArticles" class="col-lg-3">
+
+        <div class="box">
+
+          <h5 class="mt-2 mb-2">{{i.title}}</h5>
+          <p>Published: {{i.published}}</p>
+          <a href="{{i.link}}" class="btn btn-dark btn-sm mt-2">Read More</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+

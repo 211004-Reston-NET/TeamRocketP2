@@ -4,6 +4,7 @@ body {
   align-items: center;
   height: 94.5vh;
   margin: 0;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
   background: #222;
   background-image: url("../../assets/images/weather-forecast-background.jpg");
   background-position: center;
