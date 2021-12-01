@@ -1,0 +1,16 @@
+<table *ngIf="show2" class="table-primary">
+    <thead>
+       <th>reply post</th>
+      <th>date</th>
+      <th>made by</th> 
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let restaurant of listOfReplies">
+            <td>{{restaurant.replyText}}</td>
+            <td>{{restaurant.dateCreated}}</td>
+            <td>{{restaurant.userId}}</td>
+            <!-- <a routerLink="/review">Review</a> -->
+        </tr>
+    </tbody>
+  </table>

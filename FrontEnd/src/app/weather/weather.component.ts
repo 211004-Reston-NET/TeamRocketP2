@@ -9,11 +9,13 @@ import { RevAPIService } from '../services/rev-api.service';
   templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.css']
 })
+
 export class WeatherComponent implements OnInit {
 
   text2: string = "";
   resultado: string = "";
   weatherText: string = "";
+  weatherResult: string = "";
   listOfNewsArticles: News[] = [];
   listOfWeatherForecast:Weather[]=[];
   city: string="";
@@ -21,6 +23,8 @@ export class WeatherComponent implements OnInit {
   weatherTemp: any="";
   weatherWind: any="";
   weatherDescription: any="";
+  listOfWeatherForecast2:Weather[]=[];
+  testvalue:string="";
 
   constructor(private revApi: RevAPIService, private router: Router) { }
 
@@ -42,16 +46,14 @@ export class WeatherComponent implements OnInit {
     this.revApi.GetCurrentWeather(this.text2)
       .subscribe(data => {
         console.log(data)
-        // this.weatherResult = "Current weather in " + p_weathertext + " is " + data.main.temp + " degrees F";
+        // this.weatherResult = data.main.humidity + data.main.humidity + " is " + data.main.temp + " degrees F";
         this.city=data.name;
-        this.weatherTemp = data.main.temp;
+        this.weatherTemp=data.main.temp+" °F";
+        this.weatherDescription=data.weather[0].description;
         this.weatherHumidity = data.main.humidity+"%";
         this.weatherWind = data.wind.speed+ " mph";
-        this.weatherDescription = data.weather[0].description;
-
-
+        document.querySelector(" .weather")?.classList.remove("loading");
       })
-
   }
 
   Forecast(p_text:string) {
@@ -59,8 +61,8 @@ export class WeatherComponent implements OnInit {
     this.listOfWeatherForecast=[];
     this.revApi.FiveDayForecast(this.weatherText).subscribe((response) => {
       console.log(response);
-      //let pokemon2=JSON.parse(response);
-      //console.log(pokemon2);
+      // let pokemon2=JSON.parse(response);
+      // console.log(pokemon2);
       for (var i in response.list) {
         let test: Weather = {
           temp: response.list[i].main.temp+" °F",
@@ -69,13 +71,24 @@ export class WeatherComponent implements OnInit {
           date:response.list[i].dt_txt
 
         };
-
         this.listOfWeatherForecast.push(test);
-
       }
-      //It will set the show property to false to each element and also add it to our listOfRest
+      this.listOfWeatherForecast2.push(this.listOfWeatherForecast[0]);
+    this.listOfWeatherForecast2.push(this.listOfWeatherForecast[1]);
+    
+    console.log(this.listOfWeatherForecast2);
 
     });
+    // let test: Weather = {
+    //   temp: this.listOfWeatherForecast[0].temp,
+    //   minimum: this.listOfWeatherForecast[0].minimum,
+    //   maximum: this.listOfWeatherForecast[0].maximum,
+    //   date:this.listOfWeatherForecast[0].date
+
+    // };
+    // this.listOfWeatherForecast2.push(test);
+    
 
   }
+
 }

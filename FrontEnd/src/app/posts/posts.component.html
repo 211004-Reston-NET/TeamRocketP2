@@ -1,0 +1,23 @@
+
+
+<textarea>
+Enter Text area
+</textarea>
+<table *ngIf="show" class="table-primary">
+        <thead>
+           <th>post</th>
+          <th>date</th>
+          <th>made by</th> 
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let restaurant of listOfPosts">
+                <td>{{restaurant.postText}}</td>
+                <td>{{restaurant.dateCreated}}</td>
+                <td>{{restaurant.userId}}</td>
+                <!-- <a routerLink="/review">Review</a> -->
+                <button (click) = "showReview(restaurant.postId)">replies</button>
+            <app-replies [show2]="restaurant.show" [restId] = "restaurant.postId"></app-replies>
+            </tr>
+        </tbody>
+      </table>

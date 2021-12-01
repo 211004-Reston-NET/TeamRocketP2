@@ -22,3 +22,50 @@
       </tr>
   </tbody>
 </table>
+
+<!-- <button type="button" (click)="getForums()">Forums</button> -->
+<table class="table table-hover">
+  <thead>
+      <th>Topic</th>
+        <th>date</th>
+        <th>number of posts</th>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let restaurant of listOfForums">
+          <td>{{restaurant.topicName}}</td>
+          <td>{{restaurant.dateCreated}}</td>
+          <td>{{restaurant.amountOfPosts}}</td>
+
+          <!-- <a routerLink="/review">Review</a> -->
+          <button (click) = "getPostsbyForumId(restaurant.forumId)">posts</button>
+            
+      </tr>
+  </tbody>
+</table>
+<app-posts [show]="show" [restId] = "result"></app-posts>
+
+  <!-- <table class="table table-hover">
+    <thead>
+       <th>post</th>
+      <th>date</th>
+      <th>made by</th> 
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let restaurant of listOfReplies">
+            <td>{{restaurant.replyText}}</td>
+            <td>{{restaurant.dateCreated}}</td>
+            <td>{{restaurant.userId}}</td>
+  
+            
+        </tr>
+    </tbody>
+  </table> -->
+
+<!-- <a routerLink="/review">Review</a> -->
+    <input type="text" [(ngModel)]="userName2" class="search-bar" placeholder="username">
+    <input type="text" [(ngModel)]="userPass2" class="search-bar" placeholder="password">
+    <input type="text" [(ngModel)]="email2" class="search-bar" placeholder="Search by email">
+    <input type="text" [(ngModel)]="nameOfUser2" class="search-bar" placeholder="Search by Name">
+      <button type="button" (click)="AddUser(userName2,userPass2,email2,nameOfUser2)">
