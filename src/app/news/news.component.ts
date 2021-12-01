@@ -54,6 +54,7 @@ export class NewsComponent implements OnInit
         };
         this.listOfNewsArticles.push(test)
       }
+      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,5);
     });
   }
 

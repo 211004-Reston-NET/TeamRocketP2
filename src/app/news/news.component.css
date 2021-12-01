@@ -10,40 +10,23 @@
   padding: 100px 100px;
 }
 
+h4
+{
+  font-size: 40px;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
 .box
 {
-  background-color: whitesmoke;
-  box-sizing: border-box;
   padding: 10px 10px;
+  background-color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .box h5
 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.h1
-{
-  color: whitesmoke;
-  font-size: 40px;
-  font-weight: bold;
-}
-
-.outerContainer {
-  padding: 5px;
-  border: 1px solid #b6b6b6;
-  box-sizing: content-box;
-}
-
-div.container {
-  color: #eeeeee;
-  margin-bottom: 10px;
-}
-
-div.container > div {
-  height: 50px;
-  width: 50px;
-  background-color: blue;
 }

@@ -1,18 +1,29 @@
-<body class="news">
-  <h1 class="h1">Top News</h1>
-  <div class="outer-container">
-    <div class="row mt-5" >
-      <div class="col-lg-3">
-        <div fxLayout="row" fxLayoutGap="10px" class="container" *ngFor="let i of listOfNewsArticles">
-          <img src="" width="100%">
-          <h5 class="mt-2 mb-2">{{i.title}}</h5>
-          <p class="mt-2">Published: {{i.published}}</p>
-          <a href="{{i.link}}" class="btn btn-dark btn-sm mt-2">Read More</a><br>
-          <button type="button" class="btn btn-dark btn-sm mt-2" (click)="JapaneseNews()">News in Japan</button>
-        </div>
+<section class="news">
+
+<div class="container mt-5">
+
+  <h4>Top News</h4>
+
+  <div class="row">
+
+    <div *ngFor="let i of listOfNewsArticles" class="col-lg-3">
+
+      <div class="box">
+
+        <h5 class="mt-2 mb-2">{{i.title}}</h5>
+        <p>Published: {{i.published}}</p>
+        <a href="{{i.link}}" class="btn btn-dark btn-sm mt-2">Read More</a>
+        <button type="button" class="btn btn-dark btn-sm mt-2" (click)="JapaneseNews()">News in Japan</button>
+
       </div>
+
     </div>
+
   </div>
-  <router-outlet></router-outlet>
-</body>
+
+</div>
+
+</section>
+<router-outlet></router-outlet>
+
 
