@@ -19,10 +19,10 @@ import { FormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
 import { RouterModule } from '@angular/router';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
-
-//import { HomeComponent } from './home/home.component';
-//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { ForumComponent } from './forum/forum.component';
+import { FooterComponent } from './footer/footer.component';
+import { JapanComponent } from './japan/japan.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -32,18 +32,19 @@ import { AuthLoginComponent } from './auth-login/auth-login.component';
     EventsComponent,
     LoginComponent,
     LandingComponent,
-    AuthLoginComponent
+    AuthLoginComponent,
+    ForumComponent,
+    FooterComponent,
+    JapanComponent,
+    NavbarComponent
   ],
 
   imports: [
-    // RouterModule.forRoot([
-    //   {path: "**", component:LandingComponent}
-    // ]),
     AuthModule.forRoot({
-
       clientId:"YhFU5C8gk9d3y3SIVeRw8rGgmrFr6zLg",
       domain:"dev-i74lopba.us.auth0.com"
     }),
+    
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
