@@ -22,21 +22,14 @@ export class EventsComponent implements OnInit {
     userPass2:string="";
     email2:string="";
     nameOfUser2:string="";
-    test:Users={id:null,
-      userName:"string",
-      userPass:"string",
-      email:"string",
-      nameOfUser:"string",
-      forums:null,
-      invites:null,
-      posts:null,
-      replies:null
-  }
+  
   listOfPosts:ForumPosts[]=[];
   listOfReplies:Replies[]=[];
   show: boolean = true;
-
   result:any="";
+
+  forumtopic:any="";
+  forumdate:any="";
 
   constructor(private revApi: RevAPIService, private router: Router) { }
 
@@ -96,9 +89,15 @@ export class EventsComponent implements OnInit {
     });
       
   }
-  getPostsbyForumId(p_text:any) {
-
-    this.show = !this.show;
+  getPostsbyForumId(p_text:any,p_show:any) {
+if(this.show != !p_show)
+{
+  this.show = !p_show
+}
+else{
+  this.show=p_show;
+}
+    
     this.result=p_text;
       
   }
@@ -130,6 +129,46 @@ export class EventsComponent implements OnInit {
     });
       
   }
+
+  AddForum(P_Topic:string,P_date:string) {
+  
+    let testitem:Forums={topicName:P_Topic,dateCreated:P_date,creatorId:8,show:false}
+      console.log(testitem);
+      this.revApi.AddForum(testitem).subscribe((response) => {
+        console.log(response);
+  
+        //It will set the show property to false to each element and also add it to our listOfUser
+       
+      });
+        
+    }
+
+    AddPost(P_Topic:string,P_date:string) {
+  
+      let testitem:ForumPosts={postText:P_Topic,dateCreated:P_date,userId:8,forumId:4,show:false}
+        console.log(testitem);
+        this.revApi.AddPost(testitem).subscribe((response) => {
+          console.log(response);
+    
+          //It will set the show property to false to each element and also add it to our listOfUser
+         
+        });
+          
+      }
+      AddReply(P_Topic:string,P_date:string) {
+  
+        let testitem:Replies={replyText:P_Topic,dateCreated:P_date,userId:8,forumId:4,postId:6}
+          console.log(testitem);
+          this.revApi.AddReply(testitem).subscribe((response) => {
+            console.log(response);
+      
+            //It will set the show property to false to each element and also add it to our listOfUser
+           
+          });
+            
+        }
+
+
 
 
 

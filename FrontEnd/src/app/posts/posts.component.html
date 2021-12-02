@@ -8,6 +8,7 @@ Enter Text area
            <th>post</th>
           <th>date</th>
           <th>made by</th> 
+          <th>postId</th>
         </thead>
     
         <tbody>
@@ -15,6 +16,7 @@ Enter Text area
                 <td>{{restaurant.postText}}</td>
                 <td>{{restaurant.dateCreated}}</td>
                 <td>{{restaurant.userId}}</td>
+                <td>{{restaurant.postId}}</td>
                 <!-- <a routerLink="/review">Review</a> -->
                 <button (click) = "showReview(restaurant.postId)">replies</button>
             <app-replies [show2]="restaurant.show" [restId] = "restaurant.postId"></app-replies>

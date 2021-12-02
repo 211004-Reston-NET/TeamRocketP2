@@ -5,7 +5,7 @@ export interface Replies
     userId:any,
     forumId:any,
     postId:any,
-    replyId:any,
-    user:any
+    replyId?:any,
+    user?:any
 }
 

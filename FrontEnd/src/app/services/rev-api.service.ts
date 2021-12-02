@@ -22,6 +22,9 @@ private endpoint4:string="https://community-open-weather-map.p.rapidapi.com/weat
 private endpoint4b:string="https://community-open-weather-map.p.rapidapi.com/forecast?";
 private endpoint5:string="https://google-news.p.rapidapi.com/v1/geo_headlines?lang=en&geo=Japan";
 private endpoint5b:string="https://google-news1.p.rapidapi.com/top-headlines?country=Japan&lang=ja&limit=50";
+private AddForumpoint:string="https://teamrocketapi.azurewebsites.net/api/Forum/Add";
+private AddPostpoint:string="https://teamrocketapi.azurewebsites.net/api/Post/Add";
+private AddReplypoint:string="https://teamrocketapi.azurewebsites.net/api/Reply/Add";
 
   constructor(private http:HttpClient) {
    }
@@ -149,22 +152,20 @@ private endpoint5b:string="https://google-news1.p.rapidapi.com/top-headlines?cou
     return this.http.post<Users>("https://teamrocketapi.azurewebsites.net/api/user/Add",p_item);
   }
 
+  AddForum(p_item:Forums)
+  {
+    return this.http.post<Forums>(this.AddForumpoint,p_item);
+  }
+  AddPost(p_item:ForumPosts):Observable<ForumPosts>
+  {
+    return this.http.post<ForumPosts>(this.AddPostpoint,p_item);
+  }
+  AddReply(p_item:Replies):Observable<Replies>
+  {
+    return this.http.post<Replies>(this.AddReplypoint,p_item);
+  }
 
-  // const data = null;
 
-  // const xhr = new XMLHttpRequest();
-  // xhr.withCredentials = true;
-  
-  // xhr.addEventListener("readystatechange", function () {
-  //   if (this.readyState === this.DONE) {
-  //     console.log(this.responseText);
-  //   }
-  // });
-  
-  // xhr.open("GET", "https://navitime-maps.p.rapidapi.com/map_image?width=500&center=35.681236%2C139.767125&zoom=15&height=500&datum=wgs84&coord_unit=degree");
-  // xhr.setRequestHeader("x-rapidapi-key", "86cdbd2072msh31d13534aa18519p1285cfjsnf663f86b2e55");
-  // xhr.setRequestHeader("x-rapidapi-host", "navitime-maps.p.rapidapi.com");
-  
-  // xhr.send(data);
+
 
 }
