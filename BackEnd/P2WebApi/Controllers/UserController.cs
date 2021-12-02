@@ -34,6 +34,13 @@ namespace P2WebApi.Controllers
             return Ok(_userBL.GetUserById(id));
         }
 
+
+        [HttpGet("Verify{email}")]
+        public IActionResult VerifyUser(string email)
+        {
+            return Ok(_userBL.GetUserByEmail(email));
+        }
+
         // POST api/<UserController>
         [HttpPost("Add")]
         public IActionResult AddUser([FromBody] User p_user)
@@ -41,12 +48,6 @@ namespace P2WebApi.Controllers
             return Created("api/User/Add", _userBL.AddUser(p_user));
         }
 
-        // PUT api/<UserController>/5
-        [HttpPost("Verify")]
-        public IActionResult VerifyUser([FromBody] User p_user)
-        {
-            return Ok(_userBL.GetUserByEmail(p_user.Email));
-        }
 
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]

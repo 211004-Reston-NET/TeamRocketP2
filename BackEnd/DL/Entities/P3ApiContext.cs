@@ -40,7 +40,7 @@ namespace DL.Entities
 
                 entity.Property(e => e.EventDescription)
                     .IsRequired()
-                    .HasMaxLength(250)
+                    .HasMaxLength(1000)
                     .IsUnicode(false)
                     .HasColumnName("Event_Description");
 
