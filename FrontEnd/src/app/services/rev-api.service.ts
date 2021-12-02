@@ -115,6 +115,10 @@ private endpoint5b:string="https://google-news1.p.rapidapi.com/top-headlines?cou
   {
     return this.http.get<Users[]>("https://teamrocketapi.azurewebsites.net/api/user/all");
   }
+  findOne(id:number):Observable<Users[]>
+  {
+    return this.http.get<Users[]>("https://teamrocketapi.azurewebsites.net/api/user/"+id);
+  }
 
   Event():Observable<Evento[]>
   {

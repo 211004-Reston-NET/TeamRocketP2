@@ -39,23 +39,9 @@ export class EventsComponent implements OnInit {
       
   }
 
-  Event() {
+  Eventa() {
     this.revApi.Event().subscribe((response) => {
       console.log(response);
-<<<<<<< HEAD
-
-      //It will set the show property to false to each element and also add it to our listOfUser
-      response.forEach(element => {
-        
-        this.listOfEvents.push(element);
-      });
-    });
-      
-  }
-
-}
-=======
->>>>>>> 71d795d67bd732eec55904d2b65e3878ac1e896a
 
       //It will set the show property to false to each element and also add it to our listOfUser
       response.forEach(element => {
