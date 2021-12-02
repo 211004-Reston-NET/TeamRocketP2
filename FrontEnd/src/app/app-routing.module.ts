@@ -8,6 +8,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { ForumComponent } from './forum/forum.component';
 
 const routes: Routes = [
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'news', component: NewsComponent},
   { path: 'events', component: EventsComponent},
   { path: 'login', component: LoginComponent},
+  {path: 'forum',component : ForumComponent},
   { path: '**', component: LandingComponent}
 
 ];

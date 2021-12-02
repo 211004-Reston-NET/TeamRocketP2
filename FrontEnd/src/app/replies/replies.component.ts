@@ -10,11 +10,14 @@ import { RevAPIService } from '../services/rev-api.service';
 })
 export class RepliesComponent implements OnInit {
   @Input()
-  restId:number = 0;
+  postIdent:number = 0;
 
   @Input()
   show2:boolean = false;
-
+  @Input()
+  forumIdent:number = 0;
+  @Input()
+  replyshow:boolean=false;
   listOfReplies:Replies[]=[];
   overallRating:number = 0;
   constructor(private http:RevAPIService)
@@ -24,7 +27,7 @@ export class RepliesComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges): void {
 this.listOfReplies=[];
-this.http.ReplybyId(this.restId).subscribe((response) => {
+this.http.ReplybyId(this.postIdent).subscribe((response) => {
   console.log(response);
   
 
@@ -39,6 +42,7 @@ this.http.ReplybyId(this.restId).subscribe((response) => {
   }
 
   ngOnInit(): void {
+    
   }
 
 }

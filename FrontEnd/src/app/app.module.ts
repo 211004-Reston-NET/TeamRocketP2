@@ -17,10 +17,14 @@ import { EventsComponent } from './events/events.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PostsComponent } from './posts/posts.component';
 import { RepliesComponent } from './replies/replies.component';
+import { CreateForumComponent } from './create-forum/create-forum.component';
+import { CreatePostComponent } from './create-post/create-post.component';
+import { CreateReplyComponent } from './create-reply/create-reply.component';
+import { ForumComponent } from './forum/forum.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { RepliesComponent } from './replies/replies.component';
     LoginComponent,
     LandingComponent,
     PostsComponent,
-    RepliesComponent
+    RepliesComponent,
+    CreateForumComponent,
+    CreatePostComponent,
+    CreateReplyComponent,
+    ForumComponent
   ],
 
   imports: [
@@ -49,6 +57,7 @@ import { RepliesComponent } from './replies/replies.component';
     MatButtonModule,
     MatTableModule,
     FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule
   ],
 

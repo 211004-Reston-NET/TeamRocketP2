@@ -1,8 +1,19 @@
 
 
-<textarea>
-Enter Text area
-</textarea>
+<!-- <div *ngIf="show">
+  
+  <div *ngIf="showAddForum">
+    <form [formGroup] = "restGroup">
+        <input type="text" formControlName = "textfield">
+        <h2>date</h2>
+        <input type="text" formControlName = "date">
+    
+        <br>
+        <button class="btn btn-primary" (click)="createRestaurant(restGroup)">Submit</button>
+    </form>
+    </div>
+</div> -->
+<app-create-post [restId] = "forumId" [showbutton]="show"></app-create-post>
 <table *ngIf="show" class="table-primary">
         <thead>
            <th>post</th>
@@ -19,7 +30,8 @@ Enter Text area
                 <td>{{restaurant.postId}}</td>
                 <!-- <a routerLink="/review">Review</a> -->
                 <button (click) = "showReview(restaurant.postId)">replies</button>
-            <app-replies [show2]="restaurant.show" [restId] = "restaurant.postId"></app-replies>
+            
             </tr>
         </tbody>
       </table>
+      <app-replies [show2]="show2" [replyshow]="replyshow"[postIdent] = "replyPostId" [forumIdent]="replyForumId"></app-replies>

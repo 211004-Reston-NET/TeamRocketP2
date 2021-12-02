@@ -1,3 +1,6 @@
+<div *ngIf="replyshow">
+    <app-create-reply [postIdentification] = "postIdent" [showbutton]="show2" [forumIdentification] = "forumIdent" ></app-create-reply>
+
 <table *ngIf="show2" class="table-primary">
     <thead>
        <th>reply post</th>
@@ -14,3 +17,4 @@
         </tr>
     </tbody>
   </table>
+</div>

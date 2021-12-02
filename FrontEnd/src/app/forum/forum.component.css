@@ -1,0 +1,60 @@
+.table-head
+{
+  display: flex;
+}
+
+.table-head div
+{
+  padding: 5px;
+  margin: 2px;
+  background-color: darkgray;
+  font-weight: bold;
+}
+
+.table-head .status
+{
+  flex: 5%;
+}
+
+.table-head .subjects
+{
+  flex: 50%;
+}
+
+.table-head .replies
+{
+  flex: 10%;
+}
+
+.table-head .last-reply
+{
+  flex: 10%;
+}
+
+/* table-body */
+.table-row
+{
+  display: flex;
+}
+
+.table-row .status
+{
+  flex: 5%;
+  font-size: 30px;
+  text-align: center;
+}
+
+.table-row .subjects
+{
+  flex: 70%;
+}
+
+.table-row .replies
+{
+  flex: 10%;
+}
+
+.table-row .last-reply
+{
+  flex: 15%;
+}

@@ -9,12 +9,13 @@ import { Users } from '../models/Users';
 import { Weather } from '../models/Weather';
 import { RevAPIService } from '../services/rev-api.service';
 import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
+
 @Component({
-  selector: 'app-events',
-  templateUrl: './events.component.html',
-  styleUrls: ['./events.component.css']
+  selector: 'app-forum',
+  templateUrl: './forum.component.html',
+  styleUrls: ['./forum.component.css']
 })
-export class EventsComponent implements OnInit {
+export class ForumComponent implements OnInit {
 
   listOfUsers:Users[]=[];
   listOfForums:Forums[]=[];
@@ -183,8 +184,4 @@ else{
             
         }
 
-
-
-
-}
-
+      }

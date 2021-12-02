@@ -1,0 +1,12 @@
+
+<button type="button" (click)="showForm()">add forum</button>
+<div *ngIf="showAddForum">
+<form [formGroup] = "restGroup">
+    <input type="text" formControlName = "textfield">
+    <h2>date</h2>
+    <input type="text" formControlName = "date">
+
+    <br>
+    <button class="btn btn-primary" (click)="createForum(restGroup)">Submit</button>
+</form>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="posts-table">
+    <div class="table-head">
+      <div class="status">Status</div>
+      <div class="subjects">Subject</div>
+      <div class="replies">Replies/Views</div>
+      <div class="last-reply">Last Reply</div>
+    </div>
+  </div>
+  <div class="table-row">
+    <div class="status"><i class="fa fa-rocket"></i></div>
+    <div class="subjects"><a href="#">Team Rocket</a></div><br>
+    <br>
+    <span>Created by <b><a href="#">User</a></b>.</span>
+  </div>
+  <div class="replies">
+    2 replies <br>10 views
+  </div>
+  <div class="last-reply">
+    Dec 1, 2021
+    <br>
+    By <b><a href="#">User</a></b>
+  </div>
+</div>
+
+<app-create-forum></app-create-forum>
+<table class="table table-hover">
+  <thead>
+      <th>Topic</th>
+        <th>date</th>
+        <th>number of posts</th>
+        <th>forumId</th>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let restaurant of listOfForums">
+          <td>{{restaurant.topicName}}</td>
+          <td>{{restaurant.dateCreated}}</td>
+          <td>{{restaurant.amountOfPosts}}</td>
+          <td>{{restaurant.forumId}}</td>
+
+          <!-- <a routerLink="/review">Review</a> -->
+          <button (click) = "getPostsbyForumId(restaurant.forumId,restaurant.show)">posts</button>
+            
+      </tr>
+  </tbody>
+</table>
+<app-posts [show]="show" [forumId] = "result" [replyshow]="replyshow"></app-posts>
+

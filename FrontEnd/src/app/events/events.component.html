@@ -1,6 +1,6 @@
 <p>events works!</p>
 
-<button type="button" (click)="getusers()">users</button>
+<!-- <button type="button" (click)="getusers()">users</button>
 <table class="table table-hover">
   <thead>
       <th>id</th>
@@ -17,13 +17,12 @@
           <td>{{restaurant.userPass}}</td>
           <td>{{restaurant.email}}</td>
           <td>{{restaurant.nameOfUser}}</td>
-
-          <!-- <a routerLink="/review">Review</a> -->
       </tr>
   </tbody>
-</table>
+</table> -->
 
 <!-- <button type="button" (click)="getForums()">Forums</button> -->
+<app-create-forum></app-create-forum>
 <table class="table table-hover">
   <thead>
       <th>Topic</th>
@@ -45,7 +44,7 @@
       </tr>
   </tbody>
 </table>
-<app-posts [show]="show" [restId] = "result"></app-posts>
+<app-posts [show]="show" [forumId] = "result" [replyshow]="replyshow"></app-posts>
 
   <!-- <table class="table table-hover">
     <thead>
@@ -71,10 +70,9 @@
     <input type="text" [(ngModel)]="email2" class="search-bar" placeholder="Search by email">
     <input type="text" [(ngModel)]="nameOfUser2" class="search-bar" placeholder="Search by Name">
       <button type="button" (click)="AddUser(userName2,userPass2,email2,nameOfUser2)"> -->
-
+<!-- 
         <input type="text" [(ngModel)]="forumtopic" class="search-bar" placeholder="topic">
-        <input type="text" [(ngModel)]="forumdate" class="search-bar" placeholder="date">
+        <input type="text" [(ngModel)]="forumdate" class="search-bar" placeholder="date"> -->
           <!-- <button type="button" (click)="AddForum(forumtopic,forumdate)"></button> -->
             <!-- <button type="button" (click)="AddPost(forumtopic,forumdate)"></button> -->
-            <button type="button" (click)="AddReply(forumtopic,forumdate)"></button>
-
+            <!-- <button type="button" (click)="AddReply(forumtopic,forumdate)"></button> -->
