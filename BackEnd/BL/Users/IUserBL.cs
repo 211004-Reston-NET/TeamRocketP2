@@ -33,6 +33,13 @@ namespace BL
         User GetUserById(int _Id);
 
         /// <summary>
+        /// returns the user with an email matching the passed string
+        /// </summary>
+        /// <param name="_email"></param>
+        /// <returns></returns>
+        User GetUserByEmail(string _email);
+
+        /// <summary>
         /// removes the passed user obj from the DB
         /// </summary>
         /// <param name="p_user"></param>

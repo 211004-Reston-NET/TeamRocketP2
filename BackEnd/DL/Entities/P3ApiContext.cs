@@ -32,6 +32,11 @@ namespace DL.Entities
             {
                 entity.Property(e => e.EventId).HasColumnName("Event_Id");
 
+                entity.Property(e => e.EndDate)
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("End_Date");
+
                 entity.Property(e => e.EndTime)
                     .IsRequired()
                     .HasMaxLength(60)
@@ -40,7 +45,7 @@ namespace DL.Entities
 
                 entity.Property(e => e.EventDescription)
                     .IsRequired()
-                    .HasMaxLength(250)
+                    .HasMaxLength(1000)
                     .IsUnicode(false)
                     .HasColumnName("Event_Description");
 
@@ -54,6 +59,11 @@ namespace DL.Entities
                     .IsRequired()
                     .HasMaxLength(250)
                     .IsUnicode(false);
+
+                entity.Property(e => e.StartDate)
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("Start_Date");
 
                 entity.Property(e => e.StartTime)
                     .IsRequired()
