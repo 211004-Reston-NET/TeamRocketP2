@@ -9,5 +9,7 @@ appsettings.json
 -publish
 publish
 node_modules
+package.json
+package-lock.json
 
-
+FrontEnd/package-lock.json

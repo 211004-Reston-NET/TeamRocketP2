@@ -17,8 +17,12 @@ import { EventsComponent } from './events/events.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
-
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
+import { AuthLoginComponent } from './auth-login/auth-login.component';
+import { ForumComponent } from './forum/forum.component';
+import { FooterComponent } from './footer/footer.component';
+import { JapanComponent } from './japan/japan.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -27,15 +31,20 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NewsComponent,
     EventsComponent,
     LoginComponent,
-    LandingComponent
+    LandingComponent,
+    AuthLoginComponent,
+    ForumComponent,
+    FooterComponent,
+    JapanComponent,
+    NavbarComponent
   ],
 
   imports: [
     AuthModule.forRoot({
-      clientId: "UInoKfY6haP5fUKrz8V9sWhGkJ8lwAer",
-      domain: "dev-c5jmjc96.us.auth0.com"
+      clientId:"YhFU5C8gk9d3y3SIVeRw8rGgmrFr6zLg",
+      domain:"dev-i74lopba.us.auth0.com"
     }),
-
+    
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -45,7 +54,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatButtonModule,
     MatTableModule,
     FormsModule,
-    FontAwesomeModule
+    //FontAwesomeModule
   ],
 
   providers: [],

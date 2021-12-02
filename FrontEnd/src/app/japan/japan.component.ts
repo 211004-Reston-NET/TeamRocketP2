@@ -4,12 +4,11 @@ import { News } from '../models/news';
 import { RevAPIService } from '../services/rev-api.service';
 
 @Component({
-  selector: 'app-news',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.css']
+  selector: 'app-japan',
+  templateUrl: './japan.component.html',
+  styleUrls: ['./japan.component.css']
 })
-
-export class NewsComponent implements OnInit
+export class JapanComponent implements OnInit
 {
   text2: string = "";
   resultado: string = "";
@@ -19,27 +18,6 @@ export class NewsComponent implements OnInit
   constructor(private revApi: RevAPIService, private router: Router) { }
 
   ngOnInit()
-  {
-    this.listOfNewsArticles=[];
-    this.revApi.GeoHeadlines().subscribe((response) =>
-    {
-      console.log(response);
-      for (var i in response.articles)
-      {
-        let n: News =
-        {
-          published: response.articles[i].published_date,
-          title: response.articles[i].title,
-          link: response.articles[i].link
-        };
-        this.listOfNewsArticles.push(n)
-      }
-      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,5);
-    });
-    console.log(this.listOfNewsArticles);
-  }
-
-  JapaneseNews()
   {
     this.listOfNewsArticles=[];
     this.revApi.JapaneseHeadlines().subscribe((response) =>
@@ -57,7 +35,6 @@ export class NewsComponent implements OnInit
       }
       this.listOfNewsArticles = this.listOfNewsArticles.slice(0,5);
     });
-    console.log(this.listOfNewsArticles);
   }
 
   translate(p_text: string)
