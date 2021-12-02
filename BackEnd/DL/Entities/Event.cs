@@ -18,6 +18,8 @@ namespace DL.Entities
         public string EventName { get; set; }
         public string EventDescription { get; set; }
         public int EventId { get; set; }
+        public string EndDate { get; set; }
+        public string StartDate { get; set; }
 
         public virtual ICollection<Invite> Invites { get; set; }
     }
