@@ -42,9 +42,10 @@ namespace P2WebApi.Controllers
         }
 
         // PUT api/<UserController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost("Verify")]
+        public IActionResult VerifyUser([FromBody] User p_user)
         {
+            return Ok(_userBL.GetUserById(p_user.ID));
         }
 
         // DELETE api/<UserController>/5
