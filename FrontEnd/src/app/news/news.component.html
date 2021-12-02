@@ -1,44 +1,15 @@
-<section class="news">
-  <div class="container">
-    <div class="row mt-5" >
-      <div class="col-lg-3" *ngFor="let restaurant of listOfNewsArticles">
-        <div class="box shadow-sm">
-          <img src="" width="100%">
-          <h5 class="mt-2 mb-2">{{restaurant.title}}</h5>
-          <p class="mt-2">{{restaurant.published}}</p>
-          <a href="{{restaurant.link}}" class="btn btn-dark btn-sm mt-2"></a>
+<body class="news">
+  <button type="button" class="btn btn-dark btn-sm mt-2" (click)="JapaneseNews()">News in Japan</button>
+  <div class="container mt-5">
+    <h4>Top News</h4>
+    <div class="row">
+      <div *ngFor="let i of listOfNewsArticles" class="col-lg-3">
+        <div class="box">
+          <h5 class="mt-2 mb-2">{{i.title}}</h5>
+          <p>Published: {{i.published|date : 'EEEE, MMMM d, h:mm:ss'}}</p>
+          <a href="{{i.link}}" class="btn btn-dark btn-sm mt-2">Read More</a>
         </div>
       </div>
     </div>
   </div>
-</section>
-<router-outlet></router-outlet>
-
-<div>
-    <div>
-      <label>translate: </label>
-      <p><input type="text" id="text2" name="text2" [(ngModel)]="text2"></p>
-      {{resultado}}
-      <button type="button" (click)="translate(text2)">Clickme</button>
-    </div>
-    <div>
-    </div>
-  </div>
-<!-- <button type="button" (click)="News2()">news</button> -->
-<button type="button" (click)="JapaneseNews()">JapaneseNews</button>
-<table class="table table-hover">
-  <thead>
-      <th>published</th>
-      <th>title</th>
-      <th>link</th>
-  </thead>
-  <tbody>
-      <tr *ngFor="let restaurant of listOfNewsArticles">
-          <td>{{restaurant.published}}</td>
-          <td>{{restaurant.title}}</td>
-          <td><a href={{restaurant.link}}>{{restaurant.link}}</a></td>
-
-          <!-- <a routerLink="/review">Review</a> -->
-      </tr>
-  </tbody>
-</table>
+</body>
