@@ -45,7 +45,7 @@ namespace P2WebApi.Controllers
         [HttpPost("Verify")]
         public IActionResult VerifyUser([FromBody] User p_user)
         {
-            return Ok(_userBL.GetUserById(p_user.ID));
+            return Ok(_userBL.GetUserByEmail(p_user.Email));
         }
 
         // DELETE api/<UserController>/5
