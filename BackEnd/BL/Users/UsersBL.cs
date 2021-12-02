@@ -51,5 +51,15 @@ namespace BL
         {
             return _repo.DeleteUser(p_user_Id);
         }
+
+        public User GetUserByEmail(string p_email)
+        {
+            List<User> listOfUsers = _repo.GetAllUsers();
+
+
+            List<User> Found = (listOfUsers.Where(usr => usr.Email.Equals(p_email))).ToList();
+
+            return Found[0];
+        }
     }
 }
