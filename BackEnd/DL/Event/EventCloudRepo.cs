@@ -24,6 +24,8 @@ namespace DL
                 {
                     StartTime = p_event.StartTime,
                     EndTime = p_event.EndTime,
+                    StartDate = p_event.StartDate,
+                    EndDate = p_event.EndDate,
                     Location = p_event.Location, 
                     EventName = p_event.EventName,
                     EventDescription= p_event.EventDescription
@@ -41,6 +43,8 @@ namespace DL
                     EventId =  Event.EventId,
                     StartTime = Event.StartTime,
                     EndTime = Event.EndTime,
+                    StartDate = Event.StartDate,
+                    EndDate = Event.EndDate,
                     Location = Event.Location, 
                     EventName = Event.EventName,
                     EventDescription= Event.EventDescription
@@ -71,9 +75,11 @@ namespace DL
                     EventId = result.EventId,
                     StartTime = result.StartTime,
                     EndTime = result.EndTime,
+                    StartDate = result.StartDate,
+                    EndDate = result.EndDate,
                     Location = result.Location, 
                     EventName = result.EventName,
-                    EventDescription = result.EventDescription
+                    EventDescription = result.EventDescription 
                 };
         
 
