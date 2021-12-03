@@ -3,6 +3,10 @@
     <button class ="btn btn-danger" (click)="auth0.logout({ returnTo: document.location.origin })">
         Log out
     </button>
+    <ng-container *ngIf="this.count==0">
+        {{verify(LogedInEmail)}}
+        {{incrementCount()}}
+    </ng-container>
     <!-- {{verify(LogedInEmail)}} -->
     <!-- <p>{{LogedInEmail}}</p>
     <p>{{email}}</p> -->

@@ -18,17 +18,17 @@ export class AuthLoginComponent implements OnInit {
   email:string =""
   tempemail:string | undefined="notFound"
   VerifiedUser:Users | undefined;
+  count:number =0;
 
   constructor(public auth0:AuthService, @Inject(DOCUMENT) public document:Document, private revApi: RevAPIService, private router: Router)
   { 
     this.auth0.user$.subscribe((Response) => {
       this.LogedInEmail = Response?.email;
-      this.verify(this.LogedInEmail);
-      
+      //this.verify(this.LogedInEmail);
     });
     
   }
-
+ 
   ngOnInit(): void {
  
   }
@@ -41,6 +41,10 @@ export class AuthLoginComponent implements OnInit {
         this.email = data.email
 
       })
+  }
+
+  incrementCount(){
+    this.count++;
   }
 }
 
