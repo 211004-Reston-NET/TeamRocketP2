@@ -11,5 +11,7 @@ publish
 node_modules
 package.json
 package-lock.json
-
+Backend.yml
 FrontEnd/package-lock.json
+.github/workflows/Backend.yml
+.github/workflows/frontend.yml
