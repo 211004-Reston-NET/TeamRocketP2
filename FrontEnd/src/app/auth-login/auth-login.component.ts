@@ -18,6 +18,7 @@ export class AuthLoginComponent implements OnInit {
   email:string =""
   tempemail:string | undefined="notFound"
   VerifiedUser:Users | undefined;
+  id:string="";
 
   constructor(public auth0:AuthService, @Inject(DOCUMENT) public document:Document, private revApi: RevAPIService, private router: Router)
   { 
@@ -39,6 +40,11 @@ export class AuthLoginComponent implements OnInit {
         console.log(data)
         this.VerifiedUser = data
         this.email = data.email
+        this.id=data.id
+        // if(this.id!="45")
+        // {
+        //   this.router.navigateByUrl("/events");
+        // }
 
       })
   }
