@@ -23,9 +23,10 @@ export class AuthLoginComponent implements OnInit {
   { 
     this.auth0.user$.subscribe((Response) => {
       this.LogedInEmail = Response?.email;
-      
+      this.verify(this.LogedInEmail);
       
     });
+    
   }
 
   ngOnInit(): void {
