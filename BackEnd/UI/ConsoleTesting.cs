@@ -24,6 +24,10 @@ namespace UI
             });
         }
 
+        public User AuthAddTest(string p_email)
+        {
+           return _userBL.AddUserFromAuth0(p_email);
+        }
         public List<User> TestShowAll()
         {
             return _userBL.GetAllUsers();

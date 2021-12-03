@@ -29,10 +29,7 @@ namespace UI
             //instance.TestAdd();
              List<Model.User> ListOfUsers= instance.TestShowAll();
             // List<Model.User> ListOfUsers = instance.TestGetByName("name");
-            foreach(Models.User user in ListOfUsers)
-            {
-                Console.WriteLine(user.ToString());
-            }
+            Console.WriteLine((instance.AuthAddTest("SeeMe@test.com")).ToString());
 
             // foreach (Models.User user in ListOfUsers)
             // {
