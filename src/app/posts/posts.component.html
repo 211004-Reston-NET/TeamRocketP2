@@ -1,0 +1,62 @@
+<body>
+  <div class="container">
+    <div class="posts-table" *ngFor="let f of listOfPosts">
+      <div class="table-head">
+        <div class="status">Status</div>
+          <div class="subjects">Topics</div>
+            <div class="replies">Replies</div>
+              <div class="posted">Posted by</div>
+          </div>
+          <div class="table-row">
+          <div class="status"><i class="fa fa-fire"></i></div>
+          <div class="subjects">{{f.postText}}</div>
+          <br>
+          <span>Started by<b><a href=""> {{f.userId}}</a></b></span>
+        </div>
+        <div class="replies">
+          <details>
+            <summary type ="button" class="btn btn-dark btn-sm" (click) = "showReview(f.postId)">See Replies</summary>
+            <div class="details-content">
+              <p>      <app-replies [show2]="show2" [replyshow]="replyshow"[postIdent] = "replyPostId" [forumIdent]="replyForumId"></app-replies></p>
+            </div>
+          </details>
+        </div>
+    </div>
+  </div>
+</body>
+
+<app-create-post [restId] = "forumId" [showbutton]="show"></app-create-post>
+<table *ngIf="show" class="table-primary">
+        <thead>
+           <th>post</th>
+          <th>date</th>
+          <th>made by</th>
+          <th>postId</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let restaurant of listOfPosts">
+                <td>{{restaurant.postText}}</td>
+                <td>{{restaurant.dateCreated}}</td>
+                <td>{{restaurant.userId}}</td>
+                <td>{{restaurant.postId}}</td>
+                <!-- <a routerLink="/review">Review</a> -->
+                <button (click) = "showReview(restaurant.postId)">replies</button>
+
+            </tr>
+        </tbody>
+      </table>
+      <app-replies [show2]="show2" [replyshow]="replyshow"[postIdent] = "replyPostId" [forumIdent]="replyForumId"></app-replies>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,82 +1,34 @@
 <body>
-
   <div class="container">
-
-    <div class="posts-table">
-
-      <div class="table-head">
-
-        <div class="status">Status</div>
-
-        <div class="subjects">Subject</div>
-
-        <div class="replies">Replies/Views</div>
-
-        <div class="last-reply">Last Reply</div>
-
+    <div class="subforum" *ngFor="let f of listOfForums">
+      <div class="subforum-title">
+        <h1></h1>
       </div>
-
+      <div class="subforum-row">
+        <div class="subforum-icon subforum-column center">
+          <i class="fa fas fa-book"></i>
+        </div>
+        <div class="subforum-description subforum-column">
+          <h1>{{f.topicName}}</h1>
+          <details>
+            <summary type ="button" class="btn btn-dark btn-sm" (click) = "getPostsbyForumId(f.forumId,f.show)">See Posts</summary>
+            <div class="details-content">
+              <p><app-posts [show]="show" [forumId] = "result" [replyshow]="replyshow"></app-posts></p>
+            </div>
+          </details>
+        </div>
+        <div class="subforum-stats subforum-column center">
+          <span>{{f.amountOfPosts}} Posts </span>
+        </div>
+        <div class="subform-info subforum-column">
+          <b>Last Post</b> by <a href="">User</a>
+          <br>
+          <small>{{f.dateCreated|date : 'EEEE, MMMM d yyyy'}}</small>
+        </div>
+        <div style="clear: both;"></div>
+      </div>
     </div>
-
-    <div class="table-row">
-
-      <div class="status"><i class="fa fa-rocket"></i></div>
-
-      <div class="subjects"><a href="#">Test 2</a></div><br>
-
-      <br>
-
-      <span>Created by <b><a href="#">User</a></b>.</span>
-
-    </div>
-
-    <div class="replies">
-
-      2 replies <br>10 views
-
-    </div>
-
-    <div class="last-reply">
-
-      Dec 1, 2021
-
-      <br>
-
-      By <b><a href="#">User</a></b>
-
-    </div>
-
-    <br>
-
-    <div class="table-row">
-
-      <div class="status"><i class="fa fa-rocket"></i></div>
-
-      <div class="subjects"><a href="#">Test 2</a></div><br>
-
-      <br>
-
-      <span>Created by <b><a href="#">User</a></b>.</span>
-
-    </div>
-
-    <div class="replies">
-
-      2 replies <br>10 views
-
-    </div>
-
-    <div class="last-reply">
-
-      Dec 1, 2021
-
-      <br>
-
-      By <b><a href="#">User</a></b>
-
-    </div>
-
   </div>
-
 </body>
+
 

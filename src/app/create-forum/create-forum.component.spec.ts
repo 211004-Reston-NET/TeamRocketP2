@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { JapanComponent } from './japan.component';
+import { CreateForumComponent } from './create-forum.component';
 
-describe('JapanComponent', () => {
-  let component: JapanComponent;
-  let fixture: ComponentFixture<JapanComponent>;
+describe('CreateForumComponent', () => {
+  let component: CreateForumComponent;
+  let fixture: ComponentFixture<CreateForumComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ JapanComponent ]
+      declarations: [ CreateForumComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(JapanComponent);
+    fixture = TestBed.createComponent(CreateForumComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

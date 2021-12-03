@@ -1,0 +1,48 @@
+<body>
+  <div class="container">
+    <div class="posts-table" *ngFor="let f of listOfReplies">
+      <div class="table-head">
+        <div class="status">Status</div>
+          <div class="subjects">Topics</div>
+            <div class="replies">Replies</div>
+              <div class="last-reply">Posted by</div>
+          </div>
+            <div class="table-row">
+              <div class="status"><i class="fa fa-fire"></i></div>
+              <div class="subjects"><a href="">{{f.replyText}}</a></div>
+              <br>
+              <span><b><a herf="">User:{{f.userId}}</a></b></span>
+          </div>
+            <div class="last-reply">
+              Oct 12, 2021
+              <br>
+              By <b><a herf="">User</a></b>
+          </div>
+      </div>
+    </div>
+</body>
+
+
+
+
+
+<div *ngIf="replyshow">
+  <app-create-reply [postIdentification] = "postIdent" [showbutton]="show2" [forumIdentification] = "forumIdent" ></app-create-reply>
+
+<table *ngIf="show2" class="table-primary">
+  <thead>
+     <th>reply post</th>
+    <th>date</th>
+    <th>made by</th>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let restaurant of listOfReplies">
+          <td>{{restaurant.replyText}}</td>
+          <td>{{restaurant.dateCreated}}</td>
+          <td>{{restaurant.userId}}</td>
+          <!-- <a routerLink="/review">Review</a> -->
+      </tr>
+  </tbody>
+</table>
+</div>

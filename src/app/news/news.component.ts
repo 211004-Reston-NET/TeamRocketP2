@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { News } from '../models/news';
+import { News } from '../models/News';
 import { RevAPIService } from '../services/rev-api.service';
 
 @Component({
@@ -49,7 +49,7 @@ export class NewsComponent implements OnInit
       {
         let test: News =
         {
-          published: response.articles[i].published_date,
+          published: response.articles[i].published,
           title: response.articles[i].title,
           link: response.articles[i].link
         };

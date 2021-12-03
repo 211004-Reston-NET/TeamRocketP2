@@ -18,12 +18,16 @@ import { EventsComponent } from './events/events.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { JapanComponent } from './japan/japan.component';
 import { ForumComponent } from './forum/forum.component';
-import { ForecastComponent } from './forecast/forecast.component';
+import { CreateForumComponent } from './create-forum/create-forum.component';
+import { CreatePostComponent } from './create-post/create-post.component';
+import { CreateReplyComponent } from './create-reply/create-reply.component';
+import { PostsComponent } from './posts/posts.component';
+import { RepliesComponent } from './replies/replies.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +39,12 @@ import { ForecastComponent } from './forecast/forecast.component';
     LandingComponent,
     NavbarComponent,
     FooterComponent,
-    JapanComponent,
     ForumComponent,
-    ForecastComponent,
+    CreateForumComponent,
+    CreatePostComponent,
+    CreateReplyComponent,
+    PostsComponent,
+    RepliesComponent
 
   ],
 
@@ -56,6 +63,7 @@ import { ForecastComponent } from './forecast/forecast.component';
     MatButtonModule,
     MatTableModule,
     FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     FlexLayoutModule
 

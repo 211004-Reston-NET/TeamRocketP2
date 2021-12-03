@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RevAPIService } from '../services/rev-api.service';
-import { Evento } from '../models/events';
+import { Evento } from '../models/Events';
 import { elementAt } from 'rxjs';
 
 @Component({

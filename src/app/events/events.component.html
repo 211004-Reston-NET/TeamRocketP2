@@ -11,12 +11,12 @@
         <ul>
           <li *ngFor="let i of listOfEvents">
             <div class="time">
-              <h2>{{i.startTime}}<br><span></span></h2>
+              <h2>{{i.startDate}}<br>-<br><span>{{i.endDate}}</span></h2>
             </div>
             <div class="details">
               <h3>{{i.eventName}}</h3>
               <p>{{i.eventDescription}}</p>
-              <p>Start: {{i.startTime}}<br>End: {{i.endTime}}</p>
+              <p>Starts: <sub>{{i.startTime}}</sub><br>Ends: <sub>{{i.endTime}}</sub></p>
             </div>
             <div style="clear: both;"></div>
           </li>
