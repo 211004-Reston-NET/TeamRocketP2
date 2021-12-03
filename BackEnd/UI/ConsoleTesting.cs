@@ -24,6 +24,10 @@ namespace UI
             });
         }
 
+        public User AuthAddTest(string p_email)
+        {
+           return _userBL.AddUserFromAuth0(p_email);
+        }
         public List<User> TestShowAll()
         {
             return _userBL.GetAllUsers();
@@ -44,6 +48,11 @@ namespace UI
         public User TestDeleteUser(int p_user_Id)
         {
             return _userBL.DeleteUser(p_user_Id);
+        }
+
+        public User TestGetByEmail(string p_email)
+        {
+            return _userBL.GetUserByEmail(p_email);
         }
     }
 }

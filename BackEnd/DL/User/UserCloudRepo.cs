@@ -34,27 +34,30 @@ namespace DL
         {
             List<Model.User> ListOfUsers = GetAllUsers();
             var rand = new Random();
-            List<int> randNum = new List<int>();
+            string[] randNum = {"0","1","2","3","4","5","6","7","8","9"};
+            string Name = "User";
             bool run = true;
             int count=0;
             while (run)
             {
                 for (int i = 0; i <= 3; i++)
-                    randNum.Add(rand.Next(101));
+                    Name += randNum [rand.Next(randNum.Length)];
+
                 foreach (Model.User item in ListOfUsers)
                 {
-                    if($"user{randNum.ToString()}" == item.UserName)
+                    if(Name == item.UserName)
                     {count++; }
                     //if the userName that will be made is unique stop the loop
                     if(count == 0)
                     {run = false; }
                 } 
             } 
+            
             _context.Users.Add
             (
                 new Entity.User()
                 {
-                    UserName = "user"+randNum.ToString(),
+                    UserName = Name,
                     UserPass = "Password123!",
                     Email = p_email,
                     NameOfUser = "newUser"
@@ -63,7 +66,7 @@ namespace DL
             _context.SaveChanges();
             return new Model.User()
             {
-                UserName = "user" + randNum.ToString(),
+                UserName = Name,
                 UserPass = "Password123!",
                 Email = p_email,
                 NameOfUser = "newUser"

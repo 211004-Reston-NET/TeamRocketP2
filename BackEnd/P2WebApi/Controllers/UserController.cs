@@ -38,10 +38,9 @@ namespace P2WebApi.Controllers
         [HttpGet("Verify{email}")]
         public IActionResult VerifyUser(string email)
         {
-            User user= new User();
-            user = _userBL.GetUserByEmail(email);
+            User user = _userBL.GetUserByEmail(email);
             if(user.Email != email)
-                user=_userBL.AddUserFromAuth0(email);
+                {return Ok(_userBL.AddUserFromAuth0(email));}
         
             return Ok(user);
         }
