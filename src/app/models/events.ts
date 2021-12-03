@@ -5,6 +5,6 @@ export interface Evento
     endTime:string,
     location:string,
     eventName:string,
-    eventdescription:string,
+    eventDescription:string,
 
 }

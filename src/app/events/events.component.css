@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap');
+body
+{
+  background: #222;
+  background-image: url("../../assets/images/pikachu.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+/*
+section
+{
+
+  height: 100vh;
+  width: 100vw;
+  background: url(../../assets/images/pikachu.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+} */
+
+section .left-box
+{
+  width: 50%;
+  height: 150%;
+  float: left;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+section .left-box .content
+{
+  color: #fff;
+  background: rgba(0,0,0,.5);
+  border-radius: 50% 20% / 10% 40%;
+  padding: 40px;
+  transition: .5s;
+}
+
+section .left-box .content:hover
+{
+  background: #e91e63;
+}
+
+section .left-box .content h1
+{
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+  text-transform: uppercase;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+section .left-box .content p
+{
+  margin: 10px 0;
+  padding: 0;
+}
+
+/* table-right */
+
+
+section .events
+{
+  position: relative;
+  width: 50%;
+  height: 50%;
+  margin-top: 25px;
+  /* background: rgba(0,0,0,.5); */
+  float: right;
+  box-sizing: content-box;
+
+}
+
+section .events ul
+{
+
+  margin: 0;
+  padding: 40px;
+
+}
+
+section .events ul li
+{
+  list-style: none;
+  background: whitesmoke;
+  box-sizing: content-box;
+  height: 200px;
+  margin: 15px 0;
+}
+
+section .events ul li .time
+{
+  position: relative;
+  padding: 20px;
+  background: #262626;
+  box-sizing: border-box;
+  width: 30%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  transition: .5s;
+}
+
+section .events ul li:hover .time
+{
+  background: #e91e63;
+}
+
+section .events ul li .time h2
+{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: whitesmoke;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+section .events ul li .time h2 span
+{
+  font-size: 30px;
+}
+
+section .events ul li .details
+{
+  padding: 20px;
+  background: whitesmoke;
+  box-sizing: border-box;
+  width: 70%;
+  height: 100%;
+  float: left;
+}
+
+section .events ul li .details h3
+{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+}
+
+section .events ul li .details p
+{
+  position: relative;
+  margin: 10px 0 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+section .events ul li .details a
+{
+  display: inline-block;
+  text-decoration: tomato;
+  text-transform: uppercase;
+  padding: 2px 15px;
+  border: 2px solid #262626;
+  border-radius: 10% / 50%;
+  margin-top: 15px;
+}
+
+section .events ul li .details a:hover
+{
+  background: #e91e63;
+  color: whitesmoke;
+  border-color: #e91e63;
+}
+
+

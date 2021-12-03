@@ -1,2 +1,27 @@
-<p>events works!</p>
+<body>
+  <section>
+      <div class="left-box">
+        <div class="content">
+          <h1>Events in Japan</h1>
+          <p>Japan have been praised and pleased through traditional Japanese “matsuri” festivals.
+             Filled with dancing, music, costumes, food, and more, each matsuri festival boasts its own fascinating history and unique charm. </p>
+        </div>
+      </div>
+      <div class="events">
+        <ul>
+          <li *ngFor="let i of listOfEvents">
+            <div class="time">
+              <h2>{{i.startTime}}<br><span></span></h2>
+            </div>
+            <div class="details">
+              <h3>{{i.eventName}}</h3>
+              <p>{{i.eventDescription}}</p>
+              <p>Start: {{i.startTime}}<br>End: {{i.endTime}}</p>
+            </div>
+            <div style="clear: both;"></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+</body>
 

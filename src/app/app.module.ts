@@ -23,6 +23,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { JapanComponent } from './japan/japan.component';
 import { ForumComponent } from './forum/forum.component';
+import { ForecastComponent } from './forecast/forecast.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ForumComponent } from './forum/forum.component';
     FooterComponent,
     JapanComponent,
     ForumComponent,
+    ForecastComponent,
 
   ],
 
