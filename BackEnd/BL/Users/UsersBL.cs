@@ -59,12 +59,13 @@ namespace BL
 
         public User GetUserByEmail(string p_email)
         {
+            try{
             List<User> listOfUsers = _repo.GetAllUsers();
-
-
             List<User> Found = (listOfUsers.Where(usr => usr.Email.Equals(p_email))).ToList();
-
             return Found[0];
+            }
+            catch(Exception)
+            {return new User();}
         }
     }
 }

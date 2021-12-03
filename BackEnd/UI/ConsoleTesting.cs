@@ -49,5 +49,10 @@ namespace UI
         {
             return _userBL.DeleteUser(p_user_Id);
         }
+
+        public User TestGetByEmail(string p_email)
+        {
+            return _userBL.GetUserByEmail(p_email);
+        }
     }
 }
