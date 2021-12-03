@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '@auth0/auth0-angular';
 import { Users } from '../models/Users';
 import { RevAPIService } from '../services/rev-api.service';
 
@@ -13,47 +14,32 @@ import { RevAPIService } from '../services/rev-api.service';
 
 export class UserProfileComponent implements OnInit {
 
-  @Input()
-  userId:number = 0;
-
-  @Input()
-  show:boolean = true;
-
- 
-  listOfUserProfile:Users[]=[];
-  
-
-  constructor(private revApi: RevAPIService, private router: Router) { }
-
-
-
-
- 
-
- 
- 
+  current:Users={id:"",
+    userName:"",
+    userPass:"",
+    email:"",
+    nameOfUser:"",
+    forums:"",
+    invites:"",
+    posts:"",
+    replies:""};
+    retrieved:any
+  constructor(private revApi: RevAPIService, private router: Router,public auth0:AuthService) {
+    this.auth0.user$.subscribe((Response) => {
+      this.retrieved = Response?.name;
+    });
+   }
 
   ngOnInit(): void {
+    this.revApi.CurrentUser(this.retrieved).subscribe((response) => {
+      console.log(response);
+      this.current=response;
+      
+
+      //It will set the show property to false to each element and also add it to our listOfUser
+     
+    });
+  
   }
 
 }
-// export class UserProfileComponent implements OnInit {
-
-//   constructor(revApi:RevAPIService) { }
-
-//   GetUserById() {
-//     this.revApi.Users().subscribe((response) => {
-//       console.log(response);
-//       response.forEach(element => {
-        
-//         this.SingleUser.push(element);
-//       });
-//     });
-      
-//   }
-
-//   ngOnInit(): void {
-//   }
-  
-
-// }

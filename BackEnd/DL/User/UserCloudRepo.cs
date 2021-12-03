@@ -30,6 +30,49 @@ namespace DL
             return p_Users;
         }
 
+        public Model.User AddUserFromAuth0(string p_email)
+        {
+            List<Model.User> ListOfUsers = GetAllUsers();
+            var rand = new Random();
+            string[] randNum = {"0","1","2","3","4","5","6","7","8","9"};
+            string Name = "User";
+            bool run = true;
+            int count=0;
+            while (run)
+            {
+                for (int i = 0; i <= 3; i++)
+                    Name += randNum [rand.Next(randNum.Length)];
+
+                foreach (Model.User item in ListOfUsers)
+                {
+                    if(Name == item.UserName)
+                    {count++; }
+                    //if the userName that will be made is unique stop the loop
+                    if(count == 0)
+                    {run = false; }
+                } 
+            } 
+            
+            _context.Users.Add
+            (
+                new Entity.User()
+                {
+                    UserName = Name,
+                    UserPass = "Password123!",
+                    Email = p_email,
+                    NameOfUser = "newUser"
+                }
+            );
+            _context.SaveChanges();
+            return new Model.User()
+            {
+                UserName = Name,
+                UserPass = "Password123!",
+                Email = p_email,
+                NameOfUser = "newUser"
+            };
+        }
+
         public List<Model.User> GetAllUsers()
         {
             return _context.Users.Select(user =>

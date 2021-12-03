@@ -19,6 +19,11 @@ namespace BL
             return _repo.AddUser(p_user);
         }
 
+        public User AddUserFromAuth0(string p_email)
+        {
+            return _repo.AddUserFromAuth0(p_email);
+        }
+
         public List<User> GetAllUsers()
         {
             return _repo.GetAllUsers();
@@ -54,12 +59,13 @@ namespace BL
 
         public User GetUserByEmail(string p_email)
         {
+            try{
             List<User> listOfUsers = _repo.GetAllUsers();
-
-
             List<User> Found = (listOfUsers.Where(usr => usr.Email.Equals(p_email))).ToList();
-
             return Found[0];
+            }
+            catch(Exception)
+            {return new User();}
         }
     }
 }

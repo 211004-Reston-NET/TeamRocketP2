@@ -38,19 +38,17 @@ namespace P2WebApi.Controllers
         [HttpGet("Verify{email}")]
         public IActionResult VerifyUser(string email)
         {
-            User user= new User();
-            try{
-                user=_userBL.GetUserByEmail(email);
-            }
-            catch(Exception)
-            {
-                user.UserName = "User255";
-                user.UserPass = "pasword";
-                user.Email = email;
-                user.NameOfUser = "newUser";
-                _userBL.AddUser(user);
-            }
+            User user = _userBL.GetUserByEmail(email);
+            if(user.Email != email)
+                {return Ok(_userBL.AddUserFromAuth0(email));}
+        
             return Ok(user);
+        }
+
+        [HttpGet("ByEmail{email}")]
+        public IActionResult UserByEmail(string email)
+        {
+            return Ok(_userBL.GetUserByEmail(email)); 
         }
 
         // POST api/<UserController>
