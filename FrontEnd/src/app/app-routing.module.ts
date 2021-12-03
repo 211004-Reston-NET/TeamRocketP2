@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
 
@@ -22,7 +23,9 @@ const routes: Routes = [
   { path: 'japan', component: JapanComponent},
   { path: 'forum', component: ForumComponent},
   { path: 'Authlogin', component: AuthLoginComponent},
-  { path: '**', component: LandingComponent}
+  { path: 'user',  component: UserProfileComponent},
+  { path: '**', component: LandingComponent},  
+  
 
 
 ];

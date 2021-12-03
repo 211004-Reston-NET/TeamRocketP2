@@ -22,7 +22,9 @@ import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { ForumComponent } from './forum/forum.component';
 import { FooterComponent } from './footer/footer.component';
 import { JapanComponent } from './japan/japan.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ForumComponent,
     FooterComponent,
     JapanComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserProfileComponent
   ],
 
   imports: [

@@ -7,6 +7,7 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
   
   name:string | undefined = ""
   constructor(public auth0:AuthService) {
@@ -14,6 +15,7 @@ export class NavbarComponent implements OnInit {
       this.name = Response?.name;
     });
    }
+
 
   ngOnInit(): void {
   }

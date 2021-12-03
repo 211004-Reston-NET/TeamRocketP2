@@ -91,6 +91,8 @@ namespace ApiTest
                 {
                     StartTime = "10:30",
                     EndTime = "11:30",
+                    StartDate = "11/10/2021",
+                    EndDate = "11/11/2021",
                     Location = "Tokyo",
                     EventName = "We Love Japan",
                     EventDescription = "Japan fun"
@@ -124,6 +126,8 @@ namespace ApiTest
                    {
                        StartTime = "11:30",
                        EndTime = "12:30",
+                       StartDate = "11/12/2021",
+                        EndDate = "11/12/2021",
                        Location = "Tokyoooo",
                        EventName = "We Love Japanese",
                        EventDescription = "Japan funnnnn"
@@ -132,6 +136,8 @@ namespace ApiTest
                    {
                        StartTime = "9:30",
                        EndTime = "10:30",
+                       StartDate = "11/10/2021",
+                       EndDate = "11/11/2021",
                        Location = "kyoooo",
                        EventName = "We Japanese",
                        EventDescription = "funnnnn"

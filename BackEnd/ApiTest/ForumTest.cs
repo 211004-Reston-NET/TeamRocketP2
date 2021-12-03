@@ -35,7 +35,7 @@ namespace ApiTest
 
                 //Assert -- expected outcome of Act
                 Assert.Equal(2, test.Count);
-                Assert.Equal("Topic Name", test[0].TopicName);
+                Assert.Equal("Topic Names", test[0].TopicName);
             }
 
         }
