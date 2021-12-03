@@ -48,7 +48,7 @@ namespace P2WebApi.Controllers
         [HttpGet("ByEmail{email}")]
         public IActionResult UserByEmail(string email)
         {
-            return Ok(_userBL.AddUserFromAuth0(email)); 
+            return Ok(_userBL.GetUserByEmail(email)); 
         }
 
         // POST api/<UserController>
