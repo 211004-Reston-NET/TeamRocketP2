@@ -18,6 +18,13 @@ namespace DL
         User AddUser(User _Users);
 
         /// <summary>
+        /// add user if not in Db when loged in with auth0
+        /// </summary>
+        /// <param name="_email"></param>
+        /// <returns></returns>
+        User AddUserFromAuth0(string _email);
+
+        /// <summary>
         /// removes the passed user from the DB
         /// </summary>
         /// <param name="p_user"></param>
