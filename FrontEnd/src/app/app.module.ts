@@ -24,6 +24,8 @@ import { FooterComponent } from './footer/footer.component';
 import { JapanComponent } from './japan/japan.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -46,9 +48,11 @@ import { NavbarComponent } from './navbar/navbar.component';
     AuthModule.forRoot({
       clientId:"YhFU5C8gk9d3y3SIVeRw8rGgmrFr6zLg",
       domain:"dev-i74lopba.us.auth0.com"
+     
     }),
     
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     MatCardModule,

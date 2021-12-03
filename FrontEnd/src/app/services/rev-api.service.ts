@@ -33,10 +33,17 @@ private endpoint5b:string="https://google-news1.p.rapidapi.com/top-headlines?cou
     return this.http.get<Restaurant[]>(this.endpoint + "/Restaurant/All");
   }
 
+  
+
   //This will give me a list of reviews based on the restId
   getReviewByRestId(p_id:number) : Observable<any>
   {
     return this.http.get<any>(this.endpoint + "/Review/" + p_id);
+  }
+
+  GetUserById(p_id:number) : Observable<any>
+  {
+    return this.http.get<any>(this.endpoint + "/User/" + p_id);
   }
 
   translate(p_text:string): Observable<any>
@@ -115,9 +122,9 @@ private endpoint5b:string="https://google-news1.p.rapidapi.com/top-headlines?cou
   {
     return this.http.get<Users[]>("https://teamrocketapi.azurewebsites.net/api/user/all");
   }
-  findOne(id:number):Observable<Users[]>
+  Userid():Observable<Users[]>
   {
-    return this.http.get<Users[]>("https://teamrocketapi.azurewebsites.net/api/user/"+id);
+    return this.http.get<Users[]>("https://teamrocketapi.azurewebsites.net/api/user/id");
   }
 
   Event():Observable<Evento[]>
