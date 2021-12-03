@@ -19,6 +19,11 @@ namespace BL
             return _repo.AddUser(p_user);
         }
 
+        public User AddUserFromAuth0(string p_email)
+        {
+            return _repo.AddUserFromAuth0(p_email);
+        }
+
         public List<User> GetAllUsers()
         {
             return _repo.GetAllUsers();

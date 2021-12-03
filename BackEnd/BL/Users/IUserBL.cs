@@ -19,6 +19,13 @@ namespace BL
         User AddUser(User _Users);
 
         /// <summary>
+        /// add user if not in Db when loged in with auth0
+        /// </summary>
+        /// <param name="_email"></param>
+        /// <returns></returns>
+        User AddUserFromAuth0(string _email);
+
+        /// <summary>
         /// return a list of users with names matching the passed string
         /// </summary>
         /// <param name="_name"></param>

@@ -39,17 +39,10 @@ namespace P2WebApi.Controllers
         public IActionResult VerifyUser(string email)
         {
             User user= new User();
-            try{
-                user=_userBL.GetUserByEmail(email);
-            }
-            catch(Exception)
-            {
-                user.UserName = "User255";
-                user.UserPass = "pasword";
-                user.Email = email;
-                user.NameOfUser = "newUser";
-                _userBL.AddUser(user);
-            }
+            user = _userBL.GetUserByEmail(email);
+            if(user.Email != email)
+                user=_userBL.AddUserFromAuth0(email);
+        
             return Ok(user);
         }
 
