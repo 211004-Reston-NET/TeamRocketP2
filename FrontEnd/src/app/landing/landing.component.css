@@ -1,35 +1,68 @@
-.landing img
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+#video
 {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .landingcontent
 {
+    max-width: 650px;
+    margin: 60px 100px;
     position: absolute;
     top: 50%;
-    left: 14%;
-    transform: translate(-50%,-50%);
+    left: 50%;
 }
 
-.landingcontent h1
+.landingcontent h2
 {
-  color: teal;
-  font-size: 40px;
-  font-weight: bold;
+  color: whitesmoke;
+  font-size: 55px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 50%;
+  margin-bottom: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.landingcontent h2 span
+{
+  color: mediumturquoise;
+  letter-spacing: 2px;
+  line-height: 50%;
+  font-size: 50px;
+  font-weight: 600;
 }
 
 .landingcontent a
 {
     margin-top: 10px;
 }
+
+.landingcontent .info-btn
+{
+  color: whitesmoke;
+  background: teal;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: 0.3s;
+  transition-property: background;
+}
+
+.landingcontent .info-btn:hover
+{
+  background: #0C4F60;
+}
+
+
+
+

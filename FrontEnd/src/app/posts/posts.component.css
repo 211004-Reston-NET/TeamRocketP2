@@ -1,0 +1,80 @@
+body
+{
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.container
+{
+   margin: 20px;
+   padding: 20px;
+
+}
+
+.table-head
+{
+  display: flex;
+}
+
+.table-head div
+{
+  padding: 5px;
+  margin: 2px;
+  background-color: #e91e63;
+  color: whitesmoke;
+
+}
+
+.table-head .status
+{
+  flex: 5%;
+}
+
+.table-head .subjects
+{
+  flex: 30%;
+}
+
+.table-head .replies
+{
+  flex: 5%;
+}
+
+.table-head .posted
+{
+  flex: 15%;
+}
+
+.table-row
+{
+  display: flex;
+}
+
+.table-row .status, .table-row .subjects, .table-row .replies, .table-row .posted
+{
+  padding: 5px;
+  margin: 2px;
+
+}
+
+.table-row .status
+{
+  flex: 5%;
+  font-size: 22px;
+  text-align: center;
+}
+
+.table-row .subjects
+{
+  flex: 30%;
+}
+
+.table-row .replies
+{
+  flex: 30%;
+}
+
+.table-row .posted
+{
+  flex: 15%;
+}

@@ -1,9 +1,12 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Evento } from '../models/Event';
+import { ForumPosts } from '../models/ForumPosts';
+import { Forums } from '../models/Forums';
 import { News } from '../models/news';
+import { Replies } from '../models/Replies';
 import { Users } from '../models/Users';
+import { Evento } from '../models/Event';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +21,9 @@ private endpoint4b:string="https://community-open-weather-map.p.rapidapi.com/for
 private endpoint5:string="https://google-news.p.rapidapi.com/v1/geo_headlines?lang=en&geo=Japan";
 private endpoint5b:string="https://google-news1.p.rapidapi.com/top-headlines?country=Japan&lang=ja&limit=50";
 private endpointEmail:string="https://teamrocketapi.azurewebsites.net/api/user/ByEmail";
+private AddForumpoint:string="https://teamrocketapi.azurewebsites.net/api/Forum/Add";
+private AddPostpoint:string="https://teamrocketapi.azurewebsites.net/api/Post/Add";
+private AddReplypoint:string="https://teamrocketapi.azurewebsites.net/api/Reply/Add";
 
   constructor(private http:HttpClient) {
    }
@@ -119,6 +125,45 @@ private endpointEmail:string="https://teamrocketapi.azurewebsites.net/api/user/B
   CurrentUser(p_item:Users):Observable<Users>
   {
     return this.http.get<Users>(this.endpointEmail+p_item);
+  }
+  AddForum(p_item:Forums)
+  {
+    return this.http.post<Forums>(this.AddForumpoint,p_item);
+  }
+
+  AddPost(p_item:ForumPosts):Observable<ForumPosts>
+  {
+    return this.http.post<ForumPosts>(this.AddPostpoint,p_item);
+  }
+
+AddReply(p_item:Replies):Observable<Replies>
+  {
+    return this.http.post<Replies>(this.AddReplypoint,p_item);
+  }
+  Forums():Observable<Forums[]>
+  {
+    return this.http.get<Forums[]>("https://teamrocketapi.azurewebsites.net/api/forum/all");
+
+  }
+Posts():Observable<ForumPosts[]>
+  {
+    return this.http.get<ForumPosts[]>("https://teamrocketapi.azurewebsites.net//api/Post/ByForum1");
+
+  }
+PostsbyId(p_text:any):Observable<ForumPosts[]>
+  {
+    return this.http.get<ForumPosts[]>("https://teamrocketapi.azurewebsites.net//api/Post/ByForum"+p_text);
+  }
+
+Reply():Observable<Replies[]>
+  {
+    return this.http.get<Replies[]>("https://teamrocketapi.azurewebsites.net//api/Reply/ByPost1");
+  }
+
+ReplybyId(p_text:any):Observable<Replies[]>
+  {
+    console.log(p_text);
+    return this.http.get<Replies[]>("https://teamrocketapi.azurewebsites.net//api/Reply/ByPost"+p_text);
   }
   
 

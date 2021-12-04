@@ -28,13 +28,13 @@ export class NewsComponent implements OnInit
       {
         let n: News =
         {
-          published: response.articles[i].published_date,
+          published: response.articles[i].published,
           title: response.articles[i].title,
           link: response.articles[i].link
         };
         this.listOfNewsArticles.push(n)
       }
-      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,5);
+      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,8);
     });
     console.log(this.listOfNewsArticles);
   }
@@ -55,7 +55,7 @@ export class NewsComponent implements OnInit
         };
         this.listOfNewsArticles.push(test)
       }
-      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,5);
+      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,8);
     });
     console.log(this.listOfNewsArticles);
   }

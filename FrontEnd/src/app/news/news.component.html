@@ -1,15 +1,38 @@
 <body class="news">
-  <button type="button" class="btn btn-dark btn-sm mt-2" (click)="JapaneseNews()">News in Japan</button>
+
   <div class="container mt-5">
-    <h4>Top News</h4>
-    <div class="row">
-      <div *ngFor="let i of listOfNewsArticles" class="col-lg-3">
-        <div class="box">
-          <h5 class="mt-2 mb-2">{{i.title}}</h5>
-          <p>Published: {{i.published|date : 'EEEE, MMMM d, h:mm:ss'}}</p>
-          <a href="{{i.link}}" class="btn btn-dark btn-sm mt-2">Read More</a>
-        </div>
+
+    <div class="left-box">
+
+      <div class="content">
+
+        <h1>Top News</h1>
+
       </div>
+
+      <button type="button" class="btn btn-dark btn-sm mt-2" > Japan Local News </button>
+
     </div>
+
+    <div class="row">
+
+      <div *ngFor="let i of listOfNewsArticles" class="col-lg-3">
+
+        <div class="box">
+
+          <h5 class="mt-2 mb-2">{{i.title}}</h5>
+
+          <p>Published: {{i.published|date : 'EEEE, MMMM d, h:mm:ss'}}</p>
+
+          <a href="{{i.link}}" class="btn btn-dark btn-sm mt-2">Read More</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
+
 </body>
+
