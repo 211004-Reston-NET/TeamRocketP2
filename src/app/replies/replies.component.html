@@ -2,6 +2,12 @@
 
   <div class="container">
 
+    <div *ngIf="replyshow">
+
+      <p><app-create-reply [postIdentification] = "postIdent" [showbutton]="show2" [forumIdentification] = "forumIdent" ></app-create-reply></p>
+
+    </div>
+
     <div class="subforum" *ngFor="let f of listOfReplies">
 
       <div class="subforum-title">
@@ -19,20 +25,6 @@
         <div class="subforum-description subforum-column">
 
           <h1>{{f.replyText}}</h1>
-
-          <details>
-
-            <summary type ="button" class="btn btn-dark btn-sm">Reply</summary>
-
-            <div *ngIf="replyshow">
-
-              <br>
-
-              <p><app-create-reply [postIdentification] = "postIdent" [showbutton]="show2" [forumIdentification] = "forumIdent" ></app-create-reply></p>
-
-            </div>
-
-          </details>
 
         </div>
 

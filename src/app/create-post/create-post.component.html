@@ -1,34 +1,41 @@
-<details>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="showForm()">
+  Add Post
+</button>
 
-  <summary type="button" class="btn btn-dark btn-sm" (click)="showForm()">Add Post</summary>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-  <div class="details-content"  *ngIf="showAddPost">
+  <div class="modal-dialog modal-dialog-centered">
 
-    <br>
+    <div class="modal-content" *ngIf="showAddPost">
 
-    <form class="example-form" [formGroup] = "restGroup">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel">New Post</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
 
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Date</mat-label>
-        <input matInput formControlName = "date" placeholder="" value="">
-      </mat-form-field>
+      <div class="modal-body">
 
-    </form>
+        <form class="example-form" [formGroup] = "restGroup">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Date</mat-label>
+            <input matInput formControlName = "date" placeholder="" value="">
+          </mat-form-field>
+        </form>
 
-    <form class="example-form" [formGroup] = "restGroup">
+        <form class="example-form" [formGroup] = "restGroup">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Leave a comment</mat-label>
+            <textarea matInput formControlName = "textfield" placeholder="Ex. It makes me feel..."></textarea>
+          </mat-form-field>
+        </form>
 
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Leave a comment</mat-label>
-        <textarea matInput formControlName = "textfield" placeholder="Ex. It makes me feel..."></textarea>
-      </mat-form-field>
-
-    </form>
-
-    <button class="btn btn-dark btn-sm" type="button" (click)="createPost(restGroup)">Submit</button>
-
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-dark" type="button" (click)="createPost(restGroup)">Submit</button>
+      </div>
+    </div>
   </div>
-
-</details>
-
-
-
+</div>

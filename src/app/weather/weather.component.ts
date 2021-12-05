@@ -55,9 +55,9 @@ export class WeatherComponent implements OnInit {
       // console.log(pokemon2);
       for (var i in response.list) {
         let test: Weather = {
-          temp: response.list[i].main.temp+" °F",
-          minimum: response.list[i].main.temp_min+" °F",
-          maximum: response.list[i].main.temp_max+" °F",
+          temp: response.list[i].main.temp+"°",
+          minimum: response.list[i].main.temp_min+"°",
+          maximum: response.list[i].main.temp_max+"°",
           date:response.list[i].dt_txt
 
         };

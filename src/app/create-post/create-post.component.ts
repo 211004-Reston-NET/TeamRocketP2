@@ -11,7 +11,7 @@ import { ForumPosts } from '../models/ForumPosts';
   styleUrls: ['./create-post.component.css']
 })
 
-export class CreatePostComponent implements OnInit 
+export class CreatePostComponent implements OnInit
 {
 
     restGroup:FormGroup = new FormGroup({
@@ -23,17 +23,17 @@ export class CreatePostComponent implements OnInit
   restId:number = 0;
   @Input()
   showbutton:boolean = false;
-  
+
     constructor(private p_Service:RevAPIService, private router: Router) { }
-  
-    ngOnInit(): void 
+
+    ngOnInit(): void
     {
     }
 
     showForm()
     {
       this.showAddPost=!this.showAddPost
-  
+
     }
 
     createPost(restGroup: FormGroup)
@@ -47,13 +47,13 @@ export class CreatePostComponent implements OnInit
           forumId:this.restId,
           show:false
         };
-    
+
         console.log(restaurant);
-    
+
         this.p_Service.AddPost(restaurant).subscribe(
           (response) => {
             console.log(response);
-            this.router.navigateByUrl("/events");
+            this.router.navigateByUrl("/forum");
           }
         )
       }

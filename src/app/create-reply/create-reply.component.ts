@@ -53,7 +53,7 @@ export class CreateReplyComponent implements OnInit {
       (
         (response) => {
           console.log(response);
-          this.router.navigateByUrl("/events");
+          this.router.navigateByUrl("/forum");
         }
       )
     }

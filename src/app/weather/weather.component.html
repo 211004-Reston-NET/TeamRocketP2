@@ -12,11 +12,15 @@
 
     </div>
 
+    <br>
+
     <div class="weather loading">
 
-      <h2 class="city">Weather in {{city}}</h2>
+      <div class="city">Weather in {{city}}</div>
 
-      <h1 class="temp">{{Temp}}</h1>
+      <img src="" alt="" class="icon" />
+
+      <div class="temp">{{Temp}}</div>
 
       <img src="" alt="" class="icon" />
 
@@ -31,3 +35,30 @@
   </div>
 
 </body>
+
+<!-- <body>
+    <div class="container">
+      <div class="card">
+        <div class="weather loading">
+        <h1>Toyko</h1>
+        <h1 class="temp">{{Temp}}</h1>
+        <h3>
+          <span class="min-temp">25&deg;</span>
+        </h3>
+        <h2>
+          <span class="humidity">2%</span>
+        </h2>
+        <h4>
+          <span class="humidity"></span>
+        </h4>
+      </div>
+      </div>
+
+    </div>
+  </body>
+
+
+
+<input type="text" [(ngModel)]="weatherText" class="search-bar" placeholder="Search by city">
+<button type="button" (click)="Weather(weatherText);Forecast(weatherText)">
+<i class="fa fa-search" aria-hidden="true"></i></button> -->
