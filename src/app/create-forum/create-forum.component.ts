@@ -52,7 +52,7 @@ createForum(restGroup: FormGroup)
       this.p_Service.AddForum(restaurant).subscribe(
         (response) => {
           console.log(response);
-          this.router.navigateByUrl("/events");
+          this.router.navigateByUrl("/forum");
         }
       )
     }

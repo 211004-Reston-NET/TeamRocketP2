@@ -8,20 +8,8 @@ body
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
-/*
-section
-{
-
-  height: 100vh;
-  width: 100vw;
-  background: url(../../assets/images/pikachu.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-} */
 
 section .left-box
 {
@@ -180,5 +168,13 @@ section .events ul li .details a:hover
   color: whitesmoke;
   border-color: #e91e63;
 }
+
+section .events ul li .details .btn:hover
+{
+  background: #e91e63;
+  color: whitesmoke;
+  border-color: #e91e63;
+}
+
 
 

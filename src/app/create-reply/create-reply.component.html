@@ -1,15 +1,31 @@
-<p>create-reply works!</p>
-<div *ngIf="showbutton">
-  <button type="button" (click)="showForm()">add reply</button>
-</div>
+<details>
 
-<div *ngIf="showAddReply">
-<form [formGroup] = "restGroup">
-  <input type="text" formControlName = "textfield">
-  <h2>date</h2>
-  <input type="text" formControlName = "date">
+  <summary type="button" class="btn btn-dark btn-sm" type="button" (click)="showForm()">Add reply</summary>
 
-  <br>
-  <button class="btn btn-primary" (click)="createReply(restGroup)">Submit</button>
-</form>
-</div>
+  <div class="details-content" *ngIf="showAddReply">
+
+    <br>
+
+    <form class="example-form" [formGroup] = "restGroup">
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Date</mat-label>
+        <input matInput formControlName = "date" placeholder="" value="">
+      </mat-form-field>
+
+    </form>
+
+    <form class="example-form" [formGroup] = "restGroup">
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Leave a reply</mat-label>
+        <textarea matInput formControlName = "textfield" placeholder="Ex. It makes me feel..."></textarea>
+      </mat-form-field>
+
+    </form>
+
+    <button class="btn btn-dark btn-sm" type="button" (click)="createReply(restGroup)">Submit</button>
+
+  </div>
+
+</details>

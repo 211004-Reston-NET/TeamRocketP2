@@ -1,0 +1,67 @@
+.info-btn1
+{
+  color: whitesmoke;
+  background: #e91e63;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: 0.3s;
+  transition-property: background;
+}
+
+.info-btn2
+{
+  color: whitesmoke;
+  background: darkgray;
+  text-decoration: none;
+  font-weight: 200;
+  letter-spacing: 2px;
+  padding: 2px 2px;
+  border-radius: 5px;
+  transition: 0.3s;
+  transition-property: background;
+}
+
+.info-btn3
+{
+  color: whitesmoke;
+  background: #e91e63;
+  text-decoration: none;
+  font-weight: 200;
+  letter-spacing: 2px;
+  padding: 2px 2px;
+  border-radius: 5px;
+  transition: 0.3s;
+  transition-property: background;
+}
+
+.info-btn1:hover
+{
+  background: #0C4F60;
+}
+
+
+.info-btn2:hover
+{
+
+  background: #0C4F60;
+
+}
+
+.info-btn3:hover
+{
+
+  background: #0C4F60;
+
+}
+
+.img
+{
+  float: right;
+  justify-content: right;
+  width: 20%;
+  height: 20px;
+  size-adjust: 20px;
+}

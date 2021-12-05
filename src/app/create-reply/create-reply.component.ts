@@ -24,7 +24,6 @@ export class CreateReplyComponent implements OnInit {
   @Input()
   forumIdentification:number = 0;
 
-
   constructor(private p_Service:RevAPIService, private router: Router) { }
 
   ngOnInit(): void {

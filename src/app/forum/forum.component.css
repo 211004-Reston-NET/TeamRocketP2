@@ -1,7 +1,12 @@
 body
 {
-  box-sizing: border-box;
-  background: rgb(34, 34, 34);
+  background-image: url("../../assets/images/anime-g20791a911_1920.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
 }
 
 h1
@@ -13,15 +18,16 @@ h1
 
 a
 {
-  color: whitesmoke;
+  color: #e91e63;;
   font-weight: bolder;
   text-decoration: none;
 }
 
 .container
 {
-   margin: 20px;
-   padding: 20px;
+  background: cover;
+   margin: 0px;
+   padding: 10px;
 
 }
 
@@ -30,13 +36,13 @@ a
   margin-top: 20px;
 }
 
-.subforum-title
+/* .subforum-title
 {
   background-color: lightgray;
   padding: 5px;
   border-radius: 5px;
   margin: 4px;
-}
+} */
 
 .subforum-row
 {

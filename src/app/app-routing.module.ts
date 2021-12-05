@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'forum', component: ForumComponent},
   { path: 'posts',component: PostsComponent},
   { path: 'replies',component: RepliesComponent},
-  { path: '**', component: LandingComponent}
+  { path: '**', component: EventsComponent}
 
 ];
 

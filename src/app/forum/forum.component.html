@@ -1,34 +1,68 @@
-<body>
+ <body>
+
   <div class="container">
+
+    <app-create-forum></app-create-forum>
+
     <div class="subforum" *ngFor="let f of listOfForums">
+
       <div class="subforum-title">
+
         <h1></h1>
+
       </div>
+
       <div class="subforum-row">
+
         <div class="subforum-icon subforum-column center">
+
           <i class="fa fas fa-book"></i>
+
         </div>
+
         <div class="subforum-description subforum-column">
+
           <h1>{{f.topicName}}</h1>
+
           <details>
-            <summary type ="button" class="btn btn-dark btn-sm" (click) = "getPostsbyForumId(f.forumId,f.show)">See Posts</summary>
+
+            <summary type ="button" class="btn btn-dark btn-sm" (click) = "getPostsbyForumId(f.forumId,f.show)">Posts</summary>
+
             <div class="details-content">
+
               <p><app-posts [show]="show" [forumId] = "result" [replyshow]="replyshow"></app-posts></p>
+
             </div>
+
           </details>
+
         </div>
+
         <div class="subforum-stats subforum-column center">
+
           <span>{{f.amountOfPosts}} Posts </span>
+
         </div>
+
         <div class="subform-info subforum-column">
-          <b>Last Post</b> by <a href="">User</a>
+
+          <b>Last Post</b> by <a href=""> User: {{f.creatorId}}</a>
+
           <br>
+
           <small>{{f.dateCreated|date : 'EEEE, MMMM d yyyy'}}</small>
+
         </div>
+
         <div style="clear: both;"></div>
+
       </div>
+
     </div>
+
+
   </div>
+
 </body>
 
 

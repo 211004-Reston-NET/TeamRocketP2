@@ -28,7 +28,7 @@ export class NewsComponent implements OnInit
       {
         let n: News =
         {
-          published: response.articles[i].published_date,
+          published: response.articles[i].published,
           title: response.articles[i].title,
           link: response.articles[i].link
         };
@@ -49,7 +49,7 @@ export class NewsComponent implements OnInit
       {
         let test: News =
         {
-          published: response.articles[i].published,
+          published: response.articles[i].published_date,
           title: response.articles[i].title,
           link: response.articles[i].link
         };

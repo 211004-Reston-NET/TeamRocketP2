@@ -1,5 +1,7 @@
 .footer
 {
   text-align: center;
+  height: auto;
+  bottom: 100%;
 }
 

@@ -1,8 +1,21 @@
 body
 {
 
-  box-sizing: content-box;
+  background: transparent;
+}
 
+h1
+{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+a
+{
+  color: #e91e63;
+  font-weight: bolder;
+  text-decoration: none;
 }
 
 .container
@@ -12,86 +25,49 @@ body
 
 }
 
-.posts-table
-
+.subforum
 {
-  display: center;
   margin-top: 20px;
 }
 
-.table-head
+.subforum-title
 {
-  display: flex;
+  background-color: lightgray;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 4px;
 }
 
-.table-head div
+.subforum-row
 {
-  padding: 5px;
-  margin: 2px;
+  display: grid;
+  grid-template-columns: 7% 60% 13% 20%;
+
+}
+
+.subforum-column
+{
+  padding: 10px;
+  margin: 4px;
+  border-radius: 5px;
   background-color: rgb(179, 179, 179);
+
 }
 
-.table-head .status
+.subforum-column h1 p
 {
-  flex: 5%;
+  float: right;
+
 }
 
-.table-head .subjects
-{
-  flex: 50%;
-}
-
-.table-head .replies
-{
-  flex: 10%;
-}
-
-.table-head .last-reply
-{
-  flex: 15%;
-}
-
-.table-row
+.center
 {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.table-row .status, .table-row .subjects, .table-row .replies, .table-row .last-reply
+.subforum-icon i
 {
-  padding: 5px;
-  margin: 2px;
-
-}
-
-.table-row .status
-{
-  flex: 5%;
-  font-size: 30px;
-  text-align: center;
-}
-
-.table-row .status i
-{
-  font-size: 30px;
-  text-align: left;
-}
-
-.table-row .subjects
-{
-  flex: 70%;
-}
-
-.table-row .replies
-{
-  flex: 10%;
-}
-
-.table-row .last-reply
-{
-  flex: 15%;
-}
-
-.table-row .last-reply a
-{
-  display: center;
+  font-size: 45px;
 }
