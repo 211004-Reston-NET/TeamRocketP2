@@ -1,0 +1,97 @@
+body
+{
+
+  box-sizing: content-box;
+
+}
+
+.container
+{
+   margin: 20px;
+   padding: 20px;
+
+}
+
+.posts-table
+
+{
+  display: center;
+  margin-top: 20px;
+}
+
+.table-head
+{
+  display: flex;
+}
+
+.table-head div
+{
+  padding: 5px;
+  margin: 2px;
+  background-color: rgb(179, 179, 179);
+}
+
+.table-head .status
+{
+  flex: 5%;
+}
+
+.table-head .subjects
+{
+  flex: 50%;
+}
+
+.table-head .replies
+{
+  flex: 10%;
+}
+
+.table-head .last-reply
+{
+  flex: 15%;
+}
+
+.table-row
+{
+  display: flex;
+}
+
+.table-row .status, .table-row .subjects, .table-row .replies, .table-row .last-reply
+{
+  padding: 5px;
+  margin: 2px;
+
+}
+
+.table-row .status
+{
+  flex: 5%;
+  font-size: 30px;
+  text-align: center;
+}
+
+.table-row .status i
+{
+  font-size: 30px;
+  text-align: left;
+}
+
+.table-row .subjects
+{
+  flex: 70%;
+}
+
+.table-row .replies
+{
+  flex: 10%;
+}
+
+.table-row .last-reply
+{
+  flex: 15%;
+}
+
+.table-row .last-reply a
+{
+  display: center;
+}

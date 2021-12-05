@@ -1,38 +1,33 @@
 <body>
+
   <div class="card">
+
     <div class="search">
+
       <input type="text" [(ngModel)]="weatherText" class="search-bar" placeholder="Search by city">
+
       <button type="button" (click)="Weather(weatherText);Forecast(weatherText)">
+
         <i class="fa fa-search" aria-hidden="true"></i></button>
+
     </div>
+
     <div class="weather loading">
+
       <h2 class="city">Weather in {{city}}</h2>
-      <h1 class="temp">{{weatherTemp}}</h1>
+
+      <h1 class="temp">{{Temp}}</h1>
+
       <img src="" alt="" class="icon" />
-      <div class="description">{{weatherDescription}}</div>
-      <div class="humidity">Humidity: {{weatherHumidity}}</div>
-      <div class="wind">Wind Speed: {{weatherWind}}</div>
-      </div>
+
+      <div class="description">{{Description}}</div>
+
+      <div class="humidity">Humidity: {{Humidity}}</div>
+
+      <div class="wind">Wind Speed: {{Wind}}</div>
+
     </div>
+
+  </div>
+
 </body>
-
-
-<!-- <table class="table table-hover">
-  <thead>
-      <th>date</th>
-      <th>temp</th>
-      <th>minimum temperature</th>
-      <th>maximum temperature</th>
-
-  </thead>
-
-  <tbody>
-      <tr *ngFor="let restaurant of listOfWeatherForecast">
-          <td>{{restaurant.date}}</td>
-          <td>{{restaurant.temp}}</td>
-          <td>{{restaurant.minimum}}</td>
-          <td>{{restaurant.maximum}}</td>
-          <!-- <a routerLink="/review">Review</a> -->
-      <!-- </tr>
-  </tbody> --> -->
-

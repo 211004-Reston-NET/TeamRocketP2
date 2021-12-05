@@ -1,5 +1,4 @@
 import { ForumComponent } from './forum/forum.component';
-import { JapanComponent } from './japan/japan.component';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { EventsComponent } from './events/events.component';
@@ -12,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { JapanComponent } from './japan/japan.component';
 
 const routes: Routes = [
 
@@ -20,10 +20,10 @@ const routes: Routes = [
   { path: 'news', component: NewsComponent},
   { path: 'events', component: EventsComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'japan', component: JapanComponent},
   { path: 'forum', component: ForumComponent},
   { path: 'Authlogin', component: AuthLoginComponent},
   { path: 'user',  component: UserProfileComponent},
+  { path: 'japan', component: JapanComponent},
   { path: '**', component: LandingComponent},  
   
 

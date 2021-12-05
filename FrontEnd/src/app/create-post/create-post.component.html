@@ -1,0 +1,15 @@
+<p>create-post works!</p>
+<div *ngIf="showbutton">
+  <button type="button" (click)="showForm()">add post</button>
+</div>
+
+<div *ngIf="showAddPost">
+<form [formGroup] = "restGroup">
+  <input type="text" formControlName = "textfield">
+  <h2>date</h2>
+  <input type="text" formControlName = "date">
+
+  <br>
+  <button class="btn btn-primary" (click)="createPost(restGroup)">Submit</button>
+</form>
+</div>

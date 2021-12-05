@@ -19,22 +19,7 @@ export class JapanComponent implements OnInit
 
   ngOnInit()
   {
-    this.listOfNewsArticles=[];
-    this.revApi.JapaneseHeadlines().subscribe((response) =>
-    {
-      console.log(response);
-      for (var i in response.articles)
-      {
-        let test: News =
-        {
-          published: response.articles[i].published_date,
-          title: response.articles[i].title,
-          link: response.articles[i].link
-        };
-        this.listOfNewsArticles.push(test)
-      }
-      this.listOfNewsArticles = this.listOfNewsArticles.slice(0,5);
-    });
+    this.router.navigateByUrl("/forum");
   }
 
   translate(p_text: string)
