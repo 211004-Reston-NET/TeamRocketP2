@@ -1,52 +1,29 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="showForm()">
-  Add Post
-</button>
+<div *ngIf="showbutton">
+  <button type="button" class="btn btn-dark btn-sm"  (click)="showForm()"> Add Post</button>
+</div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<br>
 
-  <div class="modal-dialog">
+<div *ngIf="showAddPost">
 
-    <div class="modal-content">
+  <form class="example-form" [formGroup] = "restGroup">
 
-      <div class="modal-header">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Date</mat-label>
+      <input matInput formControlName = "date" placeholder="" value="">
+    </mat-form-field>
 
-        <h1 class="modal-title" id="exampleModalLabel">New Post</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <br>
 
-      </div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Leave a reply</mat-label>
+      <textarea matInput formControlName = "textfield" placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
 
-      <div class="modal-body"*ngIf="showAddPost">
+    <br>
 
-        <form class="example-form" [formGroup] = "restGroup">
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Date</mat-label>
-            <input matInput formControlName = "date" placeholder="" value="">
-          </mat-form-field>
+    <button class="btn btn-dark" type="button" (click)="createPost(restGroup)">Submit</button>
 
-        </form>
-
-        <form class="example-form" [formGroup] = "restGroup">
-
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Leave a comment</mat-label>
-            <textarea matInput formControlName = "textfield" placeholder="Ex. It makes me feel..."></textarea>
-          </mat-form-field>
-
-        </form>
-
-        <div class="modal-footer">
-
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="showForm()">Close</button>
-          <button class="btn btn-dark" type="button" (click)="createPost(restGroup)">Submit</button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+  </form>
 
 </div>
