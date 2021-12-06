@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 
-#video
+/* #video
 {
   background-position: center;
   background-repeat: no-repeat;
@@ -64,9 +64,82 @@
 .landingcontent .info-btn:hover
 {
   background: #0C4F60;
+} */
+
+#hero
+{
+  position: relative;
 }
 
+#hero video
+{
+  height: 100vh;
+  width: 100%;
+  background-position: absolute;
+  z-index: 10;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
 
+#hero .content
+{
+    max-width: 650px;
+    margin: 60px 100px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
 
+}
 
+#hero .content h2
 
+{
+  color: whitesmoke;
+  font-size: 55px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 100%;
+  margin-bottom: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+#hero .content h2 span
+{
+  color: mediumturquoise;
+  letter-spacing: 2px;
+  line-height: 50%;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+#hero .content .info-btn
+{
+  color: whitesmoke;
+  background: teal;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: 0.3s;
+  transition-property: background;
+}
+
+#hero .content a
+{
+  margin-top: 10px;
+
+}
+
+#hero .content .info-btn:hover
+{
+  background: #0C4F60;
+}

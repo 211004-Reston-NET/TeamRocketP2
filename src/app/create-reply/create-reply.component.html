@@ -1,37 +1,30 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-dark btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="showForm()">
-  Add Reply
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" *ngIf="showAddReply">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New Reply</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form class="example-form" [formGroup] = "restGroup">
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Date</mat-label>
-            <input matInput formControlName = "date" placeholder="" value="">
-          </mat-form-field>
-        </form>
-
-        <form class="example-form" [formGroup] = "restGroup">
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Leave a reply</mat-label>
-            <textarea matInput formControlName = "textfield" placeholder="Ex. It makes me feel..."></textarea>
-          </mat-form-field>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button class="btn btn-dark btn-sm" type="button" (click)="createReply(restGroup)">Submit</button>
-      </div>
-    </div>
-  </div>
+<div *ngIf="showbutton">
+  <button type="button" class="btn btn-dark btn-sm"  (click)="showForm()">Reply</button>
 </div>
+
+<div *ngIf="showAddReply">
+
+  <br>
+
+  <form class="example-form" [formGroup] = "restGroup">
+
+    <mat-form-field class="example-full-width" formControlName = "date" appearance="fill">
+      <mat-label>Date</mat-label>
+      <input matInput placeholder="" value="">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" formControlName = "textfield" appearance="fill">
+      <mat-label>Leave a reply</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+
+    <br>
+
+    <button class="btn btn-primary" class="btn btn-dark btn-sm"  (click)="createReply(restGroup)">Submit</button>
+
+  </form>
+
+</div>
+
 
 
