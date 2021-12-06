@@ -73,12 +73,12 @@
 
 #hero img
 {
-  background-position: absolute;
-  object-fit: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  width: 100%;
+  justify-content: center;
 }
 
 #hero .content
