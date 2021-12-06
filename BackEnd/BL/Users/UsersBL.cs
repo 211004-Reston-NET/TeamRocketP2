@@ -57,6 +57,10 @@ namespace BL
             return _repo.DeleteUser(p_user_Id);
         }
 
+        public User ModifyUser(User p_user)
+        {
+            return _repo.ModifyUser(p_user);
+        }
         public User GetUserByEmail(string p_email)
         {
             try{

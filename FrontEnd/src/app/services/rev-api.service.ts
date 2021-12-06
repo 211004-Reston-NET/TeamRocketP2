@@ -24,6 +24,7 @@ private endpointEmail:string="https://teamrocketapi.azurewebsites.net/api/user/B
 private AddForumpoint:string="https://teamrocketapi.azurewebsites.net/api/Forum/Add";
 private AddPostpoint:string="https://teamrocketapi.azurewebsites.net/api/Post/Add";
 private AddReplypoint:string="https://teamrocketapi.azurewebsites.net/api/Reply/Add";
+private UpdateUserPoint:string="https://teamrocketapi.azurewebsites.net/api/user/Update";
 
   constructor(private http:HttpClient) {
    }
@@ -126,6 +127,12 @@ private AddReplypoint:string="https://teamrocketapi.azurewebsites.net/api/Reply/
   {
     return this.http.get<Users>(this.endpointEmail+p_item);
   }
+
+  UpdateUser(p_item:Users)
+  {
+    return this.http.post<Users>(this.UpdateUserPoint,p_item);
+  }
+
   AddForum(p_item:Forums)
   {
     return this.http.post<Forums>(this.AddForumpoint,p_item);

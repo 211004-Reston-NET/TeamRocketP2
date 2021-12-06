@@ -59,6 +59,12 @@ namespace P2WebApi.Controllers
         }
 
 
+        [HttpPost("Update")]
+        public IActionResult UpdateUser([FromBody] User p_user)
+        {
+            return Created("api/User/Update", _userBL.ModifyUser(p_user));
+        }
+
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]
         public IActionResult DeleteUser(int id)

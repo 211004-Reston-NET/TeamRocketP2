@@ -88,6 +88,20 @@ namespace DL
 
         }
 
+        public Model.User ModifyUser(Model.User p_Users)
+        {
+            _context.Users.Update
+            (
+                new Entity.User()
+                {
+                    UserName = p_Users.UserName,
+                    NameOfUser = p_Users.NameOfUser
+                }
+            );
+            _context.SaveChanges();
+            return p_Users;
+        }
+
 
         public Model.User DeleteUser(int p_user_Id)
         {

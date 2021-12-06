@@ -21,6 +21,12 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/forum">Forum</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/userProfile">User Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/userModify">Modify User info</a>
+        </li>
       </ul>
 
 
@@ -32,7 +38,8 @@
                             <li><a href=""><i class="icon-envelope"></i> Contact Support</a></li>
                             <li class="divider"></li>
                             <li><a (click)="auth0.logout({ returnTo: document.location.origin })"><i class="icon-off"></i> Logout</a></li>
-                        </ul>
+                            
+                          </ul>
                     </li>
                 </ul>
               </div>

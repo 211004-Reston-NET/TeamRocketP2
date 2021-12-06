@@ -1,0 +1,17 @@
+<p>user-modify works!</p>
+
+<div *ngIf="showbutton">
+  <button type="button" (click)="showForm()">Update</button>
+</div>
+
+<div *ngIf="showModifyUser">
+<form [formGroup] = "restGroup">
+  <h2>Username</h2>
+  <input type="text" formControlName = "Username">
+  <h2>PersonName</h2>
+  <input type="text" formControlName = "PersonName">
+
+  <br>
+  <button class="btn btn-primary" (click)="UpdateUserInfo(restGroup)">Submit</button>
+</form>
+</div>
