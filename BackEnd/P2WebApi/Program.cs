@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Serilog;
+using Serilog.Formatting.Json;
 
 namespace P2WebApi
 {
@@ -14,7 +16,7 @@ namespace P2WebApi
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
-            
+
             Log.Logger = new LoggerConfiguration()
               .Enrich.FromLogContext()
               .WriteTo.File(new JsonFormatter(), "Logs/startlog.json", rollingInterval: RollingInterval.Day)
