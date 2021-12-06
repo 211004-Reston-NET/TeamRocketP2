@@ -27,23 +27,23 @@ namespace P2WebApi.Controllers
         [HttpGet("All")]
         public IActionResult GetAllEvent()
         {
-            Log.Logger = new LoggerConfiguration()
+            Log2.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
                 .WriteTo.File(new JsonFormatter(),"Logs/GetAllEvents.json")
                 .CreateLogger();
             try
             {
-                Log.Information("Get All Events was executed");
+                Log2.Information("Get All Events was executed");
                  return Ok(_EventBL.GetAllEvent());
             }
             catch
             {
-                Log.Information("Failed to get all events");
+                Log2.Information("Failed to get all events");
                 return null;
             }
             finally
             {
-                Log.CloseAndFlush();
+                Log2.CloseAndFlush();
             }
             
         }

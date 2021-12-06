@@ -29,27 +29,28 @@ export class RepliesComponent implements OnInit {
 
   }
 
-  ngOnChanges(changes: SimpleChanges): void
-  {
-  this.listOfReplies=[];
-  this.http.ReplybyId(this.postIdent).subscribe((response) =>
-  {
-    console.log(response);
-
-
-  //It will set the show property to false to each element and also add it to our listOfUser
-  response.forEach(element =>
-    {
-
-    this.listOfReplies.push(element);
-
-    }
-    );
-  });
-  }
-
   ngOnInit(): void {
 
   }
 
+  ngOnChanges(changes: SimpleChanges): void
+  {
+
+    this.listOfReplies=[];
+    this.http.ReplybyId(this.postIdent).subscribe((response) =>
+    {
+      console.log(response);
+
+
+    //It will set the show property to false to each element and also add it to our listOfUser
+    response.forEach(element =>
+      {
+
+      this.listOfReplies.push(element);
+
+      }
+      );
+    });
+
+  }
 }
