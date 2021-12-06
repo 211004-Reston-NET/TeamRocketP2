@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import { AuthModule } from '@auth0/auth0-angular';
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,12 +19,17 @@ import { RouterModule } from '@angular/router';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { ForumComponent } from './forum/forum.component';
 import { FooterComponent } from './footer/footer.component';
-import { JapanComponent } from './japan/japan.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http';
-
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+//import { FlexLayoutModule } from '@angular/flex-layout';
+import { CreateForumComponent } from './create-forum/create-forum.component';
+import { CreatePostComponent } from './create-post/create-post.component';
+import { CreateReplyComponent } from './create-reply/create-reply.component';
+import { PostsComponent } from './posts/posts.component';
+import { RepliesComponent } from './replies/replies.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { JapanComponent } from './japan/japan.component';
 
 @NgModule({
   declarations: [
@@ -39,9 +42,14 @@ import { HttpClientModule } from '@angular/common/http';
     AuthLoginComponent,
     ForumComponent,
     FooterComponent,
-    JapanComponent,
     NavbarComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    CreateForumComponent,
+    CreatePostComponent,
+    CreateReplyComponent,
+    PostsComponent,
+    RepliesComponent,
+    JapanComponent
   ],
 
   imports: [
@@ -61,7 +69,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatTableModule,
     FormsModule,
-    //FontAwesomeModule
+    //FlexLayoutModule,
+    FontAwesomeModule,
+    ReactiveFormsModule,
   ],
 
   providers: [],

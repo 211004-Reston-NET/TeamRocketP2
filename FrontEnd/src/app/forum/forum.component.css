@@ -1,60 +1,73 @@
-.table-head
+body
 {
-  display: flex;
+  box-sizing: border-box;
+  background: rgb(34, 34, 34);
 }
 
-.table-head div
+h1
 {
-  padding: 5px;
-  margin: 2px;
-  background-color: darkgray;
+  font-size: 16px;
   font-weight: bold;
 }
 
-.table-head .status
+
+a
 {
-  flex: 5%;
+  color: whitesmoke;
+  font-weight: bolder;
+  text-decoration: none;
 }
 
-.table-head .subjects
+.container
 {
-  flex: 50%;
+   margin: 20px;
+   padding: 20px;
+
 }
 
-.table-head .replies
+.subforum
 {
-  flex: 10%;
+  margin-top: 20px;
 }
 
-.table-head .last-reply
+.subforum-title
 {
-  flex: 10%;
+  background-color: lightgray;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 4px;
 }
 
-/* table-body */
-.table-row
+.subforum-row
+{
+  display: grid;
+  grid-template-columns: 7% 60% 13% 20%;
+
+}
+
+.subforum-column
+{
+  padding: 10px;
+  margin: 4px;
+  border-radius: 5px;
+  background-color: rgb(179, 179, 179);
+
+}
+
+.subforum-column h1 p
+{
+  float: right;
+
+}
+
+.center
 {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.table-row .status
+.subforum-icon i
 {
-  flex: 5%;
-  font-size: 30px;
-  text-align: center;
-}
-
-.table-row .subjects
-{
-  flex: 70%;
-}
-
-.table-row .replies
-{
-  flex: 10%;
-}
-
-.table-row .last-reply
-{
-  flex: 15%;
+  font-size: 45px;
 }

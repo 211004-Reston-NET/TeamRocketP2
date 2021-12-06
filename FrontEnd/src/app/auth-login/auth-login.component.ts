@@ -18,13 +18,28 @@ export class AuthLoginComponent implements OnInit {
   email:string =""
   tempemail:string | undefined="notFound"
   VerifiedUser:Users | undefined;
-  id:string="";
-
+  count:number =0;
   constructor(public auth0:AuthService, @Inject(DOCUMENT) public document:Document, private revApi: RevAPIService, private router: Router)
   { 
     this.auth0.user$.subscribe((Response) => {
       this.LogedInEmail = Response?.email;
-      this.verify(this.LogedInEmail);
+      console.log(Response);
+      console.log(this.LogedInEmail);
+      if(this.LogedInEmail==null)
+      {
+
+      }
+      else{
+        if(this.LogedInEmail==undefined)
+        {
+
+        }
+        else{
+          this.verify(this.LogedInEmail);
+        }
+        
+      }
+      
       
     });
     
@@ -35,18 +50,23 @@ export class AuthLoginComponent implements OnInit {
   }
   verify(p_email?: string) {
     this.tempemail=p_email;
+    console.log(this.tempemail);
     this.revApi.Verify(this.tempemail)
       .subscribe(data => {
         console.log(data)
         this.VerifiedUser = data
         this.email = data.email
-        this.id=data.id
         // if(this.id!="45")
         // {
         //   this.router.navigateByUrl("/events");
         // }
 
       })
+      this.router.navigateByUrl("/events");
+  }
+
+  incrementCount(){
+    this.count++;
   }
 }
 
