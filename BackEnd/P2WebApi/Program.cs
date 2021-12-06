@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Serilog;
 using Serilog.Formatting.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace P2WebApi
 {

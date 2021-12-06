@@ -27,7 +27,24 @@ namespace P2WebApi.Controllers
         [HttpGet("All")]
         public IActionResult GetAllEvent()
         {
-            return Ok(_EventBL.GetAllEvent());
+            Log.Logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .WriteTo.File(new JsonFormatter(),"Logs/GetAllEvents.json")
+                .CreateLogger();
+            try
+            {
+                Log.Information("Get All Events was executed");
+                 return Ok(_EventBL.GetAllEvent());
+            }
+            catch
+            {
+                Log.Information("Failed to get all events");
+                return null;
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
             
         }
 
@@ -36,13 +53,15 @@ namespace P2WebApi.Controllers
         {
             try
             {
-                return Ok(_EventBL.GetEventById(p_id));
+                Log.Information("Get All Events was executed");
+                 return Ok(_EventBL.GetEventById(p_id));
             }
-            catch (Exception e)
+           catch (Exception e)
             {
                 Log.Error(e.Message);
                 return BadRequest("Not a valid ID");
             }
+            
         }
 
         
