@@ -51,7 +51,17 @@ namespace P2WebApi.Controllers
         [HttpGet("{p_id}")]
         public IActionResult GetEventById(int p_id)
         {
-            return Ok(_EventBL.GetEventById(p_id));
+            try
+            {
+                Log.Information("Get All Events was executed");
+                 return Ok(_EventBL.GetEventById(p_id));
+            }
+           catch (Exception e)
+            {
+                Log.Error(e.Message);
+                return BadRequest("Not a valid ID");
+            }
+            
         }
 
         
