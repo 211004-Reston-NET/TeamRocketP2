@@ -31,7 +31,7 @@ export class CreateReplyComponent implements OnInit {
   showForm()
   {
     this.showAddReply=!this.showAddReply
-
+    console.log(this.showAddReply)
   }
   createReply(restGroup: FormGroup)
   {

@@ -8,14 +8,14 @@
 
   <form class="example-form" [formGroup] = "restGroup">
 
-    <mat-form-field class="example-full-width" formControlName = "date" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Date</mat-label>
-      <input matInput placeholder="" value="">
+      <input matInput formControlName = "date" placeholder="" value="">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width" formControlName = "textfield" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Leave a reply</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+      <textarea matInput formControlName = "textfield" placeholder="Ex. It makes me feel..."></textarea>
     </mat-form-field>
 
     <br>

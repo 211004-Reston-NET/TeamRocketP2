@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap');
 body
 {
-  background: #222;
+  background: #262626;
   background-image: url("../../assets/images/pikachu.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  height: 100vh;
-  width: 100%;
+  background-attachment: scroll;
+  display: table-footer-group;
+  justify-content: center;
+  height: 100%;
 }
+
 
 section .left-box
 {
@@ -78,7 +80,7 @@ section .events ul li
   background: whitesmoke;
   box-sizing: content-box;
   height: 200px;
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 section .events ul li .time
@@ -139,7 +141,7 @@ section .events ul li .details h3
 section .events ul li .details p
 {
   position: relative;
-  margin: 10px 0 0;
+  margin: 10px 20 0;
   padding: 0;
   font-size: 14px;
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -175,6 +177,4 @@ section .events ul li .details .btn:hover
   color: whitesmoke;
   border-color: #e91e63;
 }
-
-
 

@@ -33,7 +33,7 @@ export class CreatePostComponent implements OnInit
     showForm()
     {
       this.showAddPost=!this.showAddPost
-
+      console.log(this.showAddPost);
     }
 
     createPost(restGroup: FormGroup)

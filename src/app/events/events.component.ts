@@ -28,7 +28,7 @@ export class EventsComponent implements OnInit
         this.listOfEvents.push(element);
       });
 
-      this.listOfEvents =this.listOfEvents.slice(1,4);
+      this.listOfEvents =this.listOfEvents.slice(1,6);
 
     });
   }
