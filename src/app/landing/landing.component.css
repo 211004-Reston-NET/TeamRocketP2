@@ -71,21 +71,14 @@
   position: relative;
 }
 
-#hero video
+#hero img
 {
-  height: 100vh;
-  width: 100%;
   background-position: absolute;
-  z-index: 10;
   object-fit: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: center;
 }
 
 #hero .content
@@ -93,7 +86,7 @@
     max-width: 650px;
     margin: 60px 100px;
     position: absolute;
-    top: 20%;
+    top: 30%;
     left: 50%;
 
 }
