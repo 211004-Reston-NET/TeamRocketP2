@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Serilog;
+using Serilog.Formatting.Json;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -25,7 +27,25 @@ namespace P2WebApi.Controllers
         [HttpGet("All")]
         public IActionResult GetAllEvent()
         {
-            return Ok(_EventBL.GetAllEvent());
+            Log.Logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .WriteTo.File(new JsonFormatter(),"Logs/GetAllEvents.json")
+                .CreateLogger();
+            try
+            {
+                Log.Information("Get All Events was executed");
+                 return Ok(_EventBL.GetAllEvent());
+            }
+            catch
+            {
+                Log.Information("Failed to get all events");
+                return null;
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
+            
         }
 
         [HttpGet("{p_id}")]
