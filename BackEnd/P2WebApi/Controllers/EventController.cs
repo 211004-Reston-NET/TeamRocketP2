@@ -28,14 +28,18 @@ namespace P2WebApi.Controllers
         public IActionResult GetAllEvent()
         {
 
+
             Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
                 .WriteTo.File(new JsonFormatter(), "Logs/GetAllEvents.json")
+
                 .CreateLogger();
             try
             {
                 Log.Information("Get All Events was executed");
+
                 return Ok(_EventBL.GetAllEvent());
+
             }
             catch
             {
@@ -55,6 +59,7 @@ namespace P2WebApi.Controllers
         public IActionResult GetEventById(int p_id)
         {
 
+
             Log.Logger = new LoggerConfiguration()
                             .Enrich.FromLogContext()
                             .WriteTo.File(new JsonFormatter(), "Logs/GetAllEvents.json")
@@ -73,6 +78,7 @@ namespace P2WebApi.Controllers
             {
                 Log.CloseAndFlush();
             }
+
 
 
         }

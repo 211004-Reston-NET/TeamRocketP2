@@ -1,7 +1,7 @@
 export interface ForumPosts
 {
     postText:any,
-    dateCreated:any,
+    dateCreated?:any,
     userId:any,
     forumId:any,
     postId?:any,

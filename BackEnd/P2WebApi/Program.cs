@@ -18,17 +18,21 @@ namespace P2WebApi
         public static void Main(string[] args)
         {
 
+
             Log.Logger = new LoggerConfiguration()
               .Enrich.FromLogContext()
               .WriteTo.File(new JsonFormatter(), "Logs/startlog.json", rollingInterval: RollingInterval.Day)
               .CreateLogger();
+
 
             try
             {
                 Log.Information("Starting");
                 CreateHostBuilder(args).Build().Run();
             }
+
             catch (Exception ex)
+
             {
                 Log.Fatal(ex, "Application startup failed");
             }
@@ -40,6 +44,7 @@ namespace P2WebApi
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+            .UseSerilog()
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

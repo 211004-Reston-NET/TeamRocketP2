@@ -1,7 +1,7 @@
 export interface Replies
 {
     replyText:any,
-    dateCreated:any,
+    dateCreated?:any,
     userId:any,
     forumId:any,
     postId:any,

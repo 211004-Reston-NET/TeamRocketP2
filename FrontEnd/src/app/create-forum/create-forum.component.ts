@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Forums } from '../models/Forums';
 import { RevAPIService } from '../services/rev-api.service';
@@ -18,11 +18,12 @@ export class CreateForumComponent implements OnInit
   ({
 
     textfield: new FormControl("", Validators.required),
-    date: new FormControl("", Validators.required)
 
   });
 
   showAddForum:boolean=false;
+  @Input()
+  currentuser:any
 
   constructor(private p_Service:RevAPIService, private router: Router) { }
 
@@ -40,19 +41,18 @@ createForum(restGroup: FormGroup)
   {
     //valid property of a FormGroup will let you know if the Form group the user sent is valid or not
     if (restGroup.valid) {
-      let restaurant:Forums = {
+      let discussion:Forums = {
         topicName: restGroup.get("textfield")?.value,
-        dateCreated: restGroup.get("date")?.value,
-        creatorId:8,
+        creatorId:this.currentuser,
         show:false
       };
 
-      console.log(restaurant);
+      console.log(discussion);
 
-      this.p_Service.AddForum(restaurant).subscribe(
+      this.p_Service.AddForum(discussion).subscribe(
         (response) => {
           console.log(response);
-          this.router.navigateByUrl("/events");
+          this.router.navigateByUrl("/japan");
         }
       )
     }

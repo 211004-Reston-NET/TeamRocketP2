@@ -1,12 +1,58 @@
-<p>create-forum works!</p>
-<button type="button" (click)="showForm()">add forum</button>
-<div *ngIf="showAddForum">
-<form [formGroup] = "restGroup">
-    <input type="text" formControlName = "textfield">
-    <h2>date</h2>
-    <input type="text" formControlName = "date">
+<button type="button" class="info-btn1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="showForm()">
+    Add Thread
+  </button>
+  
+  <!-- Modal -->
+  
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  
+    <div class="modal-dialog">
+  
+      <div class="modal-content">
+  
+        <div class="modal-header">
+  
+          <h1 class="display-4" id="staticBackdropLabel">New Thread</h1>
+  
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  
+        </div>
+  
+        <div class="modal-body">
+  
+          <div class="img">
+            <img src="../../assets/images/jujutsu_kaisen_satoru_gojo.png" alt="">
+          </div>
+  
 
-    <br>
-    <button class="btn btn-primary" (click)="createForum(restGroup)">Submit</button>
-</form>
-</div>
+  
+          <form class="example-form" [formGroup] = "restGroup">
+  
+            <mat-form-field class="example-full-width" appearance="fill">
+  
+              <mat-label>Title</mat-label>
+  
+              <input matInput type="text" formControlName = "textfield" formControlName = "textfield" placeholder="" value="">
+  
+            </mat-form-field>
+  
+          </form>
+  
+          <div class="modal-footer">
+  
+            <button type="button" class="info-btn2" data-bs-dismiss="modal">Close</button>
+  
+            <button type="button" class="info-btn3" data-bs-dismiss="modal" (click)="createForum(restGroup)">Submit</button>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>
+  
+  

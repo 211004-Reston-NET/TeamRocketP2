@@ -1,15 +1,23 @@
-<p>create-post works!</p>
 <div *ngIf="showbutton">
-  <button type="button" (click)="showForm()">add post</button>
+  <button type="button" class="btn btn-dark btn-sm"  (click)="showForm()"> Add Post</button>
 </div>
 
-<div *ngIf="showAddPost">
-<form [formGroup] = "restGroup">
-  <input type="text" formControlName = "textfield">
-  <h2>date</h2>
-  <input type="text" formControlName = "date">
+<br>
 
-  <br>
-  <button class="btn btn-primary" (click)="createPost(restGroup)">Submit</button>
-</form>
+<div *ngIf="showAddPost">
+
+  <form class="example-form" [formGroup] = "restGroup">
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Leave a reply</mat-label>
+      <textarea matInput formControlName = "textfield" placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+
+    <br>
+
+    <button class="btn btn-dark" type="button" (click)="createPost(restGroup)">Submit</button>
+
+  </form>
+
 </div>
