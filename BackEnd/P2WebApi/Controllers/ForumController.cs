@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Serilog;
+using Serilog.Formatting.Json;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,16 +26,65 @@ namespace P2WebApi.Controllers
 
         [HttpGet("All")]
         public IActionResult GetAllForum()
-        {
-            return Ok(_ForumBL.GetAllForum());
+
+         {
+            Log.Logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .WriteTo.File(new JsonFormatter(),"Logs/GetAllForums.json")
+                .CreateLogger();
+            try
+            {
+                Log.Information("Get All Forums was executed");
+                return Ok(_ForumBL.GetAllForum());
+            }
+            catch
+            {
+                Log.Information("Failed to get all Forums");
+                return null;
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
+            
         }
+
+        
+        // {
+        //     return Ok(_ForumBL.GetAllForum());
+        // }
 
 
         [HttpGet("{p_id}")]
+
+        
         public IActionResult GetForumById(int p_id)
-        {
-            return Ok(_ForumBL.GetForumById(p_id));
+
+         {
+            Log.Logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .WriteTo.File(new JsonFormatter(),"Logs/GetForumById.json")
+                .CreateLogger();
+            try
+            {
+                Log.Information("Get Forum by Id was executed");
+                  return Ok(_ForumBL.GetForumById(p_id));
+            }
+            catch
+            {
+                Log.Information("Failed to get all forums");
+                return null;
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
+            
         }
+        // public IActionResult GetForumById(int p_id)
+        // {
+        //     return Ok(_ForumBL.GetForumById(p_id));
+        // }
 
 
          [HttpPost("Add")]

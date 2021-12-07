@@ -50,19 +50,42 @@ namespace P2WebApi.Controllers
 
         [HttpGet("{p_id}")]
         public IActionResult GetEventById(int p_id)
-        {
+
+         {
+            Log.Logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .WriteTo.File(new JsonFormatter(),"Logs/GetEventById.json")
+                .CreateLogger();
             try
             {
-                Log.Information("Get All Events was executed");
-                 return Ok(_EventBL.GetEventById(p_id));
+                Log.Information("Get Event by Id was executed");
+                  return Ok(_EventBL.GetEventById(p_id));
             }
-           catch (Exception e)
+            catch
             {
-                Log.Error(e.Message);
-                return BadRequest("Not a valid ID");
+                Log.Information("Failed to get  events by Id");
+                return null;
+            }
+            finally
+            {
+                Log.CloseAndFlush();
             }
             
         }
+
+        // {
+        //     try
+        //     {
+        //         Log.Information("Get All Events was executed");
+        //          return Ok(_EventBL.GetEventById(p_id));
+        //     }
+        //    catch (Exception e)
+        //     {
+        //         Log.Error(e.Message);
+        //         return BadRequest("Not a valid ID");
+        //     }
+            
+        // }
 
         
                 
