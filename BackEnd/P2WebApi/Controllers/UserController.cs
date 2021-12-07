@@ -80,29 +80,13 @@ namespace P2WebApi.Controllers
         [HttpGet("Verify{email}")]
         public IActionResult VerifyUser(string email)
         {
-    
-            Log.Logger = new LoggerConfiguration()
-               .Enrich.FromLogContext()
-               .WriteTo.File(new JsonFormatter(), "Logs/GetAllEvents.json")
-               .CreateLogger();
-            try
-            {
-                Log.Information("Verify was executed");
-                User user = _userBL.GetUserByEmail(email);
-                if (user.Email != email)
-                { return Ok(_userBL.AddUserFromAuth0(email)); }
+   
+            User user = _userBL.GetUserByEmail(email);
+            if (user.Email != email)
+            { return Ok(_userBL.AddUserFromAuth0(email)); }
 
-                return Ok(user);
-            }
-            catch
-            {
-                Log.Information("Failed verify");
-                return null;
-            }
-            finally
-            {
-                Log.CloseAndFlush();
-            }
+            return Ok(user);
+          
         }
 
         [HttpGet("ByEmail{email}")]

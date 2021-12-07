@@ -51,6 +51,17 @@ namespace P2WebApi
             services.AddScoped<IForumBL, ForumBL>();
             services.AddScoped<IInviteRepo, InviteCloudRepo>();
             services.AddScoped<IInviteBL, InviteBL>();
+            services.AddCors(
+                (builder) =>
+                {
+                    builder.AddDefaultPolicy((policy) =>
+                    {
+                        policy.WithOrigins("http://localhost:4200", "https://localhost:4200","http://localhost:5000","http://localhost:5001")
+                            .AllowAnyHeader() //Allows any header we provide in the http header request
+                            .AllowAnyMethod(); //Allows any method we provide in the http request
+                    });
+                }
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
