@@ -12,6 +12,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { JapanComponent } from './japan/japan.component';
+import { InviteComponent } from './invite/invite.component';
 
 const routes: Routes = [
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'Authlogin', component: AuthLoginComponent},
   { path: 'user',  component: UserProfileComponent},
   { path: 'japan', component: JapanComponent},
+  { path: 'invite',component: InviteComponent},
   { path: '**', component: LandingComponent},  
   
 
