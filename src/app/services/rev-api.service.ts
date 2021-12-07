@@ -33,9 +33,7 @@ private allevent:string="https://teamrocketapi.azurewebsites.net/api/event/all";
 private allforums:string="https://teamrocketapi.azurewebsites.net/api/forum/all";
 private PostbyForumId:string="https://teamrocketapi.azurewebsites.net//api/Post/ByForum";
 private ReplybyPostId:string="https://teamrocketapi.azurewebsites.net//api/Reply/ByPost";
-
-
-
+private UpdateUserPoint:string="https://teamrocketapi.azurewebsites.net/api/user/Update";
 
 
 
@@ -44,12 +42,6 @@ private ReplybyPostId:string="https://teamrocketapi.azurewebsites.net//api/Reply
 
   //This will give us a list of restaurant from RevWebAPI
   //Will return an observable that is a list of restaurant
-
-
-  // GetUserById(p_id:number) : Observable<any>
-  // {
-  //   return this.http.get<any>(this.endpoint + "/User/" + p_id);
-  // }
 
   translate(p_text:string): Observable<any>
   {
@@ -127,7 +119,7 @@ private ReplybyPostId:string="https://teamrocketapi.azurewebsites.net//api/Reply
   {
     return this.http.get<Users[]>(this.GetUsersendpoint);
   }
-  Userid(id: string):Observable<Users[]>
+  findOne(id:number):Observable<Users[]>
   {
     return this.http.get<Users[]>(this.findOneendpoint+id);
   }
@@ -175,8 +167,6 @@ PostsbyId(p_text:any):Observable<ForumPosts[]>
     return this.http.get<ForumPosts[]>(this.PostbyForumId+p_text);
   }
 
-
-
 Reply():Observable<Replies[]>
   {
     return this.http.get<Replies[]>("https://teamrocketapi.azurewebsites.net//api/Reply/ByPost1");
@@ -199,10 +189,15 @@ ReplybyId(p_text:any):Observable<Replies[]>
     return this.http.get<Invite[]>("https://teamrocketapi.azurewebsites.net/api/invite/all");
   }
 
-
-  GetAllInvite():Observable<Invite[]>
-
+  DeleteInvite(p_id:string):Observable<any>
   {
-    return this.http.get<Invite[]>("https://teamrocketapi.azurewebsites.net/api/invite/all");
-}
+    return this.http.delete<any>("https://teamrocketapi.azurewebsites.net/api/invite/"+p_id);
+  }
+  UpdateUser(p_item:Users)
+  {
+    return this.http.put<Users>(this.UpdateUserPoint,p_item);
+  }
+
+
+
 }

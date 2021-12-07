@@ -1,0 +1,21 @@
+<p>auth-login works!</p>
+
+
+<ng-container *ngIf="auth0.isAuthenticated$ | async; else loggedOut">
+  <button class ="btn btn-danger" (click)="auth0.logout({ returnTo: document.location.origin })">
+      Log out
+  </button>
+  <ng-container *ngIf="this.count==0">
+      {{verify(LogedInEmail)}}
+      {{incrementCount()}}
+  </ng-container>
+
+</ng-container>
+
+  <ng-template #loggedOut>
+    <button class="btn btn-primary" (click)="auth0.loginWithPopup()">Log in</button>
+  </ng-template>
+
+<!-- {screen_hint:'signup'}-->
+
+

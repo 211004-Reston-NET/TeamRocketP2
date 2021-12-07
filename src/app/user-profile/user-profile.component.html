@@ -1,61 +1,49 @@
 <body>
+
   <div class="wrapper">
-    <div class="left">
-      <img src="../../assets/images/japan.jpg" alt="" alt="user" width="400">
-      <h2>Welcome To Japan where dreams come true!</h2>
-      <h2>User informaton</h2>
-      <h3>{{current.userName}}</h3>
-      <h3>{{current.email}}</h3>
-    </div>
-    <div class="right">
-      <div class="info">
-        <h3>Information</h3>
-        <div class="info_data">
-          <div class="data">
-            <h4>Email</h4>
-            <p>{{current.email}}</p>
-          </div>
-          <div class="data">
-            <h4>Invites</h4>
-            <p>{{current.invites}}</p>
-          </div>
-        </div>
+      <div class="left">
+          <img src="../../assets/images/profile.jpg" alt=""
+          alt="user" width="400">
+          <h2>Welcome To Japan where dreams come true</h2>
+           <h2>{{current.userName}}</h2>
       </div>
-      <!-- <tbody>
-        <div class="projects">
-              <h3>Posts and invites</h3>
-              <div class="projects_data">
+      <div class="right">
+          <div class="info">
+              <h3>Information</h3>
+              <div class="info_data">
                    <div class="data">
-                      <h4>Posts</h4>
-                      <p>{{current.invites}}</p>
+                      <h4>Email</h4>
+                      <p>{{current.email}}</p>
                    </div>
                    <div class="data">
-                     <h4>invites</h4>
-                      <p>{{current.invites}}</p>
+                     <h4>Username</h4>
+                      <p>{{current.userName}}</p>
                 </div>
               </div>
-          </div> -->
-      <div class="social_media">
-        <ul>
-          <li><a href="weather"><i class="">Edit Account Info</i></a></li>
-          <li><a href="news"><i class="">News</i></a></li>
-          <li><a href="events"><i class="">Events</i></a></li>
-        </ul>
-        <button (click)="showMyinvites()">Invitiations</button>
-        <table *ngIf="show" class="table">
-          <thead>
-            <th>eventId</th>
-            <th>eventName</th>
-          </thead>
+          </div>
 
-          <tbody>
-            <tr *ngFor="let i of listofmyInvites">
-              <td>{{i.eventId}}</td>
-              <td>{{i.activity}}</td>
-            </tr>
-          </tbody>
-        </table>
+          <div class="social_media">
+                <button (click)="showForm()">Edit Profile</button>
+                <button (click)="showMyinvites()">Invitiations</button>
+            <app-user-modify [showModifyUser]="showComponent"></app-user-modify>
+            <table *ngIf="show" class="table">
+              <thead>
+                  <th>eventId</th>
+                  <th>eventName</th>
+              </thead>
+
+              <tbody>
+                  <tr *ngFor="let i of listofmyInvites">
+                      <td>{{i.eventId}}</td>
+                      <td>{{i.activity}}</td>
+                      <td>{{i.inviteId}}</td>
+                      <button (click)="DeletefromList(i.inviteId)">Delete</button>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
       </div>
-    </div>
   </div>
-</body>
+
+  </body>
+

@@ -1,3 +1,4 @@
+
 <body>
   <div class="left-box">
     <div class="content">
@@ -7,7 +8,9 @@
         and unique charm.
       </p>
     </div>
-    <app-invite></app-invite>
+    <div *ngIf="show">
+      <app-invite [currentuser]="current.id" [activity]="eventsidnum"></app-invite>
+    </div>
   </div>
   <div class="events">
     <ul>
@@ -17,12 +20,9 @@
         </div>
         <div class="details">
           <h2>{{i.eventName}}</h2>
-          <p>{{i.eventDescription}}</p>
+          <p>{{i.eventDescription}} <a (click)="showform(i.eventId)" type="button" class="btn-sm">Invite Someone</a></p>
           <p>Location: {{i.location}}</p>
-          <p>Time: {{i.startTime}} - {{i.endTime}}
-            <sub>
-            <a type="button" class="info-btn btn btn-dark btn-sm">Send Invite</a>
-          </sub>
+          <p>Time: {{i.startTime}} - {{i.endTime}}</p>
         </div>
       </li>
     </ul>

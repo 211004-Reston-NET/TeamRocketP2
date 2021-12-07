@@ -1,0 +1,42 @@
+.body {
+  background-image: url("../../assets/images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.example-card {
+  max-width: 360px;
+}
+
+.example-header-image {
+  background-image: url('../../assets/images/user.png');
+  background-size: cover;
+}
+
+.center-content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.example-form {
+  min-width: 100px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.login-button {
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  align-items: center;
+  width: 100%;
+}

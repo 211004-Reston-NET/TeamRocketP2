@@ -62,7 +62,7 @@
               <ul class="dropdown-content">
                 <li>
                   <a routerLink="/user-profile"><i class="icon-off"></i> Profile</a>
-                  <a href=""><i class="icon-off"></i> Logout</a>
+                  <a (click)="auth0.logout({ returnTo: document.location.origin })"><i class="icon-off"></i> Logout</a>
                 </li>
               </ul>
             </li>

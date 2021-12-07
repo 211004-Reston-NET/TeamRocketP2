@@ -29,6 +29,8 @@ import { PostsComponent } from './posts/posts.component';
 import { RepliesComponent } from './replies/replies.component';
 import { InviteComponent } from './invite/invite.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserModifyComponent } from './user-modify/user-modify.component';
+import { AuthLoginComponent } from './auth-login/auth-login.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     RepliesComponent,
     InviteComponent,
     UserProfileComponent,
+    UserModifyComponent,
+    AuthLoginComponent,
   ],
 
   imports: [
