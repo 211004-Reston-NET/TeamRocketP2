@@ -82,7 +82,7 @@ namespace P2WebApi.Controllers
         {
    
             User user = _userBL.GetUserByEmail(email);
-            if (user.Email != email)
+            if (user.Email.ToLower() != email.ToLower())
             { return Ok(_userBL.AddUserFromAuth0(email)); }
 
             return Ok(user);
@@ -142,14 +142,19 @@ namespace P2WebApi.Controllers
         }
 
 
-        [HttpPut("Update{id}")]
-        public IActionResult UpdateUser(int id, [FromBody]User p_user)
+        // [HttpPut("Update{id}")]
+        // public IActionResult UpdateUser(int id, [FromBody]User p_user)
+        // {
+        //     //return Ok( _userBL.UpdateUser(p_user));
+        //     return Created("api/User/Update", _userBL.UpdateUser(p_user));
+        // }
+
+        [HttpPut("Update")]
+        public IActionResult UpdateUser( [FromBody] User p_user)
         {
             //return Ok( _userBL.UpdateUser(p_user));
             return Created("api/User/Update", _userBL.UpdateUser(p_user));
         }
-
-
 
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]

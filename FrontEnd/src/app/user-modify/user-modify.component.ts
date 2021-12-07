@@ -68,7 +68,7 @@ export class UserModifyComponent implements OnInit {
           invites:this.current.invites
         }
 
-        this.revApi.UpdateUser(this.current.id,UserInfo).subscribe(
+        this.revApi.UpdateUser(UserInfo).subscribe(
           (response) => {
             console.log(response);
           }

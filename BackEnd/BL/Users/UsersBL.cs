@@ -65,7 +65,7 @@ namespace BL
         {
             try{
             List<User> listOfUsers = _repo.GetAllUsers();
-            List<User> Found = (listOfUsers.Where(usr => usr.Email.Equals(p_email))).ToList();
+            List<User> Found = (listOfUsers.Where(usr => usr.Email.ToLower().Equals(p_email.ToLower()))).ToList();
             return Found[0];
             }
             catch(Exception)

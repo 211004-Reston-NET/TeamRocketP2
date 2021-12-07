@@ -142,9 +142,9 @@ private ReplybyPostId:string="https://teamrocketapi.azurewebsites.net//api/Reply
     return this.http.get<Users>(this.endpointEmail+p_item);
   }
 
-  UpdateUser(id:string ,p_item:Users)
+  UpdateUser(p_item:Users)
   {
-    return this.http.put<Users>(this.UpdateUserPoint+id,p_item);
+    return this.http.put<Users>(this.UpdateUserPoint,p_item);
   }
 
   AddForum(p_item:Forums)
