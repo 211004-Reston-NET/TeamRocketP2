@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import { Users } from '../models/Users';
+import { Invite } from '../models/Invite';
 import { RevAPIService } from '../services/rev-api.service';
 
 
@@ -39,7 +40,9 @@ export class UserProfileComponent implements OnInit {
       //It will set the show property to false to each element and also add it to our listOfUser
      
     });
-  
+
+ 
   }
+  
 
 }

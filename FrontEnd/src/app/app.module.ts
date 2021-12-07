@@ -30,6 +30,7 @@ import { PostsComponent } from './posts/posts.component';
 import { RepliesComponent } from './replies/replies.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JapanComponent } from './japan/japan.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [

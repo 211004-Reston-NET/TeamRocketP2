@@ -7,6 +7,7 @@ import { News } from '../models/news';
 import { Replies } from '../models/Replies';
 import { Users } from '../models/Users';
 import { Evento } from '../models/Event';
+import { Invite } from '../models/Invite';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,8 @@ private endpointEmail:string="https://teamrocketapi.azurewebsites.net/api/user/B
 private AddForumpoint:string="https://teamrocketapi.azurewebsites.net/api/Forum/Add";
 private AddPostpoint:string="https://teamrocketapi.azurewebsites.net/api/Post/Add";
 private AddReplypoint:string="https://teamrocketapi.azurewebsites.net/api/Reply/Add";
+
+
 
 
   constructor(private http:HttpClient) {
@@ -165,7 +168,10 @@ Posts():Observable<ForumPosts[]>
 PostsbyId(p_text:any):Observable<ForumPosts[]>
   {
     return this.http.get<ForumPosts[]>("https://teamrocketapi.azurewebsites.net//api/Post/ByForum"+p_text);
+
   }
+
+  
 
 Reply():Observable<Replies[]>
   {
@@ -178,5 +184,9 @@ ReplybyId(p_text:any):Observable<Replies[]>
     return this.http.get<Replies[]>("https://teamrocketapi.azurewebsites.net//api/Reply/ByPost"+p_text);
   }
   
-
+  GetAllInvite():Observable<Invite[]>
+ 
+  {
+    return this.http.get<Invite[]>("https://teamrocketapi.azurewebsites.net/api/invite/all");
+}
 }
