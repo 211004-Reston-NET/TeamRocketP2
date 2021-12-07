@@ -14,7 +14,6 @@ export class CreateReplyComponent implements OnInit {
 
   restGroup:FormGroup = new FormGroup({
     textfield: new FormControl("", Validators.required),
-    date: new FormControl("", Validators.required)
   });
   showAddReply:boolean=false;
   @Input()
@@ -43,7 +42,6 @@ export class CreateReplyComponent implements OnInit {
         let restaurant:Replies =
         {
         replyText: restGroup.get("textfield")?.value,
-        dateCreated: restGroup.get("date")?.value,
         userId:this.userId.id,
         forumId:this.forumIdentification,
         postId:this.postIdentification
@@ -55,7 +53,7 @@ export class CreateReplyComponent implements OnInit {
       (
         (response) => {
           console.log(response);
-          this.router.navigateByUrl("/forum");
+          this.router.navigateByUrl("/japan");
         }
       )
     }

@@ -1,8 +1,9 @@
 export interface Invite
-{
-    id:string,
-    eventId: string,
-    emailRecipient: string,
-    userId:string
-   
-}
+    {
+        UserId:any
+        emailRecipient:any
+        eventId:any
+        InviteId?:any
+        activity?:any
+        User?:any
+    }

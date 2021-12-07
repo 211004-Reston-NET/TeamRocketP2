@@ -1,19 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap');
 body
 {
-  background: #262626;
   background-image: url("../../assets/images/pikachu.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: scroll;
-  display: table-footer-group;
+  background-attachment: fixed;
+  display: flex;
   justify-content: center;
-  height: 100%;
 }
 
-
-section .left-box
+.left-box
 {
   width: 50%;
   height: 150%;
@@ -22,7 +19,7 @@ section .left-box
   box-sizing: border-box;
 }
 
-section .left-box .content
+.left-box .content
 {
   color: #fff;
   background: rgba(0,0,0,.5);
@@ -31,12 +28,12 @@ section .left-box .content
   transition: .5s;
 }
 
-section .left-box .content:hover
+.left-box .content:hover
 {
   background: #e91e63;
 }
 
-section .left-box .content h1
+.left-box .content h1
 {
   margin: 0;
   padding: 0;
@@ -45,7 +42,7 @@ section .left-box .content h1
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-section .left-box .content p
+.left-box .content p
 {
   margin: 10px 0;
   padding: 0;
@@ -54,7 +51,7 @@ section .left-box .content p
 /* table-right */
 
 
-section .events
+.events
 {
   position: relative;
   width: 50%;
@@ -66,7 +63,7 @@ section .events
 
 }
 
-section .events ul
+.events ul
 {
 
   margin: 0;
@@ -74,7 +71,7 @@ section .events ul
 
 }
 
-section .events ul li
+.events ul li
 {
   list-style: none;
   background: whitesmoke;
@@ -83,7 +80,7 @@ section .events ul li
   margin: 20px 0;
 }
 
-section .events ul li .time
+.events ul li .time
 {
   position: relative;
   padding: 20px;
@@ -96,12 +93,12 @@ section .events ul li .time
   transition: .5s;
 }
 
-section .events ul li:hover .time
+.events ul li:hover .time
 {
   background: #e91e63;
 }
 
-section .events ul li .time h2
+.events ul li .time h2
 {
   position: absolute;
   margin: 0;
@@ -114,13 +111,13 @@ section .events ul li .time h2
   line-height: 30px;
 }
 
-section .events ul li .time h2 span
+.events ul li .time h2 span
 {
   font-size: 16px;
 }
 
 
-section .events ul li .details
+.events ul li .details
 {
   padding: 20px;
   background: whitesmoke;
@@ -130,7 +127,7 @@ section .events ul li .details
   float: left;
 }
 
-section .events ul li .details h3
+.events ul li .details h2
 {
   position: relative;
   margin: 0;
@@ -138,40 +135,36 @@ section .events ul li .details h3
   font-size: 22px;
 }
 
-section .events ul li .details p
+.events ul li .details p
 {
   position: relative;
   margin: 10px 20 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-section .events ul li .details p sub
-{
-  font-size: 16px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
 
-section .events ul li .details a
+/* .events ul li .details button
 {
   display: inline-block;
   text-decoration: tomato;
   text-transform: uppercase;
-  padding: 2px 15px;
-  border: 2px solid #262626;
-  border-radius: 10% / 50%;
-  margin-top: 15px;
-}
+} */
 
-section .events ul li .details a:hover
+.events ul li .details button
 {
-  background: #e91e63;
-  color: whitesmoke;
-  border-color: #e91e63;
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 2px 15px;
+  border: 1px solid #262626;
+  border-radius: 10% / 50%;
+  margin-top: 5px;
+
 }
 
-section .events ul li .details .btn:hover
+
+.events ul li .details .btn:hover
 {
   background: #e91e63;
   color: whitesmoke;

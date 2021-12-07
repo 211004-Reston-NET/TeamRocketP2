@@ -4,7 +4,7 @@
 
 <div class="wrapper">
     <div class="left">
-        <img src="../../assets/images/Japan.jpg" alt="" 
+        <img src="../../assets/images/Japan2.jpg" alt="" 
         alt="user" width="400">
         <h2>Welcome To Japan where dreams come true!</h2>
          <h2>User informaton</h2>
@@ -49,6 +49,23 @@
               <li><a href="events"><i class="">Events</i></a></li>
               
           </ul>
+          <button (click)="showMyinvites()">Invitiations</button>
+          <table *ngIf="show" class="table">
+            <thead>
+                <th>eventId</th>
+                <th>eventName</th>
+            </thead>
+          
+            <tbody>
+                <tr *ngFor="let i of listofmyInvites">
+                    <td>{{i.eventId}}</td>
+                    <td>{{i.activity}}</td>
+                    
+          
+                    <!-- <a routerLink="/review">Review</a> -->
+                </tr>
+            </tbody>
+          </table>
       </div>
     </div>
 </div>

@@ -18,7 +18,6 @@ export class CreateForumComponent implements OnInit
   ({
 
     textfield: new FormControl("", Validators.required),
-    date: new FormControl("", Validators.required)
 
   });
 
@@ -42,16 +41,15 @@ createForum(restGroup: FormGroup)
   {
     //valid property of a FormGroup will let you know if the Form group the user sent is valid or not
     if (restGroup.valid) {
-      let restaurant:Forums = {
+      let discussion:Forums = {
         topicName: restGroup.get("textfield")?.value,
-        dateCreated: restGroup.get("date")?.value,
         creatorId:this.currentuser,
         show:false
       };
 
-      console.log(restaurant);
+      console.log(discussion);
 
-      this.p_Service.AddForum(restaurant).subscribe(
+      this.p_Service.AddForum(discussion).subscribe(
         (response) => {
           console.log(response);
           this.router.navigateByUrl("/japan");

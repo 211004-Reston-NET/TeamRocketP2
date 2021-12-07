@@ -17,7 +17,8 @@ namespace DL
             _context = p_context;
         }
         public Model.Forum AddForum(Model.Forum p_forum)
-        { DateTime localDate = DateTime.Now;
+        { 
+            DateTime localDate = DateTime.Now;
 
             _context.Forums.Add
             (

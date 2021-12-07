@@ -87,20 +87,7 @@ export class ForumComponent implements OnInit {
 
   }
 
-  // getForums() {
-  //   this.show = !this.show;
-  //   this.revApi.Forums().subscribe((response) => {
-  //     console.log(response);
 
-  //     //It will set the show property to false to each element and also add it to our listOfUser
-  //     response.forEach(element => {
-
-  //       this.listOfForums.push(element);
-
-  //     });
-  //   });
-  //     this.show=!this.show;
-  // }
 
   getPosts()
 

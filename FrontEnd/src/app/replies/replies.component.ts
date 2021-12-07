@@ -39,7 +39,7 @@ export class RepliesComponent implements OnInit {
     this.listOfReplies=[];
     this.http.ReplybyId(this.postIdent).subscribe((response) =>
     {
-      console.log(response);
+      //console.log(response);
 
 
     //It will set the show property to false to each element and also add it to our listOfUser
