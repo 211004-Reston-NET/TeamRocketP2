@@ -25,6 +25,13 @@ namespace DL
         User AddUserFromAuth0(string _email);
 
         /// <summary>
+        /// modify the current user info with the passed info (exept email)
+        /// </summary>
+        /// <param name="_User"></param>
+        /// <returns></returns>
+        User UpdateUser(User _User);
+
+        /// <summary>
         /// removes the passed user from the DB
         /// </summary>
         /// <param name="p_user"></param>
