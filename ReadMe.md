@@ -36,6 +36,7 @@ This application to have all things Japan related in one single sight for anyone
 - Asp.net WebAPI
 - SQL
 - Javascript/Typescript/Angular
+- Html,CSS
 - Azure Cloud Services
 - Github VC/CI/CD
 - Xunit/Moq
