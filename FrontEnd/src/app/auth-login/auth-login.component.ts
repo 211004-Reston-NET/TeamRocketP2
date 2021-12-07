@@ -19,10 +19,12 @@ export class AuthLoginComponent implements OnInit {
   tempemail:string | undefined="notFound"
   VerifiedUser:Users | undefined;
   count:number =0;
+
   constructor(public auth0:AuthService, @Inject(DOCUMENT) public document:Document, private revApi: RevAPIService, private router: Router)
   { 
     this.auth0.user$.subscribe((Response) => {
       this.LogedInEmail = Response?.email;
+
       console.log(Response);
       console.log(this.LogedInEmail);
       if(this.LogedInEmail==null)
@@ -39,12 +41,11 @@ export class AuthLoginComponent implements OnInit {
         }
         
       }
-      
-      
+
     });
     
   }
-
+ 
   ngOnInit(): void {
  
   }

@@ -17,17 +17,22 @@ namespace P2WebApi
     {
         public static void Main(string[] args)
         {
+
+
             Log.Logger = new LoggerConfiguration()
-                .Enrich.FromLogContext()
-                .WriteTo.File(new JsonFormatter(),"Logs/startlog.json", rollingInterval: RollingInterval.Day)
-                .CreateLogger();
+              .Enrich.FromLogContext()
+              .WriteTo.File(new JsonFormatter(), "Logs/startlog.json", rollingInterval: RollingInterval.Day)
+              .CreateLogger();
+
 
             try
             {
                 Log.Information("Starting");
                 CreateHostBuilder(args).Build().Run();
             }
-            catch(Exception ex)
+
+            catch (Exception ex)
+
             {
                 Log.Fatal(ex, "Application startup failed");
             }

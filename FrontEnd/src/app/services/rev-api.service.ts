@@ -25,6 +25,9 @@ private endpointEmail:string="https://teamrocketapi.azurewebsites.net/api/user/B
 private AddForumpoint:string="https://teamrocketapi.azurewebsites.net/api/Forum/Add";
 private AddPostpoint:string="https://teamrocketapi.azurewebsites.net/api/Post/Add";
 private AddReplypoint:string="https://teamrocketapi.azurewebsites.net/api/Reply/Add";
+
+private UpdateUserPoint:string="https://teamrocketapi.azurewebsites.net/api/user/Update";
+
 private SendInvitepoint:string="https://teamrocketapi.azurewebsites.net/api/Invite/Add";
 private GetUsersendpoint:string="https://teamrocketapi.azurewebsites.net/api/user/all";
 private findOneendpoint:string="https://teamrocketapi.azurewebsites.net/api/user/";
@@ -34,6 +37,7 @@ private allforums:string="https://teamrocketapi.azurewebsites.net/api/forum/all"
 private PostbyForumId:string="https://teamrocketapi.azurewebsites.net//api/Post/ByForum";
 private ReplybyPostId:string="https://teamrocketapi.azurewebsites.net//api/Reply/ByPost";
 private UpdateUserPoint:string="https://teamrocketapi.azurewebsites.net/api/user/Update";
+
 
 
 
@@ -138,6 +142,12 @@ private UpdateUserPoint:string="https://teamrocketapi.azurewebsites.net/api/user
   {
     return this.http.get<Users>(this.endpointEmail+p_item);
   }
+
+  UpdateUser(p_item:Users)
+  {
+    return this.http.put<Users>(this.UpdateUserPoint,p_item);
+  }
+
   AddForum(p_item:Forums)
   {
     return this.http.post<Forums>(this.AddForumpoint,p_item);

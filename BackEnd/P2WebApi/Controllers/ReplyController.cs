@@ -29,7 +29,9 @@ namespace P2WebApi.Controllers
         {
             Log.Logger = new LoggerConfiguration()
               .Enrich.FromLogContext()
+
               .WriteTo.File(new JsonFormatter(), "Logs/GetReplybyPost.json")
+
               .CreateLogger();
             try
             {
@@ -55,7 +57,9 @@ namespace P2WebApi.Controllers
         {
             Log.Logger = new LoggerConfiguration()
               .Enrich.FromLogContext()
+
               .WriteTo.File(new JsonFormatter(), "Logs/Getposts.json")
+
               .CreateLogger();
             try
             {
@@ -77,11 +81,13 @@ namespace P2WebApi.Controllers
 
         // POST api/<ReplyController>
         [HttpPost("Add")]
-        public IActionResult AddPost([FromBody] Reply reply)
+        public IActionResult AddReply([FromBody] Reply reply)
         {
             Log.Logger = new LoggerConfiguration()
               .Enrich.FromLogContext()
+
               .WriteTo.File(new JsonFormatter(), "Logs/AddReply.json")
+
               .CreateLogger();
             try
             {
@@ -113,7 +119,9 @@ namespace P2WebApi.Controllers
         {
             Log.Logger = new LoggerConfiguration()
               .Enrich.FromLogContext()
+
               .WriteTo.File(new JsonFormatter(), "Logs/DeleteReply.json")
+
               .CreateLogger();
             try
             {
