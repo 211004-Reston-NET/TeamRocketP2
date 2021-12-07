@@ -18,9 +18,9 @@
           </div>
 
           <div class="details">
-            <h3>{{i.eventName}}</h3>
+            <h3>{{i.eventName}},{{i.eventId}}</h3>
             <p>{{i.eventDescription}}</p>
-            <p></p>
+            <!-- <input name="eventsidnum" [(ngModel)]="eventsidnum" hidden value="i.eventId"> -->
 
              <!-- Details Modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> View Details </button>
@@ -41,6 +41,7 @@
                     <p> Location: {{i.location}} </p>
                     <p> Starts: {{i.startTime}} </p>
                     <p> End: {{i.endTime}} </p>
+                    <form><p ></p></form>
                   </div>
 
                   <div class="modal-footer">
@@ -65,17 +66,13 @@
                     <form>
                       <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Recipient:</label>
-                        <input type="text" class="form-control" id="recipient-name">
-                      </div>
-                      <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Message:</label>
-                        <textarea class="form-control" id="message-text"></textarea>
+                        <input type="text" class="form-control" name="recipient" [(ngModel)]="recipient">
                       </div>
                     </form>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send Invite</button>
+                    <button type="button" class="btn btn-primary" (click)="Invite(recipient,i.eventId,current.id,i)">Send Invite</button>
                   </div>
                 </div>
               </div>

@@ -17,12 +17,13 @@ namespace DL
 
         public Model.Post AddPost(Model.Post p_post)
         {
+            DateTime localDate = DateTime.Now;
             _context.Posts.Add
             (
                 new Entity.Post()
                 {
                     PostText =p_post.PostText,
-                    DateCreated = p_post.DateCreated,
+                    DateCreated = localDate.ToString(),
                     UserId = p_post.UserId,
                     ForumId = p_post.ForumId
                 }
@@ -52,12 +53,12 @@ namespace DL
 
         public List<Model.Post> GetAllPosts()
         {
-            DateTime localDate = DateTime.Now;
+            
             return _context.Posts.Select(post =>
                 new Model.Post()
                 {
                     PostText = post.PostText,
-                    DateCreated = localDate.ToString(),
+                    DateCreated = post.DateCreated,
                     UserId = post.UserId,
                     ForumId = post.ForumId,
                     PostId = post.PostId

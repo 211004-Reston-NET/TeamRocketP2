@@ -1,6 +1,6 @@
 export interface Evento
 {
-    id:string,
+    eventId:string,
     startDate: Date,
     endDate: Date,
     startTime:string,

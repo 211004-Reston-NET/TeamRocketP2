@@ -7,6 +7,7 @@ import { News } from '../models/news';
 import { Replies } from '../models/Replies';
 import { Users } from '../models/Users';
 import { Evento } from '../models/Event';
+import { Invite } from '../models/Invite';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,16 @@ private endpointEmail:string="https://teamrocketapi.azurewebsites.net/api/user/B
 private AddForumpoint:string="https://teamrocketapi.azurewebsites.net/api/Forum/Add";
 private AddPostpoint:string="https://teamrocketapi.azurewebsites.net/api/Post/Add";
 private AddReplypoint:string="https://teamrocketapi.azurewebsites.net/api/Reply/Add";
+private SendInvitepoint:string="https://teamrocketapi.azurewebsites.net/api/Invite/Add";
+private GetUsersendpoint:string="https://teamrocketapi.azurewebsites.net/api/user/all";
+private findOneendpoint:string="https://teamrocketapi.azurewebsites.net/api/user/";
+private VerifyEmailEndpoint:string="https://teamrocketapi.azurewebsites.net/api/user/verify";
+private allevent:string="https://teamrocketapi.azurewebsites.net/api/event/all";
+private allforums:string="https://teamrocketapi.azurewebsites.net/api/forum/all";
+private PostbyForumId:string="https://teamrocketapi.azurewebsites.net//api/Post/ByForum";
+private ReplybyPostId:string="https://teamrocketapi.azurewebsites.net//api/Reply/ByPost";
+
+
 
   constructor(private http:HttpClient) {
    }
@@ -67,7 +78,7 @@ private AddReplypoint:string="https://teamrocketapi.azurewebsites.net/api/Reply/
     // .set('content-type', 'application/x-www-form-urlencoded')
     .set('x-rapidapi-key', '86cdbd2072msh31d13534aa18519p1285cfjsnf663f86b2e55')
     .set('x-rapidapi-host', 'community-open-weather-map.p.rapidapi.com');
-    console.log(headers);
+    //console.log(headers);
     return this.http.get<any>(this.endpoint4+"q="+p_text+"&units=imperial",{ 'headers': headers });
 
   }
@@ -77,7 +88,7 @@ private AddReplypoint:string="https://teamrocketapi.azurewebsites.net/api/Reply/
     // .set('content-type', 'application/x-www-form-urlencoded')
     .set('x-rapidapi-key', '86cdbd2072msh31d13534aa18519p1285cfjsnf663f86b2e55')
     .set('x-rapidapi-host', 'google-news.p.rapidapi.com');
-    console.log(headers);
+    //console.log(headers);
     return this.http.get<any>(this.endpoint5,{ 'headers': headers });
 
   }
@@ -88,7 +99,7 @@ private AddReplypoint:string="https://teamrocketapi.azurewebsites.net/api/Reply/
     // .set('content-type', 'application/x-www-form-urlencoded')
     .set('x-rapidapi-key', '86cdbd2072msh31d13534aa18519p1285cfjsnf663f86b2e55')
     .set('x-rapidapi-host', 'community-open-weather-map.p.rapidapi.com');
-    console.log(headers);
+    //console.log(headers);
     return this.http.get<any>(this.endpoint4b+"q="+p_text+"%2Cjp&units=imperial",{ 'headers': headers });
   }
 
@@ -105,21 +116,21 @@ private AddReplypoint:string="https://teamrocketapi.azurewebsites.net/api/Reply/
 
   Users():Observable<Users[]>
   {
-    return this.http.get<Users[]>("https://teamrocketapi.azurewebsites.net/api/user/all");
+    return this.http.get<Users[]>(this.GetUsersendpoint);
   }
   findOne(id:number):Observable<Users[]>
   {
-    return this.http.get<Users[]>("https://teamrocketapi.azurewebsites.net/api/user/"+id);
+    return this.http.get<Users[]>(this.findOneendpoint+id);
   }
 
   Verify(p_email?:string):Observable<any>
   {
-    return this.http.get<Users>("https://teamrocketapi.azurewebsites.net/api/user/verify"+p_email);
+    return this.http.get<Users>(this.VerifyEmailEndpoint+p_email);
   }
 
   Event():Observable<Evento[]>
   {
-    return this.http.get<Evento[]>("https://teamrocketapi.azurewebsites.net/api/event/all");
+    return this.http.get<Evento[]>(this.allevent);
   }
 
   CurrentUser(p_item:Users):Observable<Users>
@@ -142,7 +153,7 @@ AddReply(p_item:Replies):Observable<Replies>
   }
   Forums():Observable<Forums[]>
   {
-    return this.http.get<Forums[]>("https://teamrocketapi.azurewebsites.net/api/forum/all");
+    return this.http.get<Forums[]>(this.allforums);
 
   }
 Posts():Observable<ForumPosts[]>
@@ -152,7 +163,7 @@ Posts():Observable<ForumPosts[]>
   }
 PostsbyId(p_text:any):Observable<ForumPosts[]>
   {
-    return this.http.get<ForumPosts[]>("https://teamrocketapi.azurewebsites.net//api/Post/ByForum"+p_text);
+    return this.http.get<ForumPosts[]>(this.PostbyForumId+p_text);
   }
 
 Reply():Observable<Replies[]>
@@ -163,7 +174,12 @@ Reply():Observable<Replies[]>
 ReplybyId(p_text:any):Observable<Replies[]>
   {
     console.log(p_text);
-    return this.http.get<Replies[]>("https://teamrocketapi.azurewebsites.net//api/Reply/ByPost"+p_text);
+    return this.http.get<Replies[]>(this.ReplybyPostId+p_text);
+  }
+
+  SendInvite(p_item:Invite):Observable<any>
+  {
+    return this.http.post<Invite>(this.SendInvitepoint,p_item);
   }
   
 
