@@ -1,3 +1,4 @@
+import { InviteComponent } from './invite/invite.component';
 import { RepliesComponent } from './replies/replies.component';
 import { Replies } from './models/Replies';
 import { PostsComponent } from './posts/posts.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'forum', component: ForumComponent},
   { path: 'posts',component: PostsComponent},
   { path: 'replies',component: RepliesComponent},
+  { path: 'invite',component: InviteComponent},
   { path: '**', component: EventsComponent}
 
 ];

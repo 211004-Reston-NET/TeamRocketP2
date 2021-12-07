@@ -21,7 +21,41 @@
             <a class="nav-link" routerLink="/weather">Weather</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/forum">Forum</a>
+            <a class="nav-link" routerLink="/forum">Forum </a>
+          </li>
+          <li class="nav-item">
+              <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Translate</button>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title" id="staticBackdropLabel">Translator</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row g-2">
+                      <div class="col-md">
+                        <div class="form-floating">
+                          <input type="text" id="text2" name="text2" [(ngModel)]="text2" class="form-control" id="floatingInputGrid">
+                          <label for="floatingInputGrid">Input Text</label>
+                        </div>
+                      </div>
+                      <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <label for="floatingInputGrid">{{resultado}}</label>
+                      </div>
+                      <button type="button" class="btn btn-primary"(click)="translate(text2)">Translate Text</button>
+                    </div>
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
         <div class="pull-right">

@@ -28,8 +28,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { CreateReplyComponent } from './create-reply/create-reply.component';
 import { PostsComponent } from './posts/posts.component';
 import { RepliesComponent } from './replies/replies.component';
-import { TranslateComponent } from './translate/translate.component';
-import { TodayComponent } from './today/today.component';
+import { InviteComponent } from './invite/invite.component';
 
 @NgModule({
   declarations: [
@@ -47,8 +46,7 @@ import { TodayComponent } from './today/today.component';
     CreateReplyComponent,
     PostsComponent,
     RepliesComponent,
-    TranslateComponent,
-    TodayComponent,
+    InviteComponent,
   ],
 
   imports: [
