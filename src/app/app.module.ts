@@ -18,7 +18,6 @@ import { AppComponent } from './app.component';
 import { WeatherComponent } from './weather/weather.component';
 import { NewsComponent } from './news/news.component';
 import { EventsComponent } from './events/events.component';
-import { LoginComponent } from './login/login.component';
 import { LandingComponent } from './landing/landing.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -29,6 +28,7 @@ import { CreateReplyComponent } from './create-reply/create-reply.component';
 import { PostsComponent } from './posts/posts.component';
 import { RepliesComponent } from './replies/replies.component';
 import { InviteComponent } from './invite/invite.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,6 @@ import { InviteComponent } from './invite/invite.component';
     WeatherComponent,
     NewsComponent,
     EventsComponent,
-    LoginComponent,
     LandingComponent,
     NavbarComponent,
     FooterComponent,
@@ -47,6 +46,7 @@ import { InviteComponent } from './invite/invite.component';
     PostsComponent,
     RepliesComponent,
     InviteComponent,
+    UserProfileComponent,
   ],
 
   imports: [

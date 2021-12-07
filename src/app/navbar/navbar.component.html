@@ -12,7 +12,7 @@
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/test">Events</a>
+            <a class="nav-link" routerLink="/events">Events</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/news">News</a>
@@ -24,14 +24,12 @@
             <a class="nav-link" routerLink="/forum">Forum </a>
           </li>
           <li class="nav-item">
-              <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Translate</button>
-            <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <a type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#static">Translate</a>
+            <div class="modal fade" id="static" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title" id="staticBackdropLabel">Translator</h1>
+                    <h1 class="modal-title" id="staticLabel">Translator</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
@@ -63,7 +61,7 @@
             <li class="dropdown"><button class="dropbtn">Welcome, User <i class="fa fa-caret-down"></i></button>
               <ul class="dropdown-content">
                 <li>
-                  <a href=""><i class="icon-off"></i> Profile</a>
+                  <a routerLink="/user-profile"><i class="icon-off"></i> Profile</a>
                   <a href=""><i class="icon-off"></i> Logout</a>
                 </li>
               </ul>

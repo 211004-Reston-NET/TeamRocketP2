@@ -36,11 +36,20 @@ private ReplybyPostId:string="https://teamrocketapi.azurewebsites.net//api/Reply
 
 
 
+
+
+
   constructor(private http:HttpClient) {
    }
 
   //This will give us a list of restaurant from RevWebAPI
   //Will return an observable that is a list of restaurant
+
+
+  // GetUserById(p_id:number) : Observable<any>
+  // {
+  //   return this.http.get<any>(this.endpoint + "/User/" + p_id);
+  // }
 
   translate(p_text:string): Observable<any>
   {
@@ -118,7 +127,7 @@ private ReplybyPostId:string="https://teamrocketapi.azurewebsites.net//api/Reply
   {
     return this.http.get<Users[]>(this.GetUsersendpoint);
   }
-  findOne(id:number):Observable<Users[]>
+  Userid(id: string):Observable<Users[]>
   {
     return this.http.get<Users[]>(this.findOneendpoint+id);
   }
@@ -166,6 +175,8 @@ PostsbyId(p_text:any):Observable<ForumPosts[]>
     return this.http.get<ForumPosts[]>(this.PostbyForumId+p_text);
   }
 
+
+
 Reply():Observable<Replies[]>
   {
     return this.http.get<Replies[]>("https://teamrocketapi.azurewebsites.net//api/Reply/ByPost1");
@@ -182,4 +193,16 @@ ReplybyId(p_text:any):Observable<Replies[]>
     return this.http.post<Invite>(this.SendInvitepoint,p_item);
   }
 
+  GetInvites():Observable<Invite[]>
+  {
+
+    return this.http.get<Invite[]>("https://teamrocketapi.azurewebsites.net/api/invite/all");
+  }
+
+
+  GetAllInvite():Observable<Invite[]>
+
+  {
+    return this.http.get<Invite[]>("https://teamrocketapi.azurewebsites.net/api/invite/all");
+}
 }

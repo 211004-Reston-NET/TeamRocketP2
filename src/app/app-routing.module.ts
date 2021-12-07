@@ -1,3 +1,4 @@
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import { InviteComponent } from './invite/invite.component';
 import { RepliesComponent } from './replies/replies.component';
 import { Replies } from './models/Replies';
@@ -7,7 +8,6 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { CreateForumComponent } from './create-forum/create-forum.component';
 import { ForumComponent } from './forum/forum.component';
 import { LandingComponent } from './landing/landing.component';
-import { LoginComponent } from './login/login.component';
 import { EventsComponent } from './events/events.component';
 import { NewsComponent } from './news/news.component';
 import { NgModule } from '@angular/core';
@@ -20,15 +20,15 @@ import { BrowserModule } from '@angular/platform-browser';
 const routes: Routes = [
 
   { path:'', component: LandingComponent},
+  { path: 'events', component: EventsComponent},
   { path: 'weather', component: WeatherComponent},
   { path: 'news', component: NewsComponent},
-  { path: 'events', component: EventsComponent},
-  { path: 'login', component: LoginComponent},
   { path: 'forum', component: ForumComponent},
   { path: 'posts',component: PostsComponent},
   { path: 'replies',component: RepliesComponent},
   { path: 'invite',component: InviteComponent},
-  { path: '**', component: EventsComponent}
+  { path:'user-profile', component: UserProfileComponent},
+  { path: '**', component: UserProfileComponent}
 
 ];
 

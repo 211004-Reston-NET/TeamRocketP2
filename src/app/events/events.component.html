@@ -7,6 +7,7 @@
         and unique charm.
       </p>
     </div>
+    <app-invite></app-invite>
   </div>
   <div class="events">
     <ul>
@@ -18,12 +19,12 @@
           <h2>{{i.eventName}}</h2>
           <p>{{i.eventDescription}}</p>
           <p>Location: {{i.location}}</p>
-          <p>Time: {{i.startTime}} - {{i.endTime}}</p>
-          <a routerLink="/invite" type="button" class="info-btn btn btn-dark btn-sm">Send Invite</a>
+          <p>Time: {{i.startTime}} - {{i.endTime}}
+            <sub>
+            <a type="button" class="info-btn btn btn-dark btn-sm">Send Invite</a>
+          </sub>
         </div>
       </li>
     </ul>
   </div>
 </body>
-
-

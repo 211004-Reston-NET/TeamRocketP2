@@ -62,8 +62,8 @@ export class EventsComponent implements OnInit
       console.log(p_show);
       let invitation:Invite = {
         UserId:p_UserId,
-        EmailRecipient:p_email,
-        EventId:p_eventId
+        emailRecipient:p_email,
+        eventId:p_eventId
       };
       console.log(invitation)
       this.revApi.SendInvite(invitation)
