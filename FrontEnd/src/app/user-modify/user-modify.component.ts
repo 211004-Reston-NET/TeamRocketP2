@@ -16,12 +16,12 @@ export class UserModifyComponent implements OnInit {
       Username: new FormControl("", Validators.required),
       PersonName: new FormControl("", Validators.required)
     });
-    
+
     @Input()
     email:string="";
     @Input()
     showModifyUser:boolean = false;
-    
+
     current:Users={
     id:"",
     userName:"",
@@ -36,7 +36,7 @@ export class UserModifyComponent implements OnInit {
 
     retrieved:any
 
-  constructor(public auth0:AuthService,private revApi:RevAPIService, private router: Router) { 
+  constructor(public auth0:AuthService,private revApi:RevAPIService, private router: Router) {
     this.auth0.user$.subscribe((Response) => {
       this.retrieved = Response?.name;
       });
@@ -50,7 +50,7 @@ export class UserModifyComponent implements OnInit {
 
   showForm(){
       this.showModifyUser=!this.showModifyUser
-  
+
   }
 
   UpdateUserInfo(restGroup: FormGroup)
@@ -76,7 +76,7 @@ export class UserModifyComponent implements OnInit {
         )
         this.router.navigateByUrl("/landing");
       }
- 
+
   }
 
 }

@@ -1,75 +1,48 @@
-
-
 <body>
 
-<div class="wrapper">
-    <div class="left">
-        <img src="../../assets/images/Japan2.jpg" alt="" 
-        alt="user" width="400">
-        <h2>Welcome To Japan where dreams come true</h2>
-         <h2>User informaton</h2>
-    </div>
-    <div class="right">
-        <div class="info">
-            <h3>Information</h3>
-            <div class="info_data">
-                 <div class="data">
-                    <h4>Email</h4>
-                    <p>{{current.email}}</p>
-                 </div>
-                 <div class="data">
-                   <h4>Username</h4>
-                    <p>{{current.userName}}</p>
-              </div>
-            </div>
-        </div>
-      
-      <div class="projects">
-            <h3>Projects</h3>
-            <div class="projects_data">
-                 <div class="data">
-                    <h4>Recent</h4>
-                    <p>P2 greek gods</p>
-                 </div>
-                 <div class="data">
-                   <h4>Viewes</h4>
-                    <p>13,455,390</p>
-              </div>
-            </div>
-        </div>
-      
-        <div class="social_media">
-            <ul>
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          </ul>
-          <button (click)="showMyinvites()">Invitiations</button>
-          <button (click)="showForm()">Modify</button>
-          <app-user-modify [showModifyUser]="showComponent"></app-user-modify>
-          <table *ngIf="show" class="table">
-            <thead>
-                <th>eventId</th>
-                <th>eventName</th>
-            </thead>
-          
-            <tbody>
-                <tr *ngFor="let i of listofmyInvites">
-                    <td>{{i.eventId}}</td>
-                    <td>{{i.activity}}</td>
-                    <td>{{i.inviteId}}</td>
-                    <button (click)="DeletefromList(i.inviteId)">Delete</button>
-          
-                    <!-- <a routerLink="/review">Review</a> -->
-                </tr>
-            </tbody>
-          </table>
+  <div class="wrapper">
+      <div class="left">
+          <img src="../../assets/images/profile.jpg" alt=""
+          alt="user" width="400">
+          <h2>Welcome To Japan where dreams come true</h2>
+           <h2>{{current.userName}}</h2>
       </div>
-    </div>
-</div>
+      <div class="right">
+          <div class="info">
+              <h3>Information</h3>
+              <div class="info_data">
+                   <div class="data">
+                      <h4>Email</h4>
+                      <p>{{current.email}}</p>
+                   </div>
+                   <div class="data">
+                     <h4>Username</h4>
+                      <p>{{current.userName}}</p>
+                </div>
+              </div>
+          </div>
 
-</body>
+          <div class="social_media">
+                <button (click)="showForm()">Edit Profile</button>
+                <button (click)="showMyinvites()">Invitiations</button>
+            <app-user-modify [showModifyUser]="showComponent"></app-user-modify>
+            <table *ngIf="show" class="table">
+              <thead>
+                  <th>eventId</th>
+                  <th>eventName</th>
+              </thead>
 
+              <tbody>
+                  <tr *ngFor="let i of listofmyInvites">
+                      <td>{{i.eventId}}</td>
+                      <td>{{i.activity}}</td>
+                      <td>{{i.inviteId}}</td>
+                      <button (click)="DeletefromList(i.inviteId)">Delete</button>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+  </div>
 
-
-
+  </body>

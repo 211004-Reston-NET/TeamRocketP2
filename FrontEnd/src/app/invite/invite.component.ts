@@ -30,10 +30,10 @@ export class InviteComponent implements OnInit {
     this.revApi.SendInvite(invitation)
       .subscribe(data =>
       {
-        
+
         console.log(data);
       });
       this.router.navigateByUrl("/landing");
-      
+
   }
 }

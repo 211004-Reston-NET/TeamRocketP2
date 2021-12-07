@@ -74,7 +74,7 @@ showMyinvites()
   {
     if(this.listOfEvents.findIndex(rest => rest.eventId == this.listofInvitations[i].eventId))
     {
-      console.log(this.listofInvitations[i].eventId);
+      //console.log(this.listofInvitations[i].eventId);
       let index: number = this.listOfEvents.findIndex(rest => rest.eventId == this.listofInvitations[i].eventId);
       this.listofInvitations[i].activity=this.listOfEvents[index].eventName;
       console.log(this.listofInvitations[i].activity)
@@ -83,7 +83,8 @@ showMyinvites()
 
   this.listofInvitations.forEach(element=>{
    
-
+// console.log(this.current.email)
+// console.log(element.emailRecipient)
     if(element.emailRecipient==this.current.email)
     {
       this.listofmyInvites.push(element)
