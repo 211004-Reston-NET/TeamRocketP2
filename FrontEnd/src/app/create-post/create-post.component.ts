@@ -16,7 +16,6 @@ export class CreatePostComponent implements OnInit
 
     restGroup:FormGroup = new FormGroup({
       textfield: new FormControl("", Validators.required),
-      date: new FormControl("", Validators.required)
     });
     showAddPost:boolean=false;
     @Input()
@@ -45,7 +44,6 @@ export class CreatePostComponent implements OnInit
       if (restGroup.valid) {
         let restaurant:ForumPosts = {
           postText: restGroup.get("textfield")?.value,
-          dateCreated: restGroup.get("date")?.value,
           userId:this.userId.id,
           forumId:this.forumIdentification,
           show:false

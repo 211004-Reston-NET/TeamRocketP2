@@ -17,12 +17,13 @@ namespace DL
 
         public Model.Reply AddReply(Model.Reply p_reply)
         {
+            DateTime localDate = DateTime.Now;
             _context.Replies.Add
             (
                 new Entity.Reply()
                 {
                     ReplyText = p_reply.ReplyText,
-                    DateCreated = p_reply.DateCreated,
+                    DateCreated = localDate.ToString(),
                     UserId = p_reply.UserId,
                     PostId = p_reply.PostId
                 }

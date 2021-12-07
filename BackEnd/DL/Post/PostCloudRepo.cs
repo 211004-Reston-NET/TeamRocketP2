@@ -51,11 +51,12 @@ namespace DL
 
         public List<Model.Post> GetAllPosts()
         {
+            DateTime localDate = DateTime.Now;
             return _context.Posts.Select(post =>
                 new Model.Post()
                 {
                     PostText = post.PostText,
-                    DateCreated = post.DateCreated,
+                    DateCreated = localDate.ToString(),
                     UserId = post.UserId,
                     ForumId = post.ForumId,
                     PostId = post.PostId

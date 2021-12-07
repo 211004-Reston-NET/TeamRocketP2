@@ -18,7 +18,6 @@ export class CreateForumComponent implements OnInit
   ({
 
     textfield: new FormControl("", Validators.required),
-    date: new FormControl("", Validators.required)
 
   });
 
@@ -44,7 +43,6 @@ createForum(restGroup: FormGroup)
     if (restGroup.valid) {
       let restaurant:Forums = {
         topicName: restGroup.get("textfield")?.value,
-        dateCreated: restGroup.get("date")?.value,
         creatorId:this.currentuser,
         show:false
       };
