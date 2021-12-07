@@ -33,6 +33,13 @@ namespace BL
         List<User> GetUserByName(string _name);
 
         /// <summary>
+        /// modify the current user info with the passed info (exept email)
+        /// </summary>
+        /// <param name="_User"></param>
+        /// <returns></returns>
+        User UpdateUser(User _User);
+
+        /// <summary>
         /// return the user with an ID matching the passed Int
         /// </summary>
         /// <param name="p_Id"></param>

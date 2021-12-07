@@ -57,11 +57,15 @@ namespace BL
             return _repo.DeleteUser(p_user_Id);
         }
 
+        public User UpdateUser(User p_user)
+        {
+            return _repo.UpdateUser(p_user);
+        }
         public User GetUserByEmail(string p_email)
         {
             try{
             List<User> listOfUsers = _repo.GetAllUsers();
-            List<User> Found = (listOfUsers.Where(usr => usr.Email.Equals(p_email))).ToList();
+            List<User> Found = (listOfUsers.Where(usr => usr.Email.ToLower().Equals(p_email.ToLower()))).ToList();
             return Found[0];
             }
             catch(Exception)
