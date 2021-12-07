@@ -37,7 +37,7 @@ namespace BL
         /// </summary>
         /// <param name="_User"></param>
         /// <returns></returns>
-        User ModifyUser(User _User);
+        User UpdateUser(User _User);
 
         /// <summary>
         /// return the user with an ID matching the passed Int

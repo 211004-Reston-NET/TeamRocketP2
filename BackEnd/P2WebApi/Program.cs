@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Serilog;
 using Serilog.Formatting.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace P2WebApi
 {
@@ -15,7 +17,6 @@ namespace P2WebApi
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
 
             Log.Logger = new LoggerConfiguration()
               .Enrich.FromLogContext()

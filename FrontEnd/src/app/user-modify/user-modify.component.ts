@@ -22,7 +22,8 @@ export class UserModifyComponent implements OnInit {
     @Input()
     showbutton:boolean = true;
     
-    current:Users={id:"",
+    current:Users={
+    id:"",
     userName:"",
     userPass:"",
     email:"",
@@ -67,7 +68,7 @@ export class UserModifyComponent implements OnInit {
           invites:this.current.invites
         }
 
-        this.revApi.UpdateUser(UserInfo).subscribe(
+        this.revApi.UpdateUser(this.current.id,UserInfo).subscribe(
           (response) => {
             console.log(response);
           }

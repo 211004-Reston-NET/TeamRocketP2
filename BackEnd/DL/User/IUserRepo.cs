@@ -29,7 +29,7 @@ namespace DL
         /// </summary>
         /// <param name="_User"></param>
         /// <returns></returns>
-        User ModifyUser(User _User);
+        User UpdateUser(User _User);
 
         /// <summary>
         /// removes the passed user from the DB
