@@ -1,7 +1,8 @@
 # Travel Japan Application
 ## Overview
 This application to have all things Japan related in one single sight for anyone interested in taking a trip to Japan. This application currently allows you to translate any text to english, can view recent news related to japan, search the current weather for any city in japan, invite other users to upcoming cultural events and post forums to talk to other users.
-##Link
+
+## Link
 traveljapan-application.azurewebsites.net
 
 ## Tables
@@ -44,7 +45,7 @@ traveljapan-application.azurewebsites.net
   - Open Weather API
   - Google News API 
 
-##Created by
+## Created by
 -Joshua Lopez
 -Adam Czyryca
 -Oscar Cerna
