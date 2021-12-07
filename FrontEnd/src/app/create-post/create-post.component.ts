@@ -44,6 +44,7 @@ export class CreatePostComponent implements OnInit
       if (restGroup.valid) {
         let restaurant:ForumPosts = {
           postText: restGroup.get("textfield")?.value,
+          dateCreated:"",
           userId:this.userId.id,
           forumId:this.forumIdentification,
           show:false
