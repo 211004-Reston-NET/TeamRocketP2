@@ -17,13 +17,14 @@ namespace DL
             _context = p_context;
         }
         public Model.Forum AddForum(Model.Forum p_forum)
-        {
+        { DateTime localDate = DateTime.Now;
+
             _context.Forums.Add
             (
                 new Entity.Forum()
                 {
                     TopicName = p_forum.TopicName,
-                    DateCreated = p_forum.DateCreated,
+                    DateCreated = localDate.ToString(),
                     CreatorId = p_forum.CreatorId, 
                     AmountOfPosts = p_forum.AmountOfPosts,
                     
