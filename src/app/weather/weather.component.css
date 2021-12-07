@@ -1,101 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
 
 body
 {
-  background: #222;
   background-image: url("../../assets/images/panoramic-geff0a777d_1920.jpg");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
   height: 100vh;
-  width: 100%;
-  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 120%;
 }
 
- section
+.wrapper
 {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.card {
-  background: #000000d0;
-  color: whitesmoke;
-  padding: 2em;
-  border-radius: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.6);
+  max-width: 550px;
   width: 100%;
-  max-width: 400px;
-  margin: 1em;
-}
-
-.search {
+  padding: 15px;
+  border-radius: 5px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
+  justify-content: space-between;
 }
 
-input.search-bar {
-  border: none;
-  outline: none;
-  padding: 0.2em 1em;
-  border-radius: 20px;
-  background: black;
-  color: whitesmoke;
-  font-family: inherit;
-  font-size: 100%;
-  width: 100%;
-}
-
-button {
-  margin: 0.5em;
-  border-radius: 60%;
-  border: none;
-  height: 30px;
-  width: 30px;
-  outline: none;
-  background: #7c7c7c2b;
-  color: whitesmoke;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-}
-
-button.hover {
-  background: #7c7c7c9b;
-}
-
-h1.temp {
-  margin: 0;
-  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: bold;
-}
-
-h2.city
+.wrapper .input
 {
-  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 85%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
   font-weight: bold;
 }
 
-table {
+.searchbtn
+{
+  background: #ffec00;
+  width: 10%;
+  border-radius: 5px;
+  position: relative;
+}
+
+.searchbtn .fa
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 18px;
+}
+
+.card
+{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  color: whitesmoke;
+  max-width: 550px;
   width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  border-radius: none;
+  border: none;
 }
 
-.weather.loading {
-    visibility: hidden;
-    max-height: 20px;
-    position: relative;
+.card-content h5
+{
+  font-size: 50px;
 }
 
-.weather.loading::after {
-    visibility: visible;
-    color: whitesmoke;
-    position: absolute;
-    top: 0;
-    left: 20px;
+.card-content h3
+{
+  font-size: 30px;
 }
+
+

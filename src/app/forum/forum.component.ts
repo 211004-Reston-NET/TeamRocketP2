@@ -7,6 +7,7 @@ import { Replies } from '../models/Replies';
 import { Users } from '../models/Users';
 import { RevAPIService } from '../services/rev-api.service';
 import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-forum',
@@ -28,17 +29,35 @@ export class ForumComponent implements OnInit {
   result:any="";
   replyshow:boolean=false;
 
-  forumtopic:any="";
-  forumdate:any="";
+  retrieved:any
 
   restGroup:FormGroup = new FormGroup({
     textfield: new FormControl("", Validators.required),
     date: new FormControl("", Validators.required)
   });
 
-  constructor(private revApi: RevAPIService, private router: Router) { }
+  current:Users={id:"",
+    userName:"",
+    userPass:"",
+    email:"",
+    nameOfUser:"",
+    forums:"",
+    invites:"",
+    posts:"",
+    replies:""}
+
+
+  constructor(private revApi: RevAPIService, private router: Router,public auth0:AuthService) {
+    this.auth0.user$.subscribe((Response) => {
+      this.retrieved = Response?.name;
+    });
+   }
+
 
   ngOnInit(): void {
+    this.revApi.CurrentUser(this.retrieved).subscribe((response) => {
+      console.log(response);
+      this.current=response;});
 
     this.revApi.Forums().subscribe((response) => {
       console.log(response);
@@ -68,20 +87,7 @@ export class ForumComponent implements OnInit {
 
   }
 
-  // getForums() {
-  //   this.show = !this.show;
-  //   this.revApi.Forums().subscribe((response) => {
-  //     console.log(response);
 
-  //     //It will set the show property to false to each element and also add it to our listOfUser
-  //     response.forEach(element => {
-
-  //       this.listOfForums.push(element);
-
-  //     });
-  //   });
-  //     this.show=!this.show;
-  // }
 
   getPosts()
 
@@ -136,19 +142,6 @@ export class ForumComponent implements OnInit {
 
   }
 
-  AddUser(P_username:string,P_Pass:string,p_email:string,p_name:string)
-  {
-
-  let testitem:Users={userName:P_username,userPass:P_Pass,email:p_email,nameOfUser:p_name}
-    console.log(testitem);
-    this.revApi.AddUser(testitem).subscribe((response) => {
-      console.log(response);
-
-      //It will set the show property to false to each element and also add it to our listOfUser
-
-    });
-
-  }
 
   AddForum(P_Topic:string,P_date:string) {
 
@@ -162,19 +155,6 @@ export class ForumComponent implements OnInit {
       });
 
     }
-
-    // AddPost(P_Topic:string,P_date:string) {
-
-    //   let testitem:ForumPosts={postText:P_Topic,dateCreated:P_date,userId:8,forumId:this.result,show:false}
-    //     console.log(testitem);
-    //     this.revApi.AddPost(testitem).subscribe((response) => {
-    //       console.log(response);
-
-    //       //It will set the show property to false to each element and also add it to our listOfUser
-
-    //     });
-
-    //   }
 
       AddReply(P_Topic:string,P_date:string) {
 

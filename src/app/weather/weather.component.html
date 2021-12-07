@@ -1,64 +1,21 @@
 <body>
-
-  <div class="card">
-
-    <div class="search">
-
-      <input type="text" [(ngModel)]="weatherText" class="search-bar" placeholder="Search by city">
-
-      <button type="button" (click)="Weather(weatherText);Forecast(weatherText)">
-
-        <i class="fa fa-search" aria-hidden="true"></i></button>
-
+  <div class="wrapper">
+    <input type="text" class="input" placeholder="Enter Japanese City" [(ngModel)]="weatherText" >
+    <div class="searchbtn">
+      <i  type="button" class="fa fa-search" (click)="Weather(weatherText);Forecast(weatherText)"></i>
     </div>
-
-    <br>
-
-    <div class="weather loading">
-
-      <div class="city">Weather in {{city}}</div>
-
-      <img src="" alt="" class="icon" />
-
-      <div class="temp">{{Temp}}</div>
-
-      <img src="" alt="" class="icon" />
-
-      <div class="description">{{Description}}</div>
-
-      <div class="humidity">Humidity: {{Humidity}}</div>
-
-      <div class="wind">Wind Speed: {{Wind}}</div>
-
-    </div>
-
   </div>
-
+  <div class="container">
+    <div class="card">
+      <div class="card-content">
+      <br>
+      <h5>{{city}}</h5>
+      <br>
+      <h3>{{Temp}}</h3>
+      <p>{{Humidity}}</p>
+      <p>{{Wind}}</p>
+    </div>
+  </div>
+  </div>
 </body>
 
-<!-- <body>
-    <div class="container">
-      <div class="card">
-        <div class="weather loading">
-        <h1>Toyko</h1>
-        <h1 class="temp">{{Temp}}</h1>
-        <h3>
-          <span class="min-temp">25&deg;</span>
-        </h3>
-        <h2>
-          <span class="humidity">2%</span>
-        </h2>
-        <h4>
-          <span class="humidity"></span>
-        </h4>
-      </div>
-      </div>
-
-    </div>
-  </body>
-
-
-
-<input type="text" [(ngModel)]="weatherText" class="search-bar" placeholder="Search by city">
-<button type="button" (click)="Weather(weatherText);Forecast(weatherText)">
-<i class="fa fa-search" aria-hidden="true"></i></button> -->

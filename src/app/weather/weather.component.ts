@@ -40,8 +40,8 @@ export class WeatherComponent implements OnInit {
         this.city=data.name;
         this.Temp=data.main.temp+" °F";
         this.Description=data.weather[0].description;
-        this.Humidity = data.main.humidity+"%";
-        this.Wind = data.wind.speed+ " mph";
+        this.Humidity = "Humidity: "+data.main.humidity+"%";
+        this.Wind = "Wind Speed: "+data.wind.speed+ "mph";
         document.querySelector(" .weather")?.classList.remove("loading");
       })
   }
