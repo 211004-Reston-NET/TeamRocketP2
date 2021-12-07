@@ -1,91 +1,52 @@
 <body>
-  <section>
-
-    <div class="left-box">
-      <div class="content">
-        <h1>Events in Japan</h1>
-        <p>Japan have been praised and pleased through traditional Japanese “matsuri” festivals.
-          Filled with dancing, music, costumes, food, and more, each matsuri festival boasts its own fascinating history
-          and unique charm. </p>
-      </div>
+  <div class="left-box">
+    <div class="content">
+      <h1>Events in Japan</h1>
+      <p>Japan have been praised and pleased through traditional Japanese “matsuri” festivals.
+        Filled with dancing, music, costumes, food, and more, each matsuri festival boasts its own fascinating history
+        and unique charm.
+      </p>
     </div>
-
-    <div class="events">
-      <ul>
-        <li *ngFor="let i of listOfEvents">
-          <div class="time">
-            <h2>{{i.startDate}}<br>-<br><span>{{i.endDate}}</span></h2>
-          </div>
-
-          <div class="details">
-            <h3>{{i.eventName}},{{i.eventId}}</h3>
-            <p>{{i.eventDescription}}</p>
-            <!-- <input name="eventsidnum" [(ngModel)]="eventsidnum" hidden value="i.eventId"> -->
-
-             <!-- Details Modal -->
-            <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> View Details </button>
-
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-              aria-labelledby="staticBackdropLabel" aria-hidden="true">
-
-              <div class="modal-dialog modal-dialog-centered">
-
-                <div class="modal-content">
-
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">{{i.eventName}}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-
-                  <div class="modal-body">
-                    <p> Location: {{i.location}} </p>
-                    <p> Starts: {{i.startTime}} </p>
-                    <p> End: {{i.endTime}} </p>
-                    <form><p ></p></form>
-                  </div>
-
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  </div>
-                  <div style="clear: both;"></div>
+  </div>
+  <div class="events">
+    <ul>
+      <li *ngFor="let i of listOfEvents">
+        <div class="time">
+          <h2>{{i.startDate}}<br>-<br><span>{{i.endDate}}</span></h2>
+        </div>
+        <div class="details">
+          <h2>{{i.eventName}}</h2>
+          <p>{{i.eventDescription}}</p>
+          <p>Location: {{i.location}}</p>
+          <p>Time: {{i.startTime}} - {{i.endTime}}
+            <a type="button" class="info-btn btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              data-bs-whatever="@mdo">Send Invite</a>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">{{i.eventId}}:</label>
+                      <input type="text" class="form-control" name="recipient" [(ngModel)]="recipient">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" (click)="Invite(recipient,i.eventId,current.id,i)">Send Invite</button>
                 </div>
               </div>
             </div>
-
-             <!-- Invite Modal -->
-            <button type="button" class="info-btn btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Send Invite</button>
-
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Recipient:</label>
-                        <input type="text" class="form-control" name="recipient" [(ngModel)]="recipient">
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" (click)="Invite(recipient,i.eventId,current.id,i)">Send Invite</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
-
-        </li>
-
-      </ul>
-
-    </div>
-
-  </section>
-
+        </div>
+      </li>
+    </ul>
+  </div>
 </body>
+

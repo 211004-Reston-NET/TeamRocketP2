@@ -1,8 +1,8 @@
 export interface Invite
     {
         UserId:any
-        EmailRecipient:any
-        EventId:any
+        emailRecipient:any
+        eventId:any
         InviteId?:any
         activity?:any
         User?:any
