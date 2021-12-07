@@ -29,7 +29,7 @@ namespace P2WebApi.Controllers
         {
             Log.Logger = new LoggerConfiguration()
              .Enrich.FromLogContext()
-             .WriteTo.File(new JsonFormatter(), "Logs/GetAllEvents.json")
+             .WriteTo.File(new JsonFormatter(), "Logs/GetPostbyForum.json")
              .CreateLogger();
             try
             {
@@ -55,7 +55,7 @@ namespace P2WebApi.Controllers
         {
             Log.Logger = new LoggerConfiguration()
             .Enrich.FromLogContext()
-            .WriteTo.File(new JsonFormatter(), "Logs/GetAllEvents.json")
+            .WriteTo.File(new JsonFormatter(), "Logs/GetpostbyId.json")
             .CreateLogger();
             try
             {
@@ -81,7 +81,7 @@ namespace P2WebApi.Controllers
         {
             Log.Logger = new LoggerConfiguration()
             .Enrich.FromLogContext()
-            .WriteTo.File(new JsonFormatter(), "Logs/GetAllEvents.json")
+            .WriteTo.File(new JsonFormatter(), "Logs/AddPost.json")
             .CreateLogger();
             try
             {
@@ -113,7 +113,7 @@ namespace P2WebApi.Controllers
         {
             Log.Logger = new LoggerConfiguration()
             .Enrich.FromLogContext()
-            .WriteTo.File(new JsonFormatter(), "Logs/GetAllEvents.json")
+            .WriteTo.File(new JsonFormatter(), "Logs/Deletepost.json")
             .CreateLogger();
             try
             {
