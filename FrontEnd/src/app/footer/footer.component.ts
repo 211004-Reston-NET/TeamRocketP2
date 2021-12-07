@@ -14,16 +14,6 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  translate(p_text: string)
-  {
-    this.text2 = p_text;
-    this.revApi.translate(this.text2)
-      .subscribe(data =>
-      {
-        this.resultado = data.data.translation;
-        console.log(data);
-      });
-      this.text2="";
-  }
+  
 
 }
