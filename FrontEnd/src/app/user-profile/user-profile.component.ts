@@ -17,6 +17,7 @@ export class UserProfileComponent implements OnInit {
   listofmyInvites:Invite[]=[];
   listOfEvents:Evento[]=[];
   show:boolean=false
+  showComponent:boolean=false;
 
   retrieved:any
   current:Users={id:"",
@@ -91,4 +92,18 @@ showMyinvites()
   console.log(this.listofmyInvites)
   this.show=!this.show;
 }
+
+DeletefromList(p_id:string)
+{
+  this.revApi.DeleteInvite(p_id).subscribe((Response) => {
+    console.log(Response);
+    this.router.navigateByUrl("/forum");
+  });
+}
+
+showForm()
+{
+  this.showComponent=!this.showComponent
+}
+
 }

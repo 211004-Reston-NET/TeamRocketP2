@@ -36,6 +36,7 @@ private allevent:string="https://teamrocketapi.azurewebsites.net/api/event/all";
 private allforums:string="https://teamrocketapi.azurewebsites.net/api/forum/all";
 private PostbyForumId:string="https://teamrocketapi.azurewebsites.net//api/Post/ByForum";
 private ReplybyPostId:string="https://teamrocketapi.azurewebsites.net//api/Reply/ByPost";
+private UpdateUserPoint:string="https://teamrocketapi.azurewebsites.net/api/user/Update";
 
 
 
@@ -196,6 +197,15 @@ ReplybyId(p_text:any):Observable<Replies[]>
   {
     
     return this.http.get<Invite[]>("https://teamrocketapi.azurewebsites.net/api/invite/all");
+  }
+
+  DeleteInvite(p_id:string):Observable<any>
+  {
+    return this.http.delete<any>("https://teamrocketapi.azurewebsites.net/api/invite/"+p_id);
+  }
+  UpdateUser(p_item:Users)
+  {
+    return this.http.put<Users>(this.UpdateUserPoint,p_item);
   }
 
   

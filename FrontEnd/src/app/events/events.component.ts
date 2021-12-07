@@ -29,7 +29,8 @@ export class EventsComponent implements OnInit
   posts:"",
   replies:""}
 eventsidnum:any;
-  retrieved:any
+  retrieved:any;
+  show:boolean=false;
 
 constructor(private revApi: RevAPIService, private router: Router,public auth0:AuthService) {
   this.auth0.user$.subscribe((Response) => {
@@ -72,7 +73,14 @@ constructor(private revApi: RevAPIService, private router: Router,public auth0:A
         
         console.log(data);
       });
+      this.router.navigateByUrl("/japan");
       
+  }
+  showform(p_id:string)
+  {
+    this.show=!this.show
+    this.eventsidnum=p_id;
+console.log(this.eventsidnum)
   }
 
 }

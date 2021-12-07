@@ -30,6 +30,8 @@ import { PostsComponent } from './posts/posts.component';
 import { RepliesComponent } from './replies/replies.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JapanComponent } from './japan/japan.component';
+
+import { InviteComponent } from './invite/invite.component';
 import { UserModifyComponent } from './user-modify/user-modify.component';
 
 @NgModule({
@@ -51,6 +53,9 @@ import { UserModifyComponent } from './user-modify/user-modify.component';
     PostsComponent,
     RepliesComponent,
     JapanComponent,
+
+    InviteComponent,
+
     UserModifyComponent
   ],
 

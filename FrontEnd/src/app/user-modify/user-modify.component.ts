@@ -16,11 +16,13 @@ export class UserModifyComponent implements OnInit {
       Username: new FormControl("", Validators.required),
       PersonName: new FormControl("", Validators.required)
     });
+
     showModifyUser:boolean=false;
     @Input()
     email:string="";
     @Input()
     showbutton:boolean = true;
+
     
     current:Users={
     id:"",
@@ -74,6 +76,9 @@ export class UserModifyComponent implements OnInit {
             console.log(response);
           }
         )
+
+        this.router.navigateByUrl("/landing");
+
       }
  
   }

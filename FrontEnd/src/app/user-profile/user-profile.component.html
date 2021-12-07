@@ -18,8 +18,8 @@
                     <p>{{current.email}}</p>
                  </div>
                  <div class="data">
-                   <h4>Phone</h4>
-                    <p>800-867-5309</p>
+                   <h4>Username</h4>
+                    <p>{{current.userName}}</p>
               </div>
             </div>
         </div>
@@ -45,6 +45,8 @@
               <li><a href="#"><i class="fab fa-instagram"></i></a></li>
           </ul>
           <button (click)="showMyinvites()">Invitiations</button>
+          <button (click)="showForm()">Modify</button>
+          <app-user-modify [showModifyUser]="showComponent"></app-user-modify>
           <table *ngIf="show" class="table">
             <thead>
                 <th>eventId</th>
@@ -55,7 +57,8 @@
                 <tr *ngFor="let i of listofmyInvites">
                     <td>{{i.eventId}}</td>
                     <td>{{i.activity}}</td>
-                    
+                    <td>{{i.inviteId}}</td>
+                    <button (click)="DeletefromList(i.inviteId)">Delete</button>
           
                     <!-- <a routerLink="/review">Review</a> -->
                 </tr>
