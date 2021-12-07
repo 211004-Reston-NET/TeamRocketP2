@@ -62,8 +62,8 @@ constructor(private revApi: RevAPIService, private router: Router,public auth0:A
     console.log(p_show);
     let invitation:Invite = {
       UserId:p_UserId,
-      EmailRecipient:p_email,
-      EventId:p_eventId
+      emailRecipient:p_email,
+      eventId:6
     };
     console.log(invitation)
     this.revApi.SendInvite(invitation)

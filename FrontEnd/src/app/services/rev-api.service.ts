@@ -181,6 +181,13 @@ ReplybyId(p_text:any):Observable<Replies[]>
   {
     return this.http.post<Invite>(this.SendInvitepoint,p_item);
   }
+
+  GetInvites():Observable<Invite[]>
+  {
+    
+    return this.http.get<Invite[]>("https://teamrocketapi.azurewebsites.net/api/invite/all");
+  }
+
   
 
 }
