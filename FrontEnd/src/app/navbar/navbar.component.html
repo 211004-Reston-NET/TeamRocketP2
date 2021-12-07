@@ -34,7 +34,8 @@
                             <li><a href=""><i class="icon-cog"></i> Preferences</a></li>
                             <li><a href=""><i class="icon-envelope"></i> Contact Support</a></li>
                             <li class="divider"></li>
-                            <li><a (click)="auth0.logout({ returnTo: document.location.origin })"><i class="icon-off"></i> Logout</a></li>
+                            <li><a href=""><i class="icon-off"></i> Profile</a></li>
+                            <li *ngIf="auth0.isAuthenticated$ | async"><a (click)="auth0.logout({ returnTo: document.location.origin })"><i class="icon-off"></i> Logout</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -24,8 +24,7 @@ export class CreateReplyComponent implements OnInit {
   @Input()
   forumIdentification:number = 0;
   @Input()
-  currentuser:any;
-
+  userId:any
 
   constructor(private p_Service:RevAPIService, private router: Router) { }
 
@@ -34,7 +33,7 @@ export class CreateReplyComponent implements OnInit {
   showForm()
   {
     this.showAddReply=!this.showAddReply
-
+    console.log(this.showAddReply)
   }
   createReply(restGroup: FormGroup)
   {
@@ -45,7 +44,7 @@ export class CreateReplyComponent implements OnInit {
         {
         replyText: restGroup.get("textfield")?.value,
         dateCreated: restGroup.get("date")?.value,
-        userId:this.currentuser.id,
+        userId:this.userId.id,
         forumId:this.forumIdentification,
         postId:this.postIdentification
         };
@@ -56,7 +55,7 @@ export class CreateReplyComponent implements OnInit {
       (
         (response) => {
           console.log(response);
-          this.router.navigateByUrl("/events");
+          this.router.navigateByUrl("/forum");
         }
       )
     }
