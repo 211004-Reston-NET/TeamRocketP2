@@ -44,7 +44,8 @@ export class ForumComponent implements OnInit {
     forums:"",
     invites:"",
     posts:"",
-    replies:""}
+    replies:""
+  }
   
 
   constructor(private revApi: RevAPIService, private router: Router,public auth0:AuthService) {

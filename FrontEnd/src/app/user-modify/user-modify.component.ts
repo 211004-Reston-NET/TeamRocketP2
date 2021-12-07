@@ -31,7 +31,8 @@ export class UserModifyComponent implements OnInit {
     forums:"",
     invites:"",
     posts:"",
-    replies:""}
+    replies:""
+  }
 
     retrieved:any
 
@@ -58,16 +59,16 @@ export class UserModifyComponent implements OnInit {
       if (restGroup.valid) {
         let UserInfo:Users ={
           id: this.current.id,
-          userName: restGroup.get("UserName")?.value,
+          userName: restGroup.get("Username")?.value,
           nameOfUser:restGroup.get("PersonName")?.value,
           email: this.current.email,
           userPass:this.current.userPass,
-          forums: this.current.forums,
-          posts: this.current.forums,
-          replies:this.current.replies,
-          invites:this.current.invites
+          // forums: "",
+          // posts: "",
+          // replies:"",
+          // invites:""
         }
-
+        console.log(UserInfo);
         this.revApi.UpdateUser(UserInfo).subscribe(
           (response) => {
             console.log(response);

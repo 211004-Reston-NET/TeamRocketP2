@@ -5,8 +5,8 @@ export interface Users
     userPass:string,
     email:string,
     nameOfUser:string,
-    forums:string,
-    invites:string,
-    posts:string,
-    replies:string
+    forums?:string,
+    invites?:string,
+    posts?:string,
+    replies?:string
 }

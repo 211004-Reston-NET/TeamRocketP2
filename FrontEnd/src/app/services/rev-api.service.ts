@@ -26,7 +26,7 @@ private AddForumpoint:string="https://teamrocketapi.azurewebsites.net/api/Forum/
 private AddPostpoint:string="https://teamrocketapi.azurewebsites.net/api/Post/Add";
 private AddReplypoint:string="https://teamrocketapi.azurewebsites.net/api/Reply/Add";
 
-public UpdateUserPoint:string="https://teamrocketapi.azurewebsites.net/api/user/Update";
+private UpdateUserPoint:string="https://teamrocketapi.azurewebsites.net/api/user/Update";
 
 private SendInvitepoint:string="https://teamrocketapi.azurewebsites.net/api/Invite/Add";
 private GetUsersendpoint:string="https://teamrocketapi.azurewebsites.net/api/user/all";
