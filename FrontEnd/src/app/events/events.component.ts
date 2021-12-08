@@ -34,7 +34,9 @@ eventsidnum:any;
 
 constructor(private revApi: RevAPIService, private router: Router,public auth0:AuthService) {
   this.auth0.user$.subscribe((Response) => {
-    this.retrieved = Response?.name;
+    
+    this.retrieved = Response?.email;
+    console.log(this.retrieved);
   });
  }
 

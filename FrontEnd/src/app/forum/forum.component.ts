@@ -49,7 +49,7 @@ export class ForumComponent implements OnInit {
 
   constructor(private revApi: RevAPIService, private router: Router,public auth0:AuthService) {
     this.auth0.user$.subscribe((Response) => {
-      this.retrieved = Response?.name;
+      this.retrieved = Response?.email;
     });
    }
 
@@ -76,7 +76,7 @@ export class ForumComponent implements OnInit {
   getusers()
   {
     this.revApi.Users().subscribe((response) => {
-      console.log(response);
+     // console.log(response);
 
       //It will set the show property to false to each element and also add it to our listOfUser
       response.forEach(element => {
@@ -130,7 +130,7 @@ export class ForumComponent implements OnInit {
 
   getReplies() {
     this.revApi.Reply().subscribe((response) => {
-      console.log(response);
+     // console.log(response);
 
       //It will set the show property to false to each element and also add it to our listOfUser
       response.forEach(element => {
@@ -148,7 +148,7 @@ export class ForumComponent implements OnInit {
     let testitem:Forums={topicName:P_Topic,dateCreated:P_date,creatorId:8,show:false}
       console.log(testitem);
       this.revApi.AddForum(testitem).subscribe((response) => {
-        console.log(response);
+        //console.log(response);
 
         //It will set the show property to false to each element and also add it to our listOfUser
 
@@ -162,7 +162,7 @@ export class ForumComponent implements OnInit {
         let testitem:Replies={replyText:P_Topic,dateCreated:P_date,userId:8,forumId:this.result,postId:6}
           console.log(testitem);
           this.revApi.AddReply(testitem).subscribe((response) => {
-            console.log(response);
+           // console.log(response);
 
             //It will set the show property to false to each element and also add it to our listOfUser
 

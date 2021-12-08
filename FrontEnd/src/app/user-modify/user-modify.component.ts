@@ -38,7 +38,7 @@ export class UserModifyComponent implements OnInit {
 
   constructor(public auth0:AuthService,private revApi:RevAPIService, private router: Router) {
     this.auth0.user$.subscribe((Response) => {
-      this.retrieved = Response?.name;
+      this.retrieved = Response?.email;
       });
   }
 

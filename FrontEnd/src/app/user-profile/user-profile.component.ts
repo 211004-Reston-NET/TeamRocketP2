@@ -33,7 +33,7 @@ export class UserProfileComponent implements OnInit {
 
   constructor(private revApi: RevAPIService, private router: Router,public auth0:AuthService) {
     this.auth0.user$.subscribe((Response) => {
-      this.retrieved = Response?.name;
+      this.retrieved = Response?.email;
     });
     
    }
@@ -77,7 +77,7 @@ showMyinvites()
       //console.log(this.listofInvitations[i].eventId);
       let index: number = this.listOfEvents.findIndex(rest => rest.eventId == this.listofInvitations[i].eventId);
       this.listofInvitations[i].activity=this.listOfEvents[index].eventName;
-      console.log(this.listofInvitations[i].activity)
+      //console.log(this.listofInvitations[i].activity)
     }
   }
 
