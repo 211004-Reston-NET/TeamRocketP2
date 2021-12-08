@@ -34,7 +34,7 @@ namespace P2WebApi.Controllers
             try
             {
                 Log.Information("Get All Invites was executed");
-                return Ok(_InviteBL.GetAllInvite());
+                return Ok(_InviteBL.GetAllInvite()); return Ok(_InviteBL.GetAllInvite());
             }
             catch
             {
@@ -78,7 +78,11 @@ namespace P2WebApi.Controllers
             }
             
         }
-
+ [HttpPost("Add")]
+        public IActionResult AddInvite([FromBody] Invite p_invite)
+        {
+            return Created("api/Invite/Add", _InviteBL.AddInvite(p_invite));
+        }
 
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
