@@ -49,7 +49,7 @@ constructor(private revApi: RevAPIService, private router: Router,public auth0:A
         this.listOfEvents.push(element);
       });
 
-      this.listOfEvents =this.listOfEvents.slice(1,6);
+      this.listOfEvents =this.listOfEvents.slice(1,5);
       console.log(this.listOfEvents)
 
     });

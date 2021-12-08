@@ -26,10 +26,10 @@ namespace P2WebApi.Controllers
         [HttpGet("All")]
         public IActionResult GetAllInvite()
 
-         {
+        {
             Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
-                .WriteTo.File(new JsonFormatter(),"Logs/GetAllInvites.json")
+                .WriteTo.File(new JsonFormatter(), "Logs/GetAllInvites.json")
                 .CreateLogger();
             try
             {
@@ -45,7 +45,7 @@ namespace P2WebApi.Controllers
             {
                 Log.CloseAndFlush();
             }
-            
+
         }
 
 
@@ -57,15 +57,15 @@ namespace P2WebApi.Controllers
         [HttpGet("{p_id}")]
         public IActionResult GetInviteById(int p_id)
 
-           {
+        {
             Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
-                .WriteTo.File(new JsonFormatter(),"Logs/GetInviteById.json")
+                .WriteTo.File(new JsonFormatter(), "Logs/GetInviteById.json")
                 .CreateLogger();
             try
             {
                 Log.Information("Get Invite by Id was executed");
-                  return Ok(_InviteBL.GetInviteById(p_id));
+                return Ok(_InviteBL.GetInviteById(p_id));
             }
             catch
             {
@@ -76,9 +76,9 @@ namespace P2WebApi.Controllers
             {
                 Log.CloseAndFlush();
             }
-            
+
         }
- [HttpPost("Add")]
+        [HttpPost("Add")]
         public IActionResult AddInvite([FromBody] Invite p_invite)
         {
             return Created("api/Invite/Add", _InviteBL.AddInvite(p_invite));
